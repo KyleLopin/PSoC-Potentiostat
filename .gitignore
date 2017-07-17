@@ -1,0 +1,9 @@
+codegentemp/
+Generated_Source/
+CortexM3/
+Backup/
+Export/
+*.rpt
+*.cycdx
+*.cyfit
+*.html
