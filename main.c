@@ -19,7 +19,7 @@
 #include "globals.h"
 #include "helper_functions.h"
 #include "lut_protocols.h"
-#include "USB_protocols.h"
+#include "usb_protocols.h"
 #include "user_selections.h"
 
 // #define Work_electrode_resistance 1400  // ohms, estimate of resistance from SC block to the working electrode pin
@@ -112,10 +112,12 @@ int main()
     isr_adcAmp_StartEx(adcAmpInterrupt);
     isr_adcAmp_Disable();
     
+    CyWdtStart(CYWDT_1024_TICKS, CYWDT_LPMODE_NOCHANGE);
+    
     //helper_Writebyte_EEPROM(0, VDAC_ADDRESS);
     
     for(;;) {
-        
+        CyWdtClear();
         if(USBFS_IsConfigurationChanged()) {  // if the configuration is changed reenable the OUT ENDPOINT
             while(!USBFS_GetConfiguration()) {  // wait for the configuration with windows / controller is updated
             }
@@ -188,6 +190,16 @@ int main()
                 buffer_size_data_pts = user_run_amperometry(OUT_Data_Buffer);
                 buffer_size_bytes = 2*(buffer_size_data_pts + 1); // add 1 bit for the termination code and double size for bytes from uint16 data
                 break;
+            case 'H': ; // Start all of the hardware, used to start ASV run
+                helper_HardwareWakeup();
+                
+            case 's': ;  // user wants to short the TIA
+                
+                AMux_TIA_input_Connect(2);
+                
+            case 'd': ;  // user wants to stop shorting the TIA
+                AMux_TIA_input_Disconnect(2);
+
             }  // end of switch statment
             OUT_Data_Buffer[0] = '0';  // clear data buffer cause it has been processed
             Input_Flag = false;  // turn off input flag because it has been processed

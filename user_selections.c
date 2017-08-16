@@ -153,6 +153,7 @@ void user_reset_device(void) {
     isr_adc_Disable();
     isr_adcAmp_Disable();
     helper_HardwareSleep();
+    
     lut_index = 0;  
 }
 

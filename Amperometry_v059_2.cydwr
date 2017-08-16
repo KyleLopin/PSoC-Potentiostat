@@ -494,6 +494,7 @@
       <Data key="a1c785ef-3e0a-4ab6-982c-816044bb7797" value="Pin_hack" />
       <Data key="b2d132b3-c775-4961-b96c-6741bbe3c25a" value="TIA_end_pin" />
       <Data key="b20862c8-587e-42b4-a42f-6e12cf45a8f9" value="VDAC_TIA_out" />
+      <Data key="c5dfd757-f459-41a7-916d-a5739e90031e" value="Pin_1" />
       <Data key="c2706f8d-e8e8-4633-b999-999bd19dbfe5/ed092b9b-d398-4703-be89-cebf998501f6" value="LCD_LCDPort" />
       <Data key="c3720056-a98c-4bf7-b253-85f6e7addc72" value="Pin_timing" />
       <Data key="cc3bcd7e-5dc0-48ea-9bf6-6aa082be1ada" value="Counter_Electrode" />
@@ -3586,8 +3587,20 @@
     </Group>
   </Group>
   <Group key="Interrupt">
-    <Data key="4e9a5042-bdfe-493d-8930-249bbb824d8d" value="1" />
-    <Data key="493e4f69-5332-4269-b24b-3246e066652a" value="2" />
+    <Group key="4e9a5042-bdfe-493d-8930-249bbb824d8d">
+      <Group key="CortexM3">
+        <Data key="Assigned" value="True" />
+        <Data key="Priority" value="1" />
+        <Data key="Vector" value="-1" />
+      </Group>
+    </Group>
+    <Group key="493e4f69-5332-4269-b24b-3246e066652a">
+      <Group key="CortexM3">
+        <Data key="Assigned" value="True" />
+        <Data key="Priority" value="2" />
+        <Data key="Vector" value="-1" />
+      </Group>
+    </Group>
   </Group>
   <Group key="Pin2">
     <Group key="3d39ec19-0fe2-40b0-adca-ead8b6f7bf1d">
@@ -3665,6 +3678,11 @@
         <Data key="Port Format" value="0,4" />
       </Group>
     </Group>
+    <Group key="c5dfd757-f459-41a7-916d-a5739e90031e">
+      <Group key="0">
+        <Data key="Port Format" value="0,2" />
+      </Group>
+    </Group>
     <Group key="c2706f8d-e8e8-4633-b999-999bd19dbfe5/ed092b9b-d398-4703-be89-cebf998501f6">
       <Group key="0">
         <Data key="Port Format" value="2,0" />
@@ -3705,7 +3723,7 @@
     </Group>
     <Group key="e851a3b9-efb8-48be-bbb8-b303b216c393">
       <Group key="0">
-        <Data key="Port Format" value="0,1" />
+        <Data key="Port Format" value="1,7" />
       </Group>
     </Group>
     <Group key="fff7a433-a4b0-49c2-9b5f-b05d67f79c6d">
