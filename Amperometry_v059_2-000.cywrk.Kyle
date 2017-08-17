@@ -18,7 +18,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Amperometry_v059_2-000\Amperometry_v059_2\Header Files\user_selections.h">
 <ExpandedNodeIds>
 <v>Amperometry_v059_2-000</v>
 <v>Amperometry_v059_2-000\Amperometry_v059_2</v>
@@ -284,8 +284,6 @@
 <v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\ADC_SigDel_Ext_CP_Clk\ADC_SigDel_Ext_CP_Clk.h</v>
 <v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\ADC_SigDel_IRQ</v>
 <v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\ADC_SigDel_IRQ\ADC_SigDel_IRQ.c</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\ADC_SigDel_IRQ\ADC_SigDel_IRQ.h</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\ADC_SigDel_theACLK</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -435,8 +433,6 @@
 <v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\IDAC_calibrate.lst</v>
 <v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\IDAC_calibrate_PM.lst</v>
 <v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_adc.lst</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_adcAmp.lst</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_dac.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>

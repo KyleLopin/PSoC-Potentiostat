@@ -130,12 +130,12 @@ int main()
         if (Input_Flag == true) {
             switch (OUT_Data_Buffer[0]) { 
                 
-            case 'F': ; // User wants to export streaming data         
+            case EXPORT_STREAMING_DATA: ; // 'F' User wants to export streaming data         
                 uint8 user_ch1 = OUT_Data_Buffer[1]-'0';
                 USB_Export_Data(&ADC_array[user_ch1].usb[0], buffer_size_bytes); 
                 break;
                 
-            case 'E': ; // User wants to export the data, the user can choose what ADC array to export
+            case EXPORT_ADC_ARRAY: ; // 'E' User wants to export the data, the user can choose what ADC array to export
                 uint8 user_ch = OUT_Data_Buffer[1]-'0';
                 if (user_ch <= ADC_CHANNELS) { // check for buffer overflow
                     // 2*(lut_length+2) because the data is 2 times as long as it has to 
@@ -146,58 +146,59 @@ int main()
                     USB_Export_Data((uint8*)"Error Exporting", 16);
                 }
                 break;
-            case 'B': ; // calibrate the TIA / ADC current measuring circuit
+            case CALIBRATE_TIA_ADC: ; // 'B' calibrate the TIA / ADC current measuring circuit
                 calibrate_TIA();
                 break;
-            case 'C': ;  // change the compare value of the PWM to start the adc isr
+            case SET_PWM_TIMER_COMPARE: ;  // 'C' change the compare value of the PWM to start the adc isr
                 PWM_isr_WriteCompare(helper_Convert2Dec(&OUT_Data_Buffer[2], 5));
                 break;
-            case 'A': ; 
+            case SET_PWM_TIMER_PERIOD: ; // 'T' Set the PWM timer period
+                user_set_isr_timer(OUT_Data_Buffer);
+                break;
+            case SET_TIA_ADC: ;  // 'A' Set the TIA resistor, ADC gain and if external resistor is used
                 user_setup_TIA_ADC(OUT_Data_Buffer);
                 break;
-            case 'V': ;  // check if the device should use the dithering VDAC of the VDAC
+            case CHECK_VOLTAGE_SOURCE: ;  // 'V' check if the device should use the dithering VDAC of the VDAC
                 user_voltage_source_funcs(OUT_Data_Buffer);
                 break;
-            case 'R': ;  // Start a cyclic voltammetry experiment
+            case START_CYCLIC_VOLTAMMETRY: ;  // 'R' Start a cyclic voltammetry experiment
                 user_start_cv_run();
                 break;
-            case 'X': ; // reset the device by disabbleing isrs
+            case RESET_DEVICE: ; // 'X' reset the device by disabbleing isrs
                 user_reset_device();
                 break;
-            case 'I': ;  // identify the device 
+            case DEVICE_IDENTIFY: ;  // 'I' identify the device 
                 user_identify();
                 break;
-            case 'L': ; // User wants to change the electrode configuration
+            case CHANGE_NUMBER_ELECTRODES: ; // 'L' User wants to change the electrode configuration
                 AMux_channel_select = helper_Convert2Dec(&OUT_Data_Buffer[2], 1) - 2; // user sends 2 or 3 for the # electrode 
                 //config, map this to 0 or 1 for the channel the AMux should select
                 AMux_electrode_Select(AMux_channel_select);
                 break;
-            case 'T': ; //Set the PWM timer period
-                user_set_isr_timer(OUT_Data_Buffer);
-                break;
-            case 'Q': ;  // Hack to let the device to run a chronoamperometry experiment, not working properly yet
+
+            case CHRONOAMPEROMETRY_HACK: ;  // 'Q' Hack to let the device to run a chronoamperometry experiment, not working properly yet
                 lut_length = user_chrono_lut_maker(OUT_Data_Buffer);
                 break;
-            case 'S': ; // make a look up table (lut) for a cyclic voltammetry experiment
+            case MAKE_LOOK_UP_TABLE: ; // 'S' make a look up table (lut) for a cyclic voltammetry experiment
                 lut_length = user_lookup_table_maker(OUT_Data_Buffer);
                 break; 
-            case 'D': ; // set the dac value
+            case SET_DAC_VALUE: ; // 'D' set the dac value
                 DAC_SetValue(helper_Convert2Dec(&OUT_Data_Buffer[2], 4));
                 break;
-            case 'M': ; // run an amperometric experiment
+            case RUN_AMPEROMETRY: ; // 'M' run an amperometric experiment
 
                 adc_recording_channel = 0;
                 buffer_size_data_pts = user_run_amperometry(OUT_Data_Buffer);
                 buffer_size_bytes = 2*(buffer_size_data_pts + 1); // add 1 bit for the termination code and double size for bytes from uint16 data
                 break;
-            case 'H': ; // Start all of the hardware, used to start ASV run
+            case START_HARDWARE: ; // 'H' Start all of the hardware, used to start ASV run
                 helper_HardwareWakeup();
                 
-            case 's': ;  // user wants to short the TIA
+            case SHORT_TIA: ;  // 's' user wants to short the TIA
                 
                 AMux_TIA_input_Connect(2);
                 
-            case 'd': ;  // user wants to stop shorting the TIA
+            case STOP_SHORTING_TIA: ;  // 'd' user wants to stop shorting the TIA
                 AMux_TIA_input_Disconnect(2);
 
             }  // end of switch statment

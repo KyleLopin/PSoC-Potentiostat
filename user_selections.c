@@ -20,11 +20,13 @@
 *******************************************************************************
 *
 * Summary:
-*  Calibrate the TIA circuit each time the current gain settings are changed
-
+*  Set up the TIA and ADC circuit by changing the TIA resistor value, the ADC gain
+*    setup if the user wants to use an external resistor
 *  Parameters:
 *  uint8 data_buffer[]: array of chars with the parameters to set the adc and tia components
-*  input is AX|Y|Z|W: where X is the TIA resistor value index, a string between 0-7 that sets the TIA resisot value
+*  input is A|U|X|Y|Z|W: where 
+*  U is ADC configuration to use where config 1 uses a Vref of +-2.048 V and config 2 uses +-1.024 V
+*  X - the TIA resistor value index, a string between 0-7 that sets the TIA resisot value
 *  Y - the adc buffer gain setting
 *  Z - T or F for if an external resistor is to be used and the AMux_working_electrode should be set according
 *  W - 0 or 1 for which user resistor should be selected by AMux_working_electrode
@@ -39,6 +41,8 @@
 *******************************************************************************/
 
 void user_setup_TIA_ADC(uint8 data_buffer[]) {
+    //ADC_SigDel_SelectConfiguration((data_buffer[2]-'0'), DO_NOT_RESTART_ADC); 
+    
     TIA_resistor_value_index = data_buffer[1]-'0';
     TIA_SetResFB(TIA_resistor_value_index);  // see TIA.h for how the values work, basically 0 - 20k, 1 -30k, etc.
     ADC_buffer_index = data_buffer[3]-'0';

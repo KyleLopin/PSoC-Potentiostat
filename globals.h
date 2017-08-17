@@ -15,6 +15,29 @@
 #include "cytypes.h"
 
 /**************************************
+*        USB INPUT OPTIONS
+**************************************/ 
+    
+#define EXPORT_STREAMING_DATA           'F'
+#define EXPORT_ADC_ARRAY                'E'
+#define CALIBRATE_TIA_ADC               'B'
+#define SET_PWM_TIMER_COMPARE           'C'
+#define SET_PWM_TIMER_PERIOD            'T'
+#define SET_TIA_ADC                     'A'
+#define CHECK_VOLTAGE_SOURCE            'V'
+#define START_CYCLIC_VOLTAMMETRY        'R'
+#define RESET_DEVICE                    'X'
+#define DEVICE_IDENTIFY                 'I'
+#define CHANGE_NUMBER_ELECTRODES        'L'
+#define CHRONOAMPEROMETRY_HACK          'Q'
+#define MAKE_LOOK_UP_TABLE              'S'
+#define SET_DAC_VALUE                   'D'
+#define RUN_AMPEROMETRY                 'M'
+#define START_HARDWARE                  'H'
+#define SHORT_TIA                       's'
+#define STOP_SHORTING_TIA               'd'
+    
+/**************************************
 *           ADC Constants
 **************************************/  
     

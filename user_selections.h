@@ -17,6 +17,9 @@
 #include "helper_functions.h"
 #include "lut_protocols.h"
 #include "usb_protocols.h"
+    
+    
+#define DO_NOT_RESTART_ADC      0
    
 /***************************************
 *        Function Prototypes
