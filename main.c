@@ -58,32 +58,25 @@ CY_ISR(dacInterrupt)
     
     DAC_SetValue(lut_value);
     lut_index++;
-    dac_value_hold = lut_value;  // For debug
     if (lut_index >= lut_length) { // all the data points have been given
         isr_adc_Disable();
         isr_dac_Disable();
-        //LCD_Position(1,0);
-        //sprintf(LCD_str, "e2:%d|%d", lut_index, lut_length);
-        //LCD_PrintString(LCD_str);
         ADC_array[0].data[lut_index] = 0xC000;  // mark that the data array is done
         helper_HardwareSleep();
         lut_index = 0; 
         USB_Export_Data((uint8*)"Done", 5); // calls a function in an isr but only after the current isr has been disabled
-
     }
     lut_value = waveform_lut[lut_index];
 }
 CY_ISR(adcInterrupt){
     ADC_array[0].data[lut_index] = ADC_SigDel_GetResult16(); 
-    //ADC_array[0].data[lut_index] = lut_value;
-    //ADC_array[0].data[lut_index] = dac_value_hold;
 }
 
 CY_ISR(adcAmpInterrupt){
     ADC_array[adc_recording_channel].data[lut_index] = ADC_SigDel_GetResult16(); 
     lut_index++;  
     if (lut_index >= buffer_size_data_pts) {
-        ADC_array[adc_recording_channel].data[lut_index] = 0xC000;
+        ADC_array[adc_recording_channel].data[lut_index] = 0xC000; 
         // counter += 1;  // for debug
         lut_index = 0;
         adc_hold = adc_recording_channel;
@@ -94,8 +87,7 @@ CY_ISR(adcAmpInterrupt){
     }
 }
 
-int main()
-{
+int main() {
     /* Initialize all the hardware and interrupts */
     CyGlobalIntEnable; 
     
@@ -175,7 +167,6 @@ int main()
                 //config, map this to 0 or 1 for the channel the AMux should select
                 AMux_electrode_Select(AMux_channel_select);
                 break;
-
             case CHRONOAMPEROMETRY_HACK: ;  // 'Q' Hack to let the device to run a chronoamperometry experiment, not working properly yet
                 lut_length = user_chrono_lut_maker(OUT_Data_Buffer);
                 break;
@@ -186,18 +177,14 @@ int main()
                 DAC_SetValue(helper_Convert2Dec(&OUT_Data_Buffer[2], 4));
                 break;
             case RUN_AMPEROMETRY: ; // 'M' run an amperometric experiment
-
                 adc_recording_channel = 0;
                 buffer_size_data_pts = user_run_amperometry(OUT_Data_Buffer);
                 buffer_size_bytes = 2*(buffer_size_data_pts + 1); // add 1 bit for the termination code and double size for bytes from uint16 data
                 break;
             case START_HARDWARE: ; // 'H' Start all of the hardware, used to start ASV run
                 helper_HardwareWakeup();
-                
             case SHORT_TIA: ;  // 's' user wants to short the TIA
-                
                 AMux_TIA_input_Connect(2);
-                
             case STOP_SHORTING_TIA: ;  // 'd' user wants to stop shorting the TIA
                 AMux_TIA_input_Disconnect(2);
 

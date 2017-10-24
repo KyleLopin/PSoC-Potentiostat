@@ -41,16 +41,22 @@
 *******************************************************************************/
 
 void user_setup_TIA_ADC(uint8 data_buffer[]) {
-    //ADC_SigDel_SelectConfiguration((data_buffer[2]-'0'), DO_NOT_RESTART_ADC); 
-    
-    TIA_resistor_value_index = data_buffer[1]-'0';
-    TIA_SetResFB(TIA_resistor_value_index);  // see TIA.h for how the values work, basically 0 - 20k, 1 -30k, etc.
-    ADC_buffer_index = data_buffer[3]-'0';
-    ADC_SigDel_SetBufferGain(ADC_buffer_index);
-    if (data_buffer[5] == 'T') {
+    uint8 adc_config = data_buffer[2]-'0';
+    if (adc_config == 1 || adc_config == 2) {
+        ADC_SigDel_SelectConfiguration(adc_config, DO_NOT_RESTART_ADC); 
+    }
+    TIA_resistor_value_index = data_buffer[4]-'0';
+    if (TIA_resistor_value_index >= 0 || TIA_resistor_value_index <= 7) {
+        TIA_SetResFB(TIA_resistor_value_index);  // see TIA.h for how the values work, basically 0 - 20k, 1 -30k, etc.
+    }
+    ADC_buffer_index = data_buffer[6]-'0';
+    if (ADC_buffer_index >= 0 || ADC_buffer_index <= 3) {
+        ADC_SigDel_SetBufferGain(ADC_buffer_index); 
+    }
+    if (data_buffer[8] == 'T') {
         tia_mux.use_extra_resistor = true;
-        tia_mux.user_channel = data_buffer[7]-'0';  // not used yet
-        data_buffer[5] = 0;
+        tia_mux.user_channel = data_buffer[10]-'0';  // not used yet
+        data_buffer[8] = 0;
         AMux_TIA_resistor_bypass_Connect(0);
     }
     else {

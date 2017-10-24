@@ -1,4 +1,87 @@
---------------- Build Started: 10/03/2017 13:57:49 Project: Amperometry_v059_2, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+--------------- Rebuild Started: 08/17/2017 16:12:00 Project: Amperometry_v059_2, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\main.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\calibrate.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\lut_protocols.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\usb_protocols.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\helper_functions.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\DAC.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\user_selections.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\cymetadata.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\USBFS.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\USBFS_audio.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\USBFS_boot.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\USBFS_cdc.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\USBFS_cls.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\USBFS_descr.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\USBFS_drv.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\USBFS_episr.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\USBFS_hid.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\USBFS_pm.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\USBFS_std.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\USBFS_vnd.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\USBFS_midi.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\USBFS_msc.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\USBFS_Dm.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\USBFS_Dp.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\Cm3Start.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\CyBootAsmGnu.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\CyDmac.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\CyFlash.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\CyLib.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\cyPm.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\CySpc.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\cyutils.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\LED.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\Clock_PWM.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\PWM_isr.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\PWM_isr_PM.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\isr_dac.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\isr_adc.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\Pin_1.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\Opamp_Aux.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\Opamp_Aux_PM.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\TIA.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\TIA_PM.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\VDAC_TIA.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\VDAC_TIA_PM.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\ADC_SigDel.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\ADC_SigDel_PM.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\ADC_SigDel_INT.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\ADC_SigDel_Ext_CP_Clk.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\ADC_SigDel_IRQ.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\ADC_SigDel_theACLK.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\TIA_end_pin.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\TIA_resistor1.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\VDAC_source.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\VDAC_source_PM.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\AMux_V_source.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\AMux_electrode.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\AMux_TIA_resistor_bypass.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\AMux_TIA_input.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\DVDAC.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\DVDAC_PM.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\DVDAC_DMA_dma.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\DVDAC_VDAC8.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\DVDAC_VDAC8_PM.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\DVDAC_IntClock.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\EEPROM.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\IDAC_calibrate.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\IDAC_calibrate_PM.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\Pin_DVDAC_cap.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\isr_adcAmp.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\Working_Electrode.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\Reference_Electrode.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\Counter_Electrode.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\Amperometry_v059_2.hex"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\Amperometry_v059_2.elf"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\Amperometry_v059_2.map"
+Deleting file ".\Amperometry_v059_2.cycdx"
+Deleting file ".\Amperometry_v059_2.svd"
+Deleting file ".\Amperometry_v059_2.rpt"
+Deleting file ".\Amperometry_v059_2_timing.html"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\.deps\SOURCE_C__ARM_GCC_GENERIC.P"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\.deps\SOURCE_ASM__ARM_GCC_GENERIC.P"
 cydsfit.exe -.appdatapath "C:\Users\Kyle\AppData\Local\Cypress Semiconductor\PSoC Creator\4.1" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p C:\Users\Kyle\Documents\PSoC\Amperometry\Amperometry_v059_2.cydsn\Amperometry_v059_2.cyprj -d CY8C5888LTI-LP097 -s C:\Users\Kyle\Documents\PSoC\Amperometry\Amperometry_v059_2.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
 Elaborating Design...
 HDL Generation...
@@ -6,9 +89,9 @@ Synthesis...
 Tech Mapping...
 Info: plm.M0038: The pin named Working_Electrode(0) at location P0[0] prevents usage of special purposes: OpAmp:out. (App=cydsfit)
 Analog Placement...
-Log: apr.M0058: The analog placement iterative improvement is 28% done. (App=cydsfit)
-Log: apr.M0058: The analog placement iterative improvement is 52% done. (App=cydsfit)
-Log: apr.M0058: The analog placement iterative improvement is 95% done. (App=cydsfit)
+Log: apr.M0058: The analog placement iterative improvement is 36% done. (App=cydsfit)
+Log: apr.M0058: The analog placement iterative improvement is 58% done. (App=cydsfit)
+Log: apr.M0058: The analog placement iterative improvement is 89% done. (App=cydsfit)
 Analog Routing...
 Analog Code Generation...
 Warning: apr.M0042: Bonded pin(s) "P3[5]" are not used in your current design but have been connected in order to route the design. (App=cydsfit)
@@ -60,11 +143,13 @@ arm-none-eabi-gcc.exe -c Generated_Source\PSoC5\CyLib.c -o .\CortexM3\ARM_GCC_54
 arm-none-eabi-gcc.exe -c Generated_Source\PSoC5\cyPm.c -o .\CortexM3\ARM_GCC_541\Debug\cyPm.o -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/cyPm.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -std=gnu99
 arm-none-eabi-gcc.exe -c Generated_Source\PSoC5\CySpc.c -o .\CortexM3\ARM_GCC_541\Debug\CySpc.o -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/CySpc.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -std=gnu99
 arm-none-eabi-gcc.exe -c Generated_Source\PSoC5\cyutils.c -o .\CortexM3\ARM_GCC_541\Debug\cyutils.o -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/cyutils.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -std=gnu99
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC5\LED.c -o .\CortexM3\ARM_GCC_541\Debug\LED.o -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/LED.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -std=gnu99
 arm-none-eabi-gcc.exe -c Generated_Source\PSoC5\Clock_PWM.c -o .\CortexM3\ARM_GCC_541\Debug\Clock_PWM.o -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/Clock_PWM.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -std=gnu99
 arm-none-eabi-gcc.exe -c Generated_Source\PSoC5\PWM_isr.c -o .\CortexM3\ARM_GCC_541\Debug\PWM_isr.o -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/PWM_isr.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -std=gnu99
 arm-none-eabi-gcc.exe -c Generated_Source\PSoC5\PWM_isr_PM.c -o .\CortexM3\ARM_GCC_541\Debug\PWM_isr_PM.o -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/PWM_isr_PM.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -std=gnu99
 arm-none-eabi-gcc.exe -c Generated_Source\PSoC5\isr_dac.c -o .\CortexM3\ARM_GCC_541\Debug\isr_dac.o -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/isr_dac.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -std=gnu99
 arm-none-eabi-gcc.exe -c Generated_Source\PSoC5\isr_adc.c -o .\CortexM3\ARM_GCC_541\Debug\isr_adc.o -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/isr_adc.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -std=gnu99
+arm-none-eabi-gcc.exe -c Generated_Source\PSoC5\Pin_1.c -o .\CortexM3\ARM_GCC_541\Debug\Pin_1.o -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/Pin_1.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -std=gnu99
 arm-none-eabi-gcc.exe -c Generated_Source\PSoC5\Opamp_Aux.c -o .\CortexM3\ARM_GCC_541\Debug\Opamp_Aux.o -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/Opamp_Aux.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -std=gnu99
 arm-none-eabi-gcc.exe -c Generated_Source\PSoC5\Opamp_Aux_PM.c -o .\CortexM3\ARM_GCC_541\Debug\Opamp_Aux_PM.o -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/Opamp_Aux_PM.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -std=gnu99
 arm-none-eabi-gcc.exe -c Generated_Source\PSoC5\TIA.c -o .\CortexM3\ARM_GCC_541\Debug\TIA.o -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/TIA.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -std=gnu99
@@ -100,11 +185,11 @@ arm-none-eabi-gcc.exe -c Generated_Source\PSoC5\Working_Electrode.c -o .\CortexM
 arm-none-eabi-gcc.exe -c Generated_Source\PSoC5\Reference_Electrode.c -o .\CortexM3\ARM_GCC_541\Debug\Reference_Electrode.o -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/Reference_Electrode.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -std=gnu99
 arm-none-eabi-gcc.exe -c Generated_Source\PSoC5\Counter_Electrode.c -o .\CortexM3\ARM_GCC_541\Debug\Counter_Electrode.o -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/Counter_Electrode.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -std=gnu99
 arm-none-eabi-as.exe -o .\CortexM3\ARM_GCC_541\Debug\CyBootAsmGnu.o Generated_Source\PSoC5\CyBootAsmGnu.s -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -alh=.\CortexM3\ARM_GCC_541\Debug/CyBootAsmGnu.lst -g -W
-arm-none-eabi-ar.exe -rs .\CortexM3\ARM_GCC_541\Debug\Amperometry_v059_2.a .\CortexM3\ARM_GCC_541\Debug\USBFS.o .\CortexM3\ARM_GCC_541\Debug\USBFS_audio.o .\CortexM3\ARM_GCC_541\Debug\USBFS_boot.o .\CortexM3\ARM_GCC_541\Debug\USBFS_cdc.o .\CortexM3\ARM_GCC_541\Debug\USBFS_cls.o .\CortexM3\ARM_GCC_541\Debug\USBFS_descr.o .\CortexM3\ARM_GCC_541\Debug\USBFS_drv.o .\CortexM3\ARM_GCC_541\Debug\USBFS_episr.o .\CortexM3\ARM_GCC_541\Debug\USBFS_hid.o .\CortexM3\ARM_GCC_541\Debug\USBFS_pm.o .\CortexM3\ARM_GCC_541\Debug\USBFS_std.o .\CortexM3\ARM_GCC_541\Debug\USBFS_vnd.o .\CortexM3\ARM_GCC_541\Debug\USBFS_midi.o .\CortexM3\ARM_GCC_541\Debug\USBFS_msc.o .\CortexM3\ARM_GCC_541\Debug\USBFS_Dm.o .\CortexM3\ARM_GCC_541\Debug\USBFS_Dp.o .\CortexM3\ARM_GCC_541\Debug\CyDmac.o .\CortexM3\ARM_GCC_541\Debug\CyFlash.o .\CortexM3\ARM_GCC_541\Debug\CyLib.o .\CortexM3\ARM_GCC_541\Debug\cyPm.o .\CortexM3\ARM_GCC_541\Debug\CySpc.o .\CortexM3\ARM_GCC_541\Debug\cyutils.o .\CortexM3\ARM_GCC_541\Debug\Clock_PWM.o .\CortexM3\ARM_GCC_541\Debug\PWM_isr.o .\CortexM3\ARM_GCC_541\Debug\PWM_isr_PM.o .\CortexM3\ARM_GCC_541\Debug\isr_dac.o .\CortexM3\ARM_GCC_541\Debug\isr_adc.o .\CortexM3\ARM_GCC_541\Debug\Opamp_Aux.o .\CortexM3\ARM_GCC_541\Debug\Opamp_Aux_PM.o .\CortexM3\ARM_GCC_541\Debug\TIA.o .\CortexM3\ARM_GCC_541\Debug\TIA_PM.o .\CortexM3\ARM_GCC_541\Debug\VDAC_TIA.o .\CortexM3\ARM_GCC_541\Debug\VDAC_TIA_PM.o .\CortexM3\ARM_GCC_541\Debug\ADC_SigDel.o .\CortexM3\ARM_GCC_541\Debug\ADC_SigDel_PM.o .\CortexM3\ARM_GCC_541\Debug\ADC_SigDel_INT.o .\CortexM3\ARM_GCC_541\Debug\ADC_SigDel_Ext_CP_Clk.o .\CortexM3\ARM_GCC_541\Debug\ADC_SigDel_IRQ.o .\CortexM3\ARM_GCC_541\Debug\ADC_SigDel_theACLK.o .\CortexM3\ARM_GCC_541\Debug\TIA_end_pin.o .\CortexM3\ARM_GCC_541\Debug\TIA_resistor1.o .\CortexM3\ARM_GCC_541\Debug\VDAC_source.o .\CortexM3\ARM_GCC_541\Debug\VDAC_source_PM.o .\CortexM3\ARM_GCC_541\Debug\AMux_V_source.o .\CortexM3\ARM_GCC_541\Debug\AMux_electrode.o .\CortexM3\ARM_GCC_541\Debug\AMux_TIA_resistor_bypass.o .\CortexM3\ARM_GCC_541\Debug\AMux_TIA_input.o .\CortexM3\ARM_GCC_541\Debug\DVDAC.o .\CortexM3\ARM_GCC_541\Debug\DVDAC_PM.o .\CortexM3\ARM_GCC_541\Debug\DVDAC_DMA_dma.o .\CortexM3\ARM_GCC_541\Debug\DVDAC_VDAC8.o .\CortexM3\ARM_GCC_541\Debug\DVDAC_VDAC8_PM.o .\CortexM3\ARM_GCC_541\Debug\DVDAC_IntClock.o .\CortexM3\ARM_GCC_541\Debug\EEPROM.o .\CortexM3\ARM_GCC_541\Debug\IDAC_calibrate.o .\CortexM3\ARM_GCC_541\Debug\IDAC_calibrate_PM.o .\CortexM3\ARM_GCC_541\Debug\Pin_DVDAC_cap.o .\CortexM3\ARM_GCC_541\Debug\isr_adcAmp.o .\CortexM3\ARM_GCC_541\Debug\Working_Electrode.o .\CortexM3\ARM_GCC_541\Debug\Reference_Electrode.o .\CortexM3\ARM_GCC_541\Debug\Counter_Electrode.o .\CortexM3\ARM_GCC_541\Debug\CyBootAsmGnu.o
+arm-none-eabi-ar.exe -rs .\CortexM3\ARM_GCC_541\Debug\Amperometry_v059_2.a .\CortexM3\ARM_GCC_541\Debug\USBFS.o .\CortexM3\ARM_GCC_541\Debug\USBFS_audio.o .\CortexM3\ARM_GCC_541\Debug\USBFS_boot.o .\CortexM3\ARM_GCC_541\Debug\USBFS_cdc.o .\CortexM3\ARM_GCC_541\Debug\USBFS_cls.o .\CortexM3\ARM_GCC_541\Debug\USBFS_descr.o .\CortexM3\ARM_GCC_541\Debug\USBFS_drv.o .\CortexM3\ARM_GCC_541\Debug\USBFS_episr.o .\CortexM3\ARM_GCC_541\Debug\USBFS_hid.o .\CortexM3\ARM_GCC_541\Debug\USBFS_pm.o .\CortexM3\ARM_GCC_541\Debug\USBFS_std.o .\CortexM3\ARM_GCC_541\Debug\USBFS_vnd.o .\CortexM3\ARM_GCC_541\Debug\USBFS_midi.o .\CortexM3\ARM_GCC_541\Debug\USBFS_msc.o .\CortexM3\ARM_GCC_541\Debug\USBFS_Dm.o .\CortexM3\ARM_GCC_541\Debug\USBFS_Dp.o .\CortexM3\ARM_GCC_541\Debug\CyDmac.o .\CortexM3\ARM_GCC_541\Debug\CyFlash.o .\CortexM3\ARM_GCC_541\Debug\CyLib.o .\CortexM3\ARM_GCC_541\Debug\cyPm.o .\CortexM3\ARM_GCC_541\Debug\CySpc.o .\CortexM3\ARM_GCC_541\Debug\cyutils.o .\CortexM3\ARM_GCC_541\Debug\LED.o .\CortexM3\ARM_GCC_541\Debug\Clock_PWM.o .\CortexM3\ARM_GCC_541\Debug\PWM_isr.o .\CortexM3\ARM_GCC_541\Debug\PWM_isr_PM.o .\CortexM3\ARM_GCC_541\Debug\isr_dac.o .\CortexM3\ARM_GCC_541\Debug\isr_adc.o .\CortexM3\ARM_GCC_541\Debug\Pin_1.o .\CortexM3\ARM_GCC_541\Debug\Opamp_Aux.o .\CortexM3\ARM_GCC_541\Debug\Opamp_Aux_PM.o .\CortexM3\ARM_GCC_541\Debug\TIA.o .\CortexM3\ARM_GCC_541\Debug\TIA_PM.o .\CortexM3\ARM_GCC_541\Debug\VDAC_TIA.o .\CortexM3\ARM_GCC_541\Debug\VDAC_TIA_PM.o .\CortexM3\ARM_GCC_541\Debug\ADC_SigDel.o .\CortexM3\ARM_GCC_541\Debug\ADC_SigDel_PM.o .\CortexM3\ARM_GCC_541\Debug\ADC_SigDel_INT.o .\CortexM3\ARM_GCC_541\Debug\ADC_SigDel_Ext_CP_Clk.o .\CortexM3\ARM_GCC_541\Debug\ADC_SigDel_IRQ.o .\CortexM3\ARM_GCC_541\Debug\ADC_SigDel_theACLK.o .\CortexM3\ARM_GCC_541\Debug\TIA_end_pin.o .\CortexM3\ARM_GCC_541\Debug\TIA_resistor1.o .\CortexM3\ARM_GCC_541\Debug\VDAC_source.o .\CortexM3\ARM_GCC_541\Debug\VDAC_source_PM.o .\CortexM3\ARM_GCC_541\Debug\AMux_V_source.o .\CortexM3\ARM_GCC_541\Debug\AMux_electrode.o .\CortexM3\ARM_GCC_541\Debug\AMux_TIA_resistor_bypass.o .\CortexM3\ARM_GCC_541\Debug\AMux_TIA_input.o .\CortexM3\ARM_GCC_541\Debug\DVDAC.o .\CortexM3\ARM_GCC_541\Debug\DVDAC_PM.o .\CortexM3\ARM_GCC_541\Debug\DVDAC_DMA_dma.o .\CortexM3\ARM_GCC_541\Debug\DVDAC_VDAC8.o .\CortexM3\ARM_GCC_541\Debug\DVDAC_VDAC8_PM.o .\CortexM3\ARM_GCC_541\Debug\DVDAC_IntClock.o .\CortexM3\ARM_GCC_541\Debug\EEPROM.o .\CortexM3\ARM_GCC_541\Debug\IDAC_calibrate.o .\CortexM3\ARM_GCC_541\Debug\IDAC_calibrate_PM.o .\CortexM3\ARM_GCC_541\Debug\Pin_DVDAC_cap.o .\CortexM3\ARM_GCC_541\Debug\isr_adcAmp.o .\CortexM3\ARM_GCC_541\Debug\Working_Electrode.o .\CortexM3\ARM_GCC_541\Debug\Reference_Electrode.o .\CortexM3\ARM_GCC_541\Debug\Counter_Electrode.o .\CortexM3\ARM_GCC_541\Debug\CyBootAsmGnu.o
 arm-none-eabi-ar.exe: creating .\CortexM3\ARM_GCC_541\Debug\Amperometry_v059_2.a
 arm-none-eabi-gcc.exe -Wl,--start-group -o C:\Users\Kyle\Documents\PSoC\Amperometry\Amperometry_v059_2.cydsn\CortexM3\ARM_GCC_541\Debug\Amperometry_v059_2.elf .\CortexM3\ARM_GCC_541\Debug\main.o .\CortexM3\ARM_GCC_541\Debug\calibrate.o .\CortexM3\ARM_GCC_541\Debug\lut_protocols.o .\CortexM3\ARM_GCC_541\Debug\usb_protocols.o .\CortexM3\ARM_GCC_541\Debug\helper_functions.o .\CortexM3\ARM_GCC_541\Debug\DAC.o .\CortexM3\ARM_GCC_541\Debug\user_selections.o .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o .\CortexM3\ARM_GCC_541\Debug\cymetadata.o .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o .\CortexM3\ARM_GCC_541\Debug\Amperometry_v059_2.a "C:\Program Files (x86)\Cypress\PSoC Creator\4.1\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_541\Debug\CyComponentLibrary.a" -mcpu=cortex-m3 -mthumb -l m -L Generated_Source\PSoC5 -Wl,-Map,.\CortexM3\ARM_GCC_541\Debug/Amperometry_v059_2.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -O0 -ffat-lto-objects -Wl,--end-group
 cyelftool.exe -C C:\Users\Kyle\Documents\PSoC\Amperometry\Amperometry_v059_2.cydsn\CortexM3\ARM_GCC_541\Debug\Amperometry_v059_2.elf --flash_row_size 256 --flash_size 262144 --flash_offset 0x00000000
 cyelftool.exe -S C:\Users\Kyle\Documents\PSoC\Amperometry\Amperometry_v059_2.cydsn\CortexM3\ARM_GCC_541\Debug\Amperometry_v059_2.elf
-Flash used: 36964 of 262144 bytes (14.1 %).
+Flash used: 36860 of 262144 bytes (14.1 %).
 SRAM used: 54005 of 65536 bytes (82.4 %). Stack: 2048 bytes. Heap: 128 bytes.
---------------- Build Succeeded: 10/03/2017 13:58:27 ---------------
+--------------- Rebuild Succeeded: 08/17/2017 16:12:26 ---------------
