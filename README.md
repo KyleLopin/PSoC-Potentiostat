@@ -49,3 +49,28 @@ The following are the inputs commands the device will take, all inputs are input
 's' - Short the TIA so the working electrode can sink more current.
 
 'd' - Stop shorting the TIA
+
+# PSoC-Potentiostat Future directions
+
+- add status flag such as running CV, ASV or amperometry, data ready, error to the code that the GUI can poll if there is a problem
+- for CVs longer than 500 ms have the device export the data if the computer asks for it
+- add DMAs to the timing PWM to save CPU resources.   Leave isrs for now for debug and possible data processing in the future
+- add pwm to DAC isr/DMA so DVP / stair case measurements can be made
+- add pwm to ADC to take multi-measurements per voltage step to average.
+- add electrochemical techniques for SWV, NPV, ac voltammertry, pulsed amperometry, potentiometry, chronopotentiometry
+
+
+optional / exploratory
+- add auto range for the current.  Can TIA swith resistor that fast?
+- add way to have an equilibrium time for CV
+- switch voltage command DAC to TIA so that multiple Working electrodes can be used
+- free up the counter electrode DAC or TIA DAC with the VRef
+- add calibration routine
+- add DFB for removing high frequency noise
+
+
+# PSoC-Potentiostat Hardware changes to make
+
+Add case and connections to use banana clips
+Add case and connections to use the 4 twisted wire like EmStat
+
