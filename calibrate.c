@@ -68,6 +68,9 @@ void calibrate_TIA(void) {
     if (transfer_int > 250) {  // the TIA needs too much current, reduce needs by half.  Is needed for the 20k resistor setting
         transfer_int /= 2;
     }
+    //    LCD_Position(0,0);
+//    sprintf(LCD_str, "in:%d |%d| ", resistor_value, ADC_buffer_value);
+//    LCD_PrintString(LCD_str);
     // is not DRY but not sure how to fix
     IDAC_calibrate_SetPolarity(IDAC_calibrate_SINK);
     calibrate_step(transfer_int, 0);
@@ -78,10 +81,9 @@ void calibrate_TIA(void) {
     IDAC_calibrate_SetValue(0);
     Calibrate_Hardware_Sleep();
     
-//    LCD_Position(0,0);
-//    sprintf(LCD_str, "in:%d |%d| ", resistor_value, ADC_buffer_value);
-//    LCD_PrintString(LCD_str);
-        
+    float32 uAs = (float)(calibrate_array.data[0] + calibrate_array.data[4]) / 8.0;
+    uA_per_adc_count = uAs / (calibrate_array.data[5] - calibrate_array.data[9]);
+
     USB_Export_Data(calibrate_array.usb, 20);
 }
 
