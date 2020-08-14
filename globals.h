@@ -36,6 +36,7 @@
 #define START_HARDWARE                  'H'
 #define SHORT_TIA                       's'
 #define STOP_SHORTING_TIA               'd'
+#define DPV_LUT                         'G'
     
 /**************************************
 *           ADC Constants
@@ -45,7 +46,8 @@
 // to make the adc data array     
 #define MAX_LUT_SIZE 5000
 #define ADC_CHANNELS 4
-
+ 
+    
 /**************************************
 *           API Constants
 **************************************/
