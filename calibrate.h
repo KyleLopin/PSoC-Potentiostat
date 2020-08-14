@@ -14,6 +14,7 @@
 #define CALIBRATE_H
 
 #include "cytypes.h"
+#include "math.h"
     
 /**************************************
 *      Constants
@@ -41,6 +42,8 @@ ADC reading 0 IDAC input, ADC reading for 2nd lowest IDAC value, ADC reading for
 
 uint8 TIA_resistor_value_index;
 uint8 ADC_buffer_index;
+extern float32 uA_per_adc_count;
+extern float32 R_analog_route;
 
     
 extern char LCD_str[];  // for debug
