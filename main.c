@@ -52,11 +52,15 @@ uint16 buffer_size_bytes;  // number of bytes of data stored to export for amper
 uint16 buffer_size_data_pts = 4000;  // prevent the isr from firing by initializing to 4000
 uint16 dac_value_hold = 0;
 
+float32 uA_per_adc_count = 0.0527428;
+//float32 R_analog_route = 0.94092;
+int16 voltage_error = 0;
+float32 R_analog_route = 0;
 
 CY_ISR(dacInterrupt)
 {
     
-    DAC_SetValue(lut_value);
+    DAC_SetValue(lut_value + voltage_error);
     lut_index++;
     if (lut_index >= lut_length) { // all the data points have been given
         isr_adc_Disable();
@@ -64,12 +68,17 @@ CY_ISR(dacInterrupt)
         ADC_array[0].data[lut_index] = 0xC000;  // mark that the data array is done
         helper_HardwareSleep();
         lut_index = 0; 
+        voltage_error = 0;
         USB_Export_Data((uint8*)"Done", 5); // calls a function in an isr but only after the current isr has been disabled
     }
     lut_value = waveform_lut[lut_index];
 }
 CY_ISR(adcInterrupt){
     ADC_array[0].data[lut_index] = ADC_SigDel_GetResult16(); 
+    // current = ADC_array[0].data[lut_index] * uA_per_adc_count
+    // voltage_error = current * R_analog_route  (uA * kohm) = mV
+    voltage_error = -ADC_SigDel_GetResult16() * uA_per_adc_count * R_analog_route;
+//    ADC_array[0].data[lut_index] = voltage_error;
 }
 
 CY_ISR(adcAmpInterrupt){
@@ -90,9 +99,13 @@ CY_ISR(adcAmpInterrupt){
 int main() {
     /* Initialize all the hardware and interrupts */
     CyGlobalIntEnable; 
+//    LCD_Start();
+//    LCD_ClearDisplay();
+//    LCD_PrintString("DPV1");
     
     USBFS_Start(0, USBFS_DWR_VDDD_OPERATION);  // initialize the USB
     helper_HardwareSetup();
+    ADC_SigDel_SelectConfiguration(2, DO_NOT_RESTART_ADC);
     while(!USBFS_bGetConfiguration());  //Wait till it the usb gets its configuration from the PC ??
     
     isr_dac_StartEx(dacInterrupt);
@@ -120,6 +133,9 @@ int main() {
         }
         
         if (Input_Flag == true) {
+//                LCD_ClearDisplay();
+//                sprintf(LCD_str, "%.*s", 16, OUT_Data_Buffer);
+//                LCD_PrintString(LCD_str);
             switch (OUT_Data_Buffer[0]) { 
                 
             case EXPORT_STREAMING_DATA: ; // 'F' User wants to export streaming data         
@@ -183,10 +199,18 @@ int main() {
                 break;
             case START_HARDWARE: ; // 'H' Start all of the hardware, used to start ASV run
                 helper_HardwareWakeup();
+                break;
             case SHORT_TIA: ;  // 's' user wants to short the TIA
                 AMux_TIA_input_Connect(2);
+                break;
             case STOP_SHORTING_TIA: ;  // 'd' user wants to stop shorting the TIA
                 AMux_TIA_input_Disconnect(2);
+                break;
+            case DPV_LUT: ; // G user wants to make a look up table for differential pulse voltammetry
+//                LCD_ClearDisplay();
+//                LCD_PrintString("Making DPV LUT");
+                lut_length = user_dpv_lut_maker(OUT_Data_Buffer);
+                break;
 
             }  // end of switch statment
             OUT_Data_Buffer[0] = '0';  // clear data buffer cause it has been processed
