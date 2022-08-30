@@ -73,6 +73,7 @@ The following are the inputs commands the device will take, all inputs are input
 ## v1.5 - GUI optimizations
 - refactor the USB handler in the GUI to seperate into low and high level functions
 - add more unittest to GUI
+- Change from tabs for each experiment to the user can start a new tab with the experiment type they want
 
 ## v1.6 - Improve hardware
 - add options to take multiple measurements at the end of the pulse to average
