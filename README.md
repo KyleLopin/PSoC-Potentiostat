@@ -60,6 +60,31 @@ The following are the inputs commands the device will take, all inputs are input
 - add electrochemical techniques for SWV, NPV, ac voltammertry, pulsed amperometry, potentiometry, chronopotentiometry
 
 
+# Preliminary roadmap
+## v1.3 - DPV and clean up
+- Get a SWV working on CV frame
+- get versions of GUI and hex files synced
+
+## v1.4 - hardware optimizations
+- Change USB to USBUART to make connections easier
+- change adc and dac changes from the isr to hardware
+- GUI start adding unittests
+
+## v1.5 - GUI optimizations
+- refactor the USB handler in the GUI to seperate into low and high level functions
+- add more unittest to GUI
+
+## v1.6 - Improve hardware
+- add options to take multiple measurements at the end of the pulse to average
+- while running experiments, send data to the computer to graph while running
+
+## v1.7 - add more options
+- start adding more experimental options
+- add ac voltammertry, pulsed amperometry
+
+## v1.8 - 
+- add potentiometry, chronopotentiometry
+
 optional / exploratory
 - add auto range for the current.  Can TIA swith resistor that fast?
 - add way to have an equilibrium time for CV
