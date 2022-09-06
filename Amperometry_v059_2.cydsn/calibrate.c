@@ -81,9 +81,6 @@ void calibrate_TIA(void) {
     IDAC_calibrate_SetValue(0);
     Calibrate_Hardware_Sleep();
     
-    float32 uAs = (float)(calibrate_array.data[0] + calibrate_array.data[4]) / 8.0;
-    uA_per_adc_count = uAs / (calibrate_array.data[5] - calibrate_array.data[9]);
-
     USB_Export_Data(calibrate_array.usb, 20);
 }
 

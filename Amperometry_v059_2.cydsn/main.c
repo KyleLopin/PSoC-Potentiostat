@@ -52,15 +52,11 @@ uint16 buffer_size_bytes;  // number of bytes of data stored to export for amper
 uint16 buffer_size_data_pts = 4000;  // prevent the isr from firing by initializing to 4000
 uint16 dac_value_hold = 0;
 
-float32 uA_per_adc_count = 0.0527428;
-//float32 R_analog_route = 0.94092;
-int16 voltage_error = 0;
-float32 R_analog_route = 0;
 
 CY_ISR(dacInterrupt)
 {
     
-    DAC_SetValue(lut_value + voltage_error);
+    DAC_SetValue(lut_value);
     lut_index++;
     if (lut_index >= lut_length) { // all the data points have been given
         isr_adc_Disable();
@@ -68,17 +64,12 @@ CY_ISR(dacInterrupt)
         ADC_array[0].data[lut_index] = 0xC000;  // mark that the data array is done
         helper_HardwareSleep();
         lut_index = 0; 
-        voltage_error = 0;
         USB_Export_Data((uint8*)"Done", 5); // calls a function in an isr but only after the current isr has been disabled
     }
     lut_value = waveform_lut[lut_index];
 }
 CY_ISR(adcInterrupt){
     ADC_array[0].data[lut_index] = ADC_SigDel_GetResult16(); 
-    // current = ADC_array[0].data[lut_index] * uA_per_adc_count
-    // voltage_error = current * R_analog_route  (uA * kohm) = mV
-    voltage_error = -ADC_SigDel_GetResult16() * uA_per_adc_count * R_analog_route;
-//    ADC_array[0].data[lut_index] = voltage_error;
 }
 
 CY_ISR(adcAmpInterrupt){

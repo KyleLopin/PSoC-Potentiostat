@@ -23,6 +23,8 @@ uint16 LUT_MakeCVStartZero(uint16 start_value, uint16 end_value);
 uint16 LUT_MakeTriangle_Wave(uint16 start_value, uint16 end_value);
 void LUT_MakePulse(uint16 base, uint16 pulse);
 uint16 LUT_make_line(uint16 start, uint16 end, uint16 index);
+uint16 LUT_make_dpv(uint16 start, uint16 end, uint16 height, 
+                    uint16 increment, uint16 index);
 
 /***************************************
 * Global variables external identifier

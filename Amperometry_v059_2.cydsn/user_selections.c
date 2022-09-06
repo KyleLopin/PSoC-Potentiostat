@@ -13,6 +13,7 @@
 #include <project.h>
 
 #include "user_selections.h"
+extern char LCD_str[];  // for debug
 
 
 /******************************************************************************
@@ -43,6 +44,7 @@
 void user_setup_TIA_ADC(uint8 data_buffer[]) {
     uint8 adc_config = data_buffer[2]-'0';
     if (adc_config == 1 || adc_config == 2) {
+        ADC_SigDel_CFG1;
         ADC_SigDel_SelectConfiguration(adc_config, DO_NOT_RESTART_ADC); 
     }
     TIA_resistor_value_index = data_buffer[4]-'0';
@@ -127,11 +129,16 @@ void user_start_cv_run(void){
         lut_value = waveform_lut[0];
         helper_HardwareWakeup();  // start the hardware
         DAC_SetValue(lut_value);  // let the electrode equilibriate
-        CyDelay(1);  // let the electrode voltage settle
+        CyDelay(20);  // let the electrode voltage settle
         ADC_SigDel_StartConvert();  // start the converstion process of the delta sigma adc so it will be ready to read when needed
-        CyDelay(20);
+        CyDelay(10);
         PWM_isr_WriteCounter(100);  // set the pwm timer so that it will trigger adc isr first
         ADC_array[0].data[lut_index] = ADC_SigDel_GetResult16();  // Hack, get first adc reading, timing element doesn't reverse for some reason
+        
+        DAC_SetValue(lut_value);  // let the electrode equilibriate
+        
+        CyDelay(20);  // let the electrode voltage settle
+        
         isr_dac_Enable();  // enable the interrupts to start the dac
         isr_adc_Enable();  // and the adc
     }
@@ -257,6 +264,58 @@ uint16 user_chrono_lut_maker(uint8 data_buffer[]) {
     return 4000; // the look up table length will be 4000
 }
 
+
+
+
+
+/******************************************************************************
+* Function Name: user_dpv_lut_maker
+*******************************************************************************
+*
+* Summary:
+*  Make a look up table that will run a differential pulse experiment.  Hackish now
+* 
+* Parameters:
+*  uint8 data_buffer[]: array of chars used to make the look up table
+*  input is G|XXXX|YYYY|AAA|BBB|ZZZZZ: 
+*  XXXX  - uint16 the number to put in the DAC for the baseline voltage 
+*  YYYY  - uint16 the dac value to stop at
+*  AAA   - uint16 the increase in the dac value for the pulse
+*  BBB   - uint16 the pulse increment of the DPV protocol
+*  ZZZZZ - uint16 to put in the period of the PWM timer to set the sampling rate
+*  
+* Global variables:
+*  uint16 lut_value: value gotten from the look up table that is to be applied to the DAC
+*  uint16 waveform_lut[]:  look up table of the waveform to apply to the DAC
+*  
+* Return:
+*  index - how far in the look up table that has been filled
+*
+*******************************************************************************/
+
+uint16 user_dpv_lut_maker(uint8 data_buffer[]) {
+    PWM_isr_Wakeup();
+    uint16 start = helper_Convert2Dec(&data_buffer[2], 4);
+    uint16 end = helper_Convert2Dec(&data_buffer[7], 4);
+    uint16 pulse_height = helper_Convert2Dec(&data_buffer[12], 3);
+    uint16 pulse_inc = helper_Convert2Dec(&data_buffer[16], 3);
+    //LCD_ClearDisplay();
+    
+    //sprintf(LCD_str, "%d|%d|%d|%d", start, end, pulse_height, pulse_inc);
+    //sprintf(LCD_str, "%.*s", 16, data_buffer);
+    //LCD_PrintString(LCD_str);
+    uint16 timer_period = helper_Convert2Dec(&data_buffer[20], 5);
+//                
+    PWM_isr_WritePeriod(timer_period);
+                
+    uint16 index = LUT_make_dpv(start, end, pulse_height, pulse_inc, 0);
+    lut_value = waveform_lut[0];  // setup the dac so when it starts it will be at the correct voltage
+                
+    PWM_isr_Sleep();
+    return index; // the look up table length will be 4000
+}
+
+
 /******************************************************************************
 * Function Name: user_lookup_table_maker
 *******************************************************************************
@@ -302,6 +361,7 @@ uint16 user_lookup_table_maker(uint8 data_buffer[]) {
     else if (start_volt_type == 'S') {  // Make a Cyclic voltammetry look up table that starts at the first dac value
         lut_length = LUT_MakeTriangle_Wave(start_dac_value, end_dac_value);
     } 
+    
     
     lut_value = waveform_lut[0];  // Initialize for the start of the experiment
     PWM_isr_Sleep();

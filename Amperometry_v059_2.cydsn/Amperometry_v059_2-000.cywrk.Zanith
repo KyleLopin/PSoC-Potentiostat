@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Amperometry_v059_2-000\Amperometry_v059_2\TopDesign">
+<ExpandedNodeIds>
+<v>Amperometry_v059_2-000</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\TopDesign</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Amperometry_v059_2.cydwr</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Amperometry_v059_2.cydwr\Pins</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Amperometry_v059_2.cydwr\Analog</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Amperometry_v059_2.cydwr\Clocks</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Amperometry_v059_2.cydwr\Interrupts</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Amperometry_v059_2.cydwr\DMA</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Amperometry_v059_2.cydwr\System</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Amperometry_v059_2.cydwr\Directives</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Amperometry_v059_2.cydwr\Flash Security</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Amperometry_v059_2.cydwr\EEPROM</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Header Files</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Header Files\calibrate.h</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Header Files\DAC.h</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Header Files\globals.h</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Header Files\helper_functions.h</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Header Files\lut_protocols.h</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Header Files\usb_protocols.h</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Header Files\user_selections.h</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Source Files</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Source Files\calibrate.c</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Source Files\DAC.c</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Source Files\helper_functions.c</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Source Files\lut_protocols.c</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Source Files\main.c</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Source Files\usb_protocols.c</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Source Files\user_selections.c</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5</v>
+</ExpandedNodeIds>
+<VisibleNodeIds />
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>Amperometry_v059_2-000</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\TopDesign</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\TopDesign\TopDesign.cysch</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\TopDesign\TopDesign_01.cymacro</v>
+</ExpandedNodeIds>
+<VisibleNodeIds />
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>Amperometry_v059_2-000</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SigDel.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SigDel_Ext_CP_Clk.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SigDel_INT.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SigDel_IRQ.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SigDel_PM.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SigDel_theACLK.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\AMux_electrode.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\AMux_TIA_input.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\AMux_TIA_resistor_bypass.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\AMux_V_source.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\calibrate.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock_PWM.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\Counter_Electrode.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\DAC.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\DVDAC.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\DVDAC_DMA_dma.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\DVDAC_IntClock.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\DVDAC_PM.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\DVDAC_VDAC8.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\DVDAC_VDAC8_PM.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\EEPROM.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\helper_functions.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\IDAC_calibrate.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\IDAC_calibrate_PM.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_adc.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_adcAmp.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\isr_dac.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\lut_protocols.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\Opamp_Aux.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\Opamp_Aux_PM.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_DVDAC_cap.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\PWM_isr.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\PWM_isr_PM.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\Reference_Electrode.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\TIA.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\TIA_end_pin.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\TIA_PM.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\TIA_resistor1.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\usb_protocols.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_audio.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_boot.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_cdc.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_cls.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_descr.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_Dm.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_Dp.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_drv.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_episr.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_hid.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_midi.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_msc.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_pm.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_std.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\USBFS_vnd.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\user_selections.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\VDAC_source.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\VDAC_source_PM.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\VDAC_TIA.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\VDAC_TIA_PM.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Listing Files\Working_Electrode.lst</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Amperometry_v059_2.elf</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Amperometry_v059_2.hex</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CortexM3\ARM_GCC_541\Debug\Amperometry_v059_2.map</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Amperometry_v059_2.gpdsc</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Amperometry_v059_2.rpt</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Amperometry_v059_2_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds />
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>Amperometry_v059_2-000</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\PSoC 5LP Architecture TRM</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\CY8C58LP Family Datasheet</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\System Reference Guides</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\System Reference Guides\cy_boot_v5_50</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\ADC_DelSig_v3_20.pdf</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\AMux_v1_80</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\AMux_v1_80\AMux_v1_80.pdf</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Capacitor_v1_0.pdf</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\cy_clock_v2_20.pdf</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\cy_constant_v1_0.pdf</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\cy_isr_v1_70</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\cy_isr_v1_70\cy_isr_v1_70.pdf</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\cy_pins_v2_20</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\DVDAC_v2_10.pdf</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\EEPROM_v3_0.pdf</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Gnd_v1_0.pdf</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\IDAC8_v2_0.pdf</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\not_v1_0.pdf</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\OpAmp_v1_90.pdf</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\PWM_v3_30.pdf</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\TIA_v2_0.pdf</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\USBFS_v3_10.pdf</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\VDAC8_v1_90</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\VDAC8_v1_90\VDAC8_v1_90.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds />
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs />
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1119, 446" SelectedTabbedMdiWindow="5823cdcf-1696-4838-8f58-40872a4257cf"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="5823cdcf-1696-4838-8f58-40872a4257cf" /><ToolWindow Key="CyFeedbackPageToolWindow:279a374f-99bb-478b-83b4-831f8474bf17:Component Feedback" Guid="a73b79a6-4a8a-4fe3-9978-2ff2d977869b" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>

@@ -128,6 +128,54 @@ uint16 LUT_make_line(uint16 start, uint16 end, uint16 index) {
 }
 
 /******************************************************************************
+* Function Name: LUT_make_dpv
+*******************************************************************************
+*
+* Summary:
+*  Make a Differential Pulse Voltammetry (DPV) look up table profile
+*
+* Parameters:
+*  uint16 start: starting dac value
+*  uint16 end: value the dac will end with, not including the pulse dac settings
+*  uint16 index: the place to start putting in numbers in the look up table
+*  uint16 height: height of the DPV pulse
+*  uint16 increment: increment of each step
+*
+* Return:
+*  uint16: first place after the filled in area of the look up table
+*
+* Global variables:
+*  waveform_lut: Array the look up table is stored in
+*
+*  NOTES: NOT FINISHED JUST TO RUN UPWARDS DPV AFTER ASV
+*
+*******************************************************************************/
+
+uint16 LUT_make_dpv(uint16 start, uint16 end, uint16 height, 
+                    uint16 increment, uint16 index) {
+    uint16 level = start;  // variable to store currend dac values in 
+    
+    waveform_lut[index] = level;
+    while (level >= end) {  // >= because the voltages are inverted compared to the dac
+        index += 1;
+        waveform_lut[index] = level - height - increment;  // negative bec
+        index += 1;
+        waveform_lut[index] = level - increment;
+        level = waveform_lut[index];
+    }
+//    LCD_ClearDisplay();
+//    
+//    sprintf(LCD_str, "%d|%d|%d", waveform_lut[0], waveform_lut[1], waveform_lut[2]);
+//    LCD_PrintString(LCD_str);
+//    LCD_Position(1, 0);
+    
+    sprintf(LCD_str, "%d|%d|%d", waveform_lut[3], waveform_lut[4], waveform_lut[5]);
+//    LCD_PrintString(LCD_str);
+    
+    return index;
+}
+
+/******************************************************************************
 * Function Name: LUT_MakePulse
 *******************************************************************************
 *
