@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ComponentStateRules Version="1">
+    <Rule>
+        <Pattern>
+            <Architecture>PSoC3</Architecture>
+            <Family>*</Family>
+            <Revision>ES2</Revision>
+            <Device>*</Device>
+        </Pattern>
+        <State>Prototype</State>
+        <Severity>None</Severity>
+        <Message />
+    </Rule>
+    <Rule>
+        <Pattern>
+            <Architecture>PSoC3</Architecture>
+            <Family>*</Family>
+            <Revision>*</Revision>
+            <Device>*</Device>
+        </Pattern>
+        <State>Prototype</State>
+        <Severity>None</Severity>
+        <Message />
+    </Rule>
+    <Rule>
+        <Pattern>
+            <Architecture>PSoC5</Architecture>
+            <Family>*</Family>
+            <Revision>*</Revision>
+            <Device>*</Device>
+        </Pattern>
+        <State>Prototype</State>
+        <Severity>None</Severity>
+        <Message />
+    </Rule>
+</ComponentStateRules>

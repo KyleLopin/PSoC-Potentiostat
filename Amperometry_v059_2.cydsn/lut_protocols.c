@@ -11,7 +11,7 @@
 
 #include "lut_protocols.h"
 #include "globals.h"
-extern char LCD_str[];  // for debug
+//extern char LCD_str[];  // for debug
 
 /******************************************************************************
 * Function Name: LUT_MakeTriangleWave
@@ -38,16 +38,24 @@ uint16 LUT_MakeTriangle_Wave(uint16 start_value, uint16 end_value) {
     
     //LCD_Position(1,0);
     //LCD_PrintDecUint16(end_value);
+    printf("p: %i\n", _lut_index);
     
     _lut_index = LUT_make_line(start_value, end_value, 0);
+    printf("z: %i\n", _lut_index);
     
     _lut_index = LUT_make_line(end_value, start_value, _lut_index-1);
+    printf("v: %i\n", _lut_index);
     waveform_lut[_lut_index] = start_value;  // the DAC is changed before the value is checked in the isr so it will go 1 over so make it stay at last voltage
     _lut_index++;
     //LCD_PutChar('|');
     //LCD_PrintDecUint16(_lut_index);
+    printf("%i\n", _lut_index);
     //LCD_PutChar('|');
     return _lut_index;  
+}
+
+int LUT_test() {
+    return 1;
 }
 
 
@@ -72,7 +80,7 @@ uint16 LUT_MakeTriangle_Wave(uint16 start_value, uint16 end_value) {
 *
 *******************************************************************************/
 
-uint16 LUT_MakeCVStartZero(uint16 start_value, uint16 end_value){
+uint16 LUT_MakeCVStartZero(const uint16 start_value, const uint16 end_value){
     uint16 _lut_index = 0;  // start at the beginning of the lut
     
     //LCD_Position(1,0);
@@ -112,18 +120,83 @@ uint16 LUT_MakeCVStartZero(uint16 start_value, uint16 end_value){
 *******************************************************************************/
 
 uint16 LUT_make_line(uint16 start, uint16 end, uint16 index) {
+    printf("start: %i, end: %i\n", start, end);
     if (start < end) {
-        for (uint16 value = start; value <= end; value++) {
+        for (int16 value = start; value <= end; value++) {
             waveform_lut[index] = value;
             index ++;
+            printf("l: %i, %i\n", index, value);
         }
     }
     else {
-        for (uint16 value = start; value >= end; value--) {
+        for (int16 value = start; value >= end; value--) {
             waveform_lut[index] = value;
             index ++;
+            printf("b: %i, %i\n", index, value);
+            if (index > 50) {
+                break;
+            }
         }
     }
+    printf("m: %i\n", index);
+    return index;
+}
+
+/******************************************************************************
+* Function Name: LUT_make_swv_side
+*******************************************************************************
+*
+* Summary:
+*  Make a ramp with a square wave super imposed, from start to end in waveform_lut 
+*  starting at index
+*  Does not matter if start or end is higher
+*
+* Parameters:
+*  uint16 start: first value to put in the look up table
+*  uint16 end: end value to put in the look up table
+*  uint16 pulse_inc: increment between the square pulse steps
+*  uint16 pulse_height: height of each square wave pulse
+*  uint16 index: the place to start putting in numbers in the look up table
+*
+* Return:
+*  uint16: first place after the filled in area of the look up table
+*
+* Global variables:
+*  waveform_lut: Array the look up table is stored in
+*
+*******************************************************************************/
+
+uint16 LUT_make_swv_line(uint16 start, uint16 end, uint16 pulse_inc, 
+                         uint16 pulse_height, uint16 index) {
+    printf("start: %i, end: %i\n", start, end);
+    if (index > 4000) {
+        return index;
+    }
+    if (start < end) {
+        for (int16 value = start; value <= end; value+=pulse_inc) {
+            waveform_lut[index] = value + pulse_height;
+            index ++;
+            waveform_lut[index] = value - pulse_height;
+            index ++;
+            printf("l: %i, %i\n", index, value);
+            if (index > 4000) {
+                break;
+            }
+        }
+    }
+    else {
+        for (int16 value = start; value >= end; value-=pulse_inc) {
+            waveform_lut[index] = value + pulse_height;
+            index ++;
+            waveform_lut[index] = value - pulse_height;
+            index ++;
+            printf("b: %i, %i\n", index, value);
+            if (index > 4000) {
+                break;
+            }
+        }
+    }
+    printf("m: %i\n", index);
     return index;
 }
 
@@ -169,7 +242,7 @@ uint16 LUT_make_dpv(uint16 start, uint16 end, uint16 height,
 //    LCD_PrintString(LCD_str);
 //    LCD_Position(1, 0);
     
-    sprintf(LCD_str, "%d|%d|%d", waveform_lut[3], waveform_lut[4], waveform_lut[5]);
+//    sprintf(LCD_str, "%d|%d|%d", waveform_lut[3], waveform_lut[4], waveform_lut[5]);
 //    LCD_PrintString(LCD_str);
     
     return index;

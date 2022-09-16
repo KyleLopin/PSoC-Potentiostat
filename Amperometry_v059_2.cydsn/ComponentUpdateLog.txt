@@ -1,0 +1,14 @@
+Last Modified Date & Time: 09/16/2022 11:32:16
+
+Amperometry_v059_2: Amperometry_v059_2.cydwr
+	cy_boot [v5.50] to [v6.10]
+	LIN_Dynamic [v3.40] to [v6.0]
+
+Amperometry_v059_2: TopDesign.cysch
+	ADC_SigDel [v3.20] to [v3.30]
+	isr_adc [v1.70] to [v1.71]
+	isr_adcAmp [v1.70] to [v1.71]
+	isr_dac [v1.70] to [v1.71]
+	USBFS [v3.10] to [v3.20]
+
+

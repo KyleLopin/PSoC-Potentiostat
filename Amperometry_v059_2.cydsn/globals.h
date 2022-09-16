@@ -107,6 +107,34 @@ struct TIAMux {  // not used currently
 };
 struct TIAMux tia_mux;
 
+//struct RunParams {
+//    uint16 start_value;
+//    uint16 end_value;
+//    uint8 sweep_type;  // Can be C - cyclic voltammetry, or L for linear sweep
+//    // Can be S for start voltage (triange shape sweep) or Z for starting at zero volts
+//    uint8 start_volt_type;  
+//    uint8 use_swv;
+//    uint16 swv_inc;
+//    uint16 swv_pulse_height;
+//    uint16 timer_period;
+//};// run_params_default = {500, 1000, 'C', 'S', false, 10, 100, 20000};
+//
+//struct RunParams run_params;
+
+struct RunParams {
+    uint16 start_value;
+    uint16 end_value;
+    uint8 sweep_type;  // Can be C - cyclic voltammetry, or L for linear sweep
+    // Can be S for start voltage (triange shape sweep) or Z for starting at zero volts
+    uint8 start_volt_type;  
+    uint8 use_swv;
+    uint16 swv_inc;
+    uint16 swv_pulse_height;
+    uint16 timer_period;
+};
+
+struct RunParams run_params;
+
 
 #endif    
 /* [] END OF FILE */

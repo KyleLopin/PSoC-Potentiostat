@@ -22,6 +22,7 @@
 ***************************************/     
     
 extern uint8 selected_voltage_source;
+//extern struct RunParams run_params;
     
     
 /***************************************
@@ -37,8 +38,9 @@ void helper_HardwareSetup(void);
 void helper_HardwareStart(void);
 void helper_HardwareSleep(void);
 void helper_HardwareWakeup(void);
-
-uint16 helper_Convert2Dec(uint8 array[], uint8 len);
+void make_run_params(const uint8 data_buffer[], const uint8 use_swv, 
+                     struct RunParams *run_params);
+uint16 helper_Convert2Dec(const uint8 array[], const uint8 len);
 
 
 #endif

@@ -15,6 +15,9 @@
 #include <project.h>
 #include "stdlib.h"  // remove after testing
 #include "stdio.h"  // remove after testing
+    
+// Local files
+#include "globals.h"
 
 /***************************************
 *        Function Prototypes

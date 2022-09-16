@@ -214,7 +214,27 @@ void helper_HardwareSleep(void){  // put to sleep all the components that have t
 }
 
 
-uint16 helper_Convert2Dec(uint8 array[], uint8 len){
+void make_run_params(const uint8 data_buffer[], const uint8 use_swv, 
+                     struct RunParams *run_params) {
+    run_params->start_value = helper_Convert2Dec(&data_buffer[2], 4);
+    run_params->end_value = helper_Convert2Dec(&data_buffer[7], 4);
+    run_params->timer_period = helper_Convert2Dec(&data_buffer[12], 5);
+    if (use_swv == true) {
+        run_params->use_swv = true;
+        run_params->swv_inc = helper_Convert2Dec(&data_buffer[18], 4);
+        run_params->swv_pulse_height = helper_Convert2Dec(&data_buffer[23], 4);
+        run_params->sweep_type = data_buffer[28];
+        run_params->start_volt_type = data_buffer[29];
+    }
+    else {
+        run_params->sweep_type = data_buffer[18];
+        run_params->start_volt_type = data_buffer[19];
+    }
+    
+}
+
+
+uint16 helper_Convert2Dec(const uint8 array[], const uint8 len){
     uint16 num = 0;
     for (int i = 0; i < len; i++){
         num = num * 10 + (array[i] - '0');
