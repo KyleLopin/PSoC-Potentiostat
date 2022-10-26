@@ -18,14 +18,14 @@
 #include "usb_protocols.h"
 
 //extern char LCD_str[];  // for debug
-const uint16 calibrate_TIA_resistor_list[] = {20, 30, 40, 80, 120, 250, 500, 1000}; 
-uint16 static ADC_value;
+const uint16_t calibrate_TIA_resistor_list[] = {20, 30, 40, 80, 120, 250, 500, 1000}; 
+uint16_t static ADC_value;
 
 /***************************************
 * Forward function references
 ***************************************/
 static void Calibrate_Hardware_Wakeup(void);
-static void calibrate_step(uint16 IDAC_value, uint8 IDAC_index);
+static void calibrate_step(uint16_t IDAC_value, uint8 IDAC_index);
 static void Calibrate_Hardware_Sleep(void);
 
 /******************************************************************************
@@ -54,9 +54,9 @@ void calibrate_TIA(void) {
     Calibrate_Hardware_Wakeup();
     CyDelay(100);
     // decide what currents to use based on TIA resistor and ADC buffer settings
-    uint16 resistor_value = calibrate_TIA_resistor_list[TIA_resistor_value_index];
+    uint16_t resistor_value = calibrate_TIA_resistor_list[TIA_resistor_value_index];
     uint var = 2;
-    uint16 IDAC_setting = 0;
+    uint16_t IDAC_setting = 0;
     uint8 ADC_buffer_value = pow(var, ADC_buffer_index);
     // set input current to zero and read ADC
     ADC_SigDel_StartConvert();
@@ -93,7 +93,7 @@ void calibrate_TIA(void) {
 *  the ADC count and saving them in the calibration_array
 *
 * Parameters:
-*  uint16 IDAC_value: value to set the calibration  IDAC to before measuring with the ADC
+*  uint16_t IDAC_value: value to set the calibration  IDAC to before measuring with the ADC
 *  uint8 IDAC_index: index of where in calibration_array to save the IDAC and ADC data
 *
 * Global variables:
@@ -101,7 +101,7 @@ void calibrate_TIA(void) {
 *
 *******************************************************************************/
 
-static void calibrate_step(uint16 IDAC_value, uint8 IDAC_index) {
+static void calibrate_step(uint16_t IDAC_value, uint8 IDAC_index) {
     IDAC_calibrate_SetValue(IDAC_value);
     CyDelay(100);  // allow the ADC to settle
     ADC_value = ADC_SigDel_GetResult16();

@@ -22,8 +22,8 @@
 *  Start the CV protocol at the user defined start value
 *
 * Parameters:
-*  uint16 start_value: first value to put in the dac
-*  uint16 end_value: to peak dac value
+*  uint16_t start_value: first value to put in the dac
+*  uint16_t end_value: to peak dac value
 *
 * Return:
 *  uint16: how long the look up table is
@@ -33,8 +33,8 @@
 *
 *******************************************************************************/
 
-uint16 LUT_MakeTriangle_Wave(uint16 start_value, uint16 end_value) {
-    uint16 _lut_index = 0;  // start at the beginning of the lut
+uint16_t LUT_MakeTriangle_Wave(uint16_t start_value, uint16_t end_value) {
+    uint16_t _lut_index = 0;  // start at the beginning of the lut
     
     //LCD_Position(1,0);
     //LCD_PrintDecUint16(end_value);
@@ -69,8 +69,8 @@ int LUT_test() {
 *  Start the CV protocol at 0 volts
 *
 * Parameters:
-*  uint16 start_value: first value the dac goes after it starts at 0 V
-*  uint16 end_value: the dac value to go to after going to start_value, dac then goes to 0 V (e.g. virtual ground)
+*  uint16_t start_value: first value the dac goes after it starts at 0 V
+*  uint16_t end_value: the dac value to go to after going to start_value, dac then goes to 0 V (e.g. virtual ground)
 *
 * Return:
 *  uint16: how long the look up table is
@@ -80,8 +80,8 @@ int LUT_test() {
 *
 *******************************************************************************/
 
-uint16 LUT_MakeCVStartZero(const uint16 start_value, const uint16 end_value){
-    uint16 _lut_index = 0;  // start at the beginning of the lut
+uint16_t LUT_MakeCVStartZero(const uint16_t start_value, const uint16_t end_value){
+    uint16_t _lut_index = 0;  // start at the beginning of the lut
     
     //LCD_Position(1,0);
     //LCD_PrintDecUint16(end_value);
@@ -107,9 +107,9 @@ uint16 LUT_MakeCVStartZero(const uint16 start_value, const uint16 end_value){
 *  Does not matter if start or end is higher
 *
 * Parameters:
-*  uint16 start: first value to put in the look up table
-*  uint16 end: end value to put in the look up table
-*  uint16 index: the place to start putting in numbers in the look up table
+*  uint16_t start: first value to put in the look up table
+*  uint16_t end: end value to put in the look up table
+*  uint16_t index: the place to start putting in numbers in the look up table
 *
 * Return:
 *  uint16: first place after the filled in area of the look up table
@@ -119,17 +119,17 @@ uint16 LUT_MakeCVStartZero(const uint16 start_value, const uint16 end_value){
 *
 *******************************************************************************/
 
-uint16 LUT_make_line(uint16 start, uint16 end, uint16 index) {
+uint16_t LUT_make_line(uint16_t start, uint16_t end, uint16_t index) {
     printf("start: %i, end: %i\n", start, end);
     if (start < end) {
-        for (int16 value = start; value <= end; value++) {
+        for (int16_t value = start; value <= end; value++) {
             waveform_lut[index] = value;
             index ++;
-            printf("l: %i, %i\n", index, value);
+            printf("l: %i, %i 2 \n", index, value);
         }
     }
     else {
-        for (int16 value = start; value >= end; value--) {
+        for (int16_t value = start; value >= end; value--) {
             waveform_lut[index] = value;
             index ++;
             printf("b: %i, %i\n", index, value);
@@ -152,11 +152,11 @@ uint16 LUT_make_line(uint16 start, uint16 end, uint16 index) {
 *  Does not matter if start or end is higher
 *
 * Parameters:
-*  uint16 start: first value to put in the look up table
-*  uint16 end: end value to put in the look up table
-*  uint16 pulse_inc: increment between the square pulse steps
-*  uint16 pulse_height: height of each square wave pulse
-*  uint16 index: the place to start putting in numbers in the look up table
+*  uint16_t start: first value to put in the look up table
+*  uint16_t end: end value to put in the look up table
+*  uint16_t pulse_inc: increment between the square pulse steps
+*  uint16_t pulse_height: height of each square wave pulse
+*  uint16_t index: the place to start putting in numbers in the look up table
 *
 * Return:
 *  uint16: first place after the filled in area of the look up table
@@ -166,14 +166,14 @@ uint16 LUT_make_line(uint16 start, uint16 end, uint16 index) {
 *
 *******************************************************************************/
 
-uint16 LUT_make_swv_line(uint16 start, uint16 end, uint16 pulse_inc, 
-                         uint16 pulse_height, uint16 index) {
+uint16_t LUT_make_swv_line(uint16_t start, uint16_t end, uint16_t pulse_inc, 
+                         uint16_t pulse_height, uint16_t index) {
     printf("start: %i, end: %i\n", start, end);
     if (index > 4000) {
         return index;
     }
     if (start < end) {
-        for (int16 value = start; value <= end; value+=pulse_inc) {
+        for (int16_t value = start; value <= end; value+=pulse_inc) {
             waveform_lut[index] = value + pulse_height;
             index ++;
             waveform_lut[index] = value - pulse_height;
@@ -185,7 +185,7 @@ uint16 LUT_make_swv_line(uint16 start, uint16 end, uint16 pulse_inc,
         }
     }
     else {
-        for (int16 value = start; value >= end; value-=pulse_inc) {
+        for (int16_t value = start; value >= end; value-=pulse_inc) {
             waveform_lut[index] = value + pulse_height;
             index ++;
             waveform_lut[index] = value - pulse_height;
@@ -208,11 +208,11 @@ uint16 LUT_make_swv_line(uint16 start, uint16 end, uint16 pulse_inc,
 *  Make a Differential Pulse Voltammetry (DPV) look up table profile
 *
 * Parameters:
-*  uint16 start: starting dac value
-*  uint16 end: value the dac will end with, not including the pulse dac settings
-*  uint16 index: the place to start putting in numbers in the look up table
-*  uint16 height: height of the DPV pulse
-*  uint16 increment: increment of each step
+*  uint16_t start: starting dac value
+*  uint16_t end: value the dac will end with, not including the pulse dac settings
+*  uint16_t index: the place to start putting in numbers in the look up table
+*  uint16_t height: height of the DPV pulse
+*  uint16_t increment: increment of each step
 *
 * Return:
 *  uint16: first place after the filled in area of the look up table
@@ -224,9 +224,9 @@ uint16 LUT_make_swv_line(uint16 start, uint16 end, uint16 pulse_inc,
 *
 *******************************************************************************/
 
-uint16 LUT_make_dpv(uint16 start, uint16 end, uint16 height, 
-                    uint16 increment, uint16 index) {
-    uint16 level = start;  // variable to store currend dac values in 
+uint16_t LUT_make_dpv(uint16_t start, uint16_t end, uint16_t height, 
+                    uint16_t increment, uint16_t index) {
+    uint16_t level = start;  // variable to store currend dac values in 
     
     waveform_lut[index] = level;
     while (level >= end) {  // >= because the voltages are inverted compared to the dac
@@ -258,15 +258,15 @@ uint16 LUT_make_dpv(uint16 start, uint16 end, uint16 height,
 *  TODO: THIS SHOULD BE REPLACED
 *
 * Parameters:
-*  uint16 base: value to be placed in the DAC to maintain the baseline potential
-*  uint16 pulse: value to put in the DAC for the voltage pulse
+*  uint16_t base: value to be placed in the DAC to maintain the baseline potential
+*  uint16_t pulse: value to put in the DAC for the voltage pulse
 *
 * Global variables:
 *  waveform_lut: Array the look up table is stored in
 *
 *******************************************************************************/
 
-void LUT_MakePulse(uint16 base, uint16 pulse) {
+void LUT_MakePulse(uint16_t base, uint16_t pulse) {
     int _lut_index = 0;
     while (_lut_index < 1000) {
         waveform_lut[_lut_index] = base;

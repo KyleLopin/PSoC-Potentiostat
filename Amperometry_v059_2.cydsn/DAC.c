@@ -107,7 +107,7 @@ void DAC_Wakeup(void) {
 *  Set the value of the correct voltage source
 *
 * Parameters:
-*  uint16 value: number to place in the appropriate DAC
+*  uint16_t value: number to place in the appropriate DAC
 *
 * Global variables:
 *  selected_voltage_source:  voltage source that is set to run, 
@@ -115,7 +115,7 @@ void DAC_Wakeup(void) {
 *
 *******************************************************************************/
 
-void DAC_SetValue(uint16 value) {
+void DAC_SetValue(uint16_t value) {
     
     if (selected_voltage_source == VDAC_IS_DVDAC) {
         DVDAC_SetValue(value);

@@ -598,14 +598,14 @@
 <v>Generated_Source\PSoC5\cycodeshareimport.scat</v>
 </gen_list>
 <warp_dep>
-<v>C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\warp\lib\ieee\work\stdlogic.vif</v>
-<v>C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif</v>
-<v>C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\warp\lib\common\cypress.v</v>
-<v>C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\warp\lib\common\cy_psoc3_inc.v</v>
-<v>C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif</v>
-<v>C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif</v>
+<v>C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\ieee\work\stdlogic.vif</v>
+<v>C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif</v>
+<v>C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\cypress.v</v>
+<v>C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\cy_psoc3_inc.v</v>
+<v>C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif</v>
+<v>C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif</v>
 </warp_dep>
-<deps_time v="133077803869379369" />
+<deps_time v="133104483268733973" />
 <top_block v="TopDesign" />
 <last_generation v="20" />
 <pdl_path v="" />
@@ -1784,74 +1784,10 @@
 </file>
 <file name=".\helper_functions.c" />
 <file name=".\CortexM3\ARM_GCC_541\Debug\lut_protocols.o">
-<dep name=".\Generated_Source\PSoC5\ADC_SigDel.h" />
-<dep name=".\Generated_Source\PSoC5\ADC_SigDel_Ext_CP_Clk.h" />
-<dep name=".\Generated_Source\PSoC5\ADC_SigDel_IRQ.h" />
-<dep name=".\Generated_Source\PSoC5\ADC_SigDel_theACLK.h" />
-<dep name=".\Generated_Source\PSoC5\AMux_TIA_input.h" />
-<dep name=".\Generated_Source\PSoC5\AMux_TIA_resistor_bypass.h" />
-<dep name=".\Generated_Source\PSoC5\AMux_V_source.h" />
-<dep name=".\Generated_Source\PSoC5\AMux_electrode.h" />
-<dep name=".\Generated_Source\PSoC5\CYDMAC.H" />
-<dep name=".\Generated_Source\PSoC5\CYFITTER.H" />
-<dep name=".\Generated_Source\PSoC5\Clock_PWM.h" />
-<dep name=".\Generated_Source\PSoC5\Counter_Electrode.h" />
-<dep name=".\Generated_Source\PSoC5\Counter_Electrode_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
-<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
-<dep name=".\Generated_Source\PSoC5\CyLib.h" />
-<dep name=".\Generated_Source\PSoC5\CySpc.h" />
-<dep name=".\Generated_Source\PSoC5\DVDAC.h" />
-<dep name=".\Generated_Source\PSoC5\DVDAC_DMA_dma.h" />
-<dep name=".\Generated_Source\PSoC5\DVDAC_IntClock.h" />
-<dep name=".\Generated_Source\PSoC5\DVDAC_VDAC8.h" />
-<dep name=".\Generated_Source\PSoC5\EEPROM.h" />
-<dep name=".\Generated_Source\PSoC5\IDAC_calibrate.h" />
-<dep name=".\Generated_Source\PSoC5\Opamp_Aux.h" />
-<dep name=".\Generated_Source\PSoC5\PWM_isr.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_DVDAC_cap.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_DVDAC_cap_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Reference_Electrode.h" />
-<dep name=".\Generated_Source\PSoC5\Reference_Electrode_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\TIA.h" />
-<dep name=".\Generated_Source\PSoC5\TIA_end_pin.h" />
-<dep name=".\Generated_Source\PSoC5\TIA_end_pin_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\TIA_resistor1.h" />
-<dep name=".\Generated_Source\PSoC5\TIA_resistor1_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_Dm.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_Dm_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_Dp.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_Dp_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_audio.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_cdc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_cydmac.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_hid.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_midi.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_msc.h" />
-<dep name=".\Generated_Source\PSoC5\USBFS_pvt.h" />
-<dep name=".\Generated_Source\PSoC5\VDAC_TIA.h" />
-<dep name=".\Generated_Source\PSoC5\VDAC_source.h" />
-<dep name=".\Generated_Source\PSoC5\Working_Electrode.h" />
-<dep name=".\Generated_Source\PSoC5\Working_Electrode_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\cmsis_armcc.h" />
-<dep name=".\Generated_Source\PSoC5\cmsis_compiler.h" />
-<dep name=".\Generated_Source\PSoC5\cmsis_gcc.h" />
-<dep name=".\Generated_Source\PSoC5\core_cm3.h" />
-<dep name=".\Generated_Source\PSoC5\core_cm3_psoc5.h" />
-<dep name=".\Generated_Source\PSoC5\cyPm.h" />
-<dep name=".\Generated_Source\PSoC5\cy_em_eeprom.h" />
 <dep name=".\Generated_Source\PSoC5\cydevice.h" />
 <dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC5\cydisabledsheets.h" />
 <dep name=".\Generated_Source\PSoC5\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC5\cyfitter_cfg.h" />
-<dep name=".\Generated_Source\PSoC5\cypins.h" />
 <dep name=".\Generated_Source\PSoC5\cytypes.h" />
-<dep name=".\Generated_Source\PSoC5\isr_adc.h" />
-<dep name=".\Generated_Source\PSoC5\isr_adcAmp.h" />
-<dep name=".\Generated_Source\PSoC5\isr_dac.h" />
-<dep name=".\Generated_Source\PSoC5\project.h" />
 <dep name=".\globals.h" />
 <dep name=".\lut_protocols.c" />
 <dep name=".\lut_protocols.h" />
@@ -2273,13 +2209,13 @@
 <name_val_pair name="C:\Users\Zanith\Documents\PSoC-Creator\psoc_potentiostat\Amperometry_v059_2.cydsn\CortexM3\ARM_GCC_541\Debug\Amperometry_v059_2.hex" v="-mcpu=cortex-m3 -mthumb -l m -L Generated_Source\PSoC5 -Wl,-Map,${OutputDir}/${ProjectShortName}.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -O0 -ffat-lto-objects" />
 </name>
 </genericCmdLineData>
-<codeGenCmdLineTag v="-.appdatapath &quot;C:\Users\Zanith\AppData\Local\Cypress Semiconductor\PSoC Creator\4.3&quot; -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p C:\Users\Zanith\Documents\PSoC-Creator\psoc_potentiostat\Amperometry_v059_2.cydsn\Amperometry_v059_2.cyprj -d CY8C5888LTI-LP097 -s C:\Users\Zanith\Documents\PSoC-Creator\psoc_potentiostat\Amperometry_v059_2.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE" />
+<codeGenCmdLineTag v="-.appdatapath &quot;C:\Users\Zanith\AppData\Local\Cypress Semiconductor\PSoC Creator\4.4&quot; -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p C:\Users\Zanith\Documents\PSoC-Creator\psoc_potentiostat\Amperometry_v059_2.cydsn\Amperometry_v059_2.cyprj -d CY8C5888LTI-LP097 -s C:\Users\Zanith\Documents\PSoC-Creator\psoc_potentiostat\Amperometry_v059_2.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE" />
 </CyGuid_b0374e30-ce3a-47f2-ad85-821643292c68>
 </dataGuid>
 <dataGuid v="769d31ea-68b1-4f0c-b90a-7c10a43ee563">
 <CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563 type_name="CyDesigner.Common.ProjMgmt.Model.CyLinkCustomData" version="1">
 <link_deps_times>
-<name_val_pair name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM3" v="133077807852059544" />
+<name_val_pair name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM3" v="133107107566089633" />
 </link_deps_times>
 </CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563>
 </dataGuid>
@@ -2335,6 +2271,18 @@
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </tree_states>
 </CyGuid_718b6b01-68ba-4a17-b632-d38dc61ebb3b>
+</dataGuid>
+<dataGuid v="8b7054c8-ee0e-4f1f-82fc-855e0b008a8f">
+<CyGuid_8b7054c8-ee0e-4f1f-82fc-855e0b008a8f type_name="CyDesigner.Common.ProjMgmt.IDE.CyIDEPrjUserSettings" version="1" LastExported="">
+<ExportedPaths>
+<v>.\makefile</v>
+</ExportedPaths>
+</CyGuid_8b7054c8-ee0e-4f1f-82fc-855e0b008a8f>
+</dataGuid>
+<dataGuid v="504337dd-7d07-4bc7-9057-90e60cf6c469">
+<CyGuid_504337dd-7d07-4bc7-9057-90e60cf6c469 type_name="CyDesigner.Common.Debugger.CyBreakpointList" version="1">
+<debugger_breakpoint_list />
+</CyGuid_504337dd-7d07-4bc7-9057-90e60cf6c469>
 </dataGuid>
 </userData>
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>

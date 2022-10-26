@@ -41,7 +41,7 @@ extern uint8 USB_deviceAdress;
 ***************************************/  
     
 uint8 USB_CheckInput(uint8 buffer[]);
-void USB_Export_Data(uint8 array[], uint16 size);
+void USB_Export_Data(uint8 array[], uint16_t size);
 
 #endif
 

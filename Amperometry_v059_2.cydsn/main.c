@@ -44,14 +44,14 @@ uint8 AMux_channel_select = 0;  // Let the user choose to use the two electrode 
 // electrode configuration (set to 1) by choosing the correct AMux channel
 
 uint8 adc_recording_channel = 0;
-uint16 lut_length = 3000;  // how long the look up table is,initialize large so when starting isr the ending doesn't get triggered
-//uint16 lut_hold = 0;  // for debugging
+uint16_t lut_length = 3000;  // how long the look up table is,initialize large so when starting isr the ending doesn't get triggered
+//uint16_t lut_hold = 0;  // for debugging
 uint8 adc_hold;  // value to hold what adc buffer was just filled
 // uint8 counter = 0;  // for debug
-uint16 buffer_size_bytes;  // number of bytes of data stored to export for amperometry experiments
+uint16_t buffer_size_bytes;  // number of bytes of data stored to export for amperometry experiments
 // for amperometry experiments, how many data points to save before exporting the adc buffer
-uint16 buffer_size_data_pts = 4000;  // prevent the isr from firing by initializing to 4000
-uint16 dac_value_hold = 0;
+uint16_t buffer_size_data_pts = 4000;  // prevent the isr from firing by initializing to 4000
+uint16_t dac_value_hold = 0;
 
 
 CY_ISR(dacInterrupt)

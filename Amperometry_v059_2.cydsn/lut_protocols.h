@@ -12,7 +12,7 @@
 #if !defined(LUT_PROTOCOLS_H)
 #define LUT_PROTOCOLS_H
 
-#include <project.h>
+//#include <project.h>
 #include "stdlib.h"  // remove after testing
 #include "stdio.h"  // remove after testing
     
@@ -22,17 +22,20 @@
 /***************************************
 *        Function Prototypes
 ***************************************/    
-uint16 LUT_MakeCVStartZero(uint16 start_value, uint16 end_value);
-uint16 LUT_MakeTriangle_Wave(uint16 start_value, uint16 end_value);
-void LUT_MakePulse(uint16 base, uint16 pulse);
-uint16 LUT_make_line(uint16 start, uint16 end, uint16 index);
-uint16 LUT_make_dpv(uint16 start, uint16 end, uint16 height, 
-                    uint16 increment, uint16 index);
+uint16_t LUT_MakeCVStartZero(uint16_t start_value, uint16_t end_value);
+uint16_t LUT_MakeTriangle_Wave(uint16_t start_value, uint16_t end_value);
+void LUT_MakePulse(uint16_t base, uint16_t pulse);
+uint16_t LUT_make_line(uint16_t start, uint16_t end, uint16_t index);
+uint16_t LUT_make_dpv(uint16_t start, uint16_t end, uint16_t height, 
+                    uint16_t increment, uint16_t index);
 
 /***************************************
 * Global variables external identifier
 ***************************************/
-extern uint16 waveform_lut[];
+extern uint16_t lut_value;  // value need to load DAC
+extern uint16_t waveform_lut[];
+extern uint16_t dac_ground_value;  // value to load in the DAC
+
     
 #endif
 

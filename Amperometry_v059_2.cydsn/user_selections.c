@@ -107,9 +107,9 @@ void user_voltage_source_funcs(uint8 data_buffer[]) {
 *  and error through the USB.  
 *  
 * Global variables:
-*  uint16 lut_value: value gotten from the look up table that is to be applied to the DAC
-*  uint16 lut_index: current index of the look up table
-*  uint16 waveform_lut[]:  look up table of the waveform to apply to the DAC
+*  uint16_t lut_value: value gotten from the look up table that is to be applied to the DAC
+*  uint16_t lut_index: current index of the look up table
+*  uint16_t waveform_lut[]:  look up table of the waveform to apply to the DAC
 *
 * Parameters:
 *  None
@@ -155,7 +155,7 @@ void user_start_cv_run(void){
 *  Stop all operations by disabling all the isrs and reset the look up table index to 0
 *  
 * Global variables:
-*  uint16 lut_index: current index of the look up table
+*  uint16_t lut_index: current index of the look up table
 *
 * Parameters:
 *  None
@@ -208,7 +208,7 @@ void user_identify(void) {
 * Parameters:
 *  uint8 data_buffer[]: array of chars used to setup the DAC or to read the DAC settings
 *  input is T|XXXXX
-*  XXXXX - uint16 with the number to put in the period register
+*  XXXXX - uint16_t with the number to put in the period register
 *  the compare register will be loaded with XXXXX / 2
 *  
 * Return:
@@ -219,7 +219,7 @@ void user_identify(void) {
 
 void user_set_isr_timer(uint8 data_buffer[]) {
     PWM_isr_Wakeup();
-    uint16 timer_period = helper_Convert2Dec(&data_buffer[2], 5);
+    uint16_t timer_period = helper_Convert2Dec(&data_buffer[2], 5);
     PWM_isr_WriteCompare(timer_period / 2);  // not used in amperometry run so just set in the middle
     PWM_isr_WritePeriod(timer_period);
     PWM_isr_Sleep();
@@ -235,25 +235,25 @@ void user_set_isr_timer(uint8 data_buffer[]) {
 * Parameters:
 *  uint8 data_buffer[]: array of chars used to make the look up table
 *  input is Q|XXXX|YYYY|ZZZZZ: 
-*  XXXX - uint16 with the number to put in the DAC for the baseline voltage and the 
+*  XXXX - uint16_t with the number to put in the DAC for the baseline voltage and the 
 *  voltage to be applied after the pulse.
-*  YYYY - uint16 with the number to put in the dac during the pulse of the experiment
-*  ZZZZZ - uint16 to put in the period of the PWM timer to set the sampling rate
+*  YYYY - uint16_t with the number to put in the dac during the pulse of the experiment
+*  ZZZZZ - uint16_t to put in the period of the PWM timer to set the sampling rate
 *  
 * Global variables:
-*  uint16 lut_value: value gotten from the look up table that is to be applied to the DAC
-*  uint16 waveform_lut[]:  look up table of the waveform to apply to the DAC
+*  uint16_t lut_value: value gotten from the look up table that is to be applied to the DAC
+*  uint16_t waveform_lut[]:  look up table of the waveform to apply to the DAC
 *  
 * Return:
 *  4000 - how long the look up table will be
 *
 *******************************************************************************/
 
-uint16 user_chrono_lut_maker(uint8 data_buffer[]) {
+uint16_t user_chrono_lut_maker(uint8 data_buffer[]) {
     PWM_isr_Wakeup();
-    uint16 baseline = helper_Convert2Dec(&data_buffer[2], 4);
-    uint16 pulse = helper_Convert2Dec(&data_buffer[7], 4);
-    uint16 timer_period = helper_Convert2Dec(&data_buffer[12], 5);
+    uint16_t baseline = helper_Convert2Dec(&data_buffer[2], 4);
+    uint16_t pulse = helper_Convert2Dec(&data_buffer[7], 4);
+    uint16_t timer_period = helper_Convert2Dec(&data_buffer[12], 5);
                 
     PWM_isr_WritePeriod(timer_period);
                 
@@ -278,37 +278,37 @@ uint16 user_chrono_lut_maker(uint8 data_buffer[]) {
 * Parameters:
 *  uint8 data_buffer[]: array of chars used to make the look up table
 *  input is G|XXXX|YYYY|AAA|BBB|ZZZZZ: 
-*  XXXX  - uint16 the number to put in the DAC for the baseline voltage 
-*  YYYY  - uint16 the dac value to stop at
-*  AAA   - uint16 the increase in the dac value for the pulse
-*  BBB   - uint16 the pulse increment of the DPV protocol
-*  ZZZZZ - uint16 to put in the period of the PWM timer to set the sampling rate
+*  XXXX  - uint16_t the number to put in the DAC for the baseline voltage 
+*  YYYY  - uint16_t the dac value to stop at
+*  AAA   - uint16_t the increase in the dac value for the pulse
+*  BBB   - uint16_t the pulse increment of the DPV protocol
+*  ZZZZZ - uint16_t to put in the period of the PWM timer to set the sampling rate
 *  
 * Global variables:
-*  uint16 lut_value: value gotten from the look up table that is to be applied to the DAC
-*  uint16 waveform_lut[]:  look up table of the waveform to apply to the DAC
+*  uint16_t lut_value: value gotten from the look up table that is to be applied to the DAC
+*  uint16_t waveform_lut[]:  look up table of the waveform to apply to the DAC
 *  
 * Return:
 *  index - how far in the look up table that has been filled
 *
 *******************************************************************************/
 
-uint16 user_dpv_lut_maker(uint8 data_buffer[]) {
+uint16_t user_dpv_lut_maker(uint8 data_buffer[]) {
     PWM_isr_Wakeup();
-    uint16 start = helper_Convert2Dec(&data_buffer[2], 4);
-    uint16 end = helper_Convert2Dec(&data_buffer[7], 4);
-    uint16 pulse_height = helper_Convert2Dec(&data_buffer[12], 3);
-    uint16 pulse_inc = helper_Convert2Dec(&data_buffer[16], 3);
+    uint16_t start = helper_Convert2Dec(&data_buffer[2], 4);
+    uint16_t end = helper_Convert2Dec(&data_buffer[7], 4);
+    uint16_t pulse_height = helper_Convert2Dec(&data_buffer[12], 3);
+    uint16_t pulse_inc = helper_Convert2Dec(&data_buffer[16], 3);
     //LCD_ClearDisplay();
     
     //sprintf(LCD_str, "%d|%d|%d|%d", start, end, pulse_height, pulse_inc);
     //sprintf(LCD_str, "%.*s", 16, data_buffer);
     //LCD_PrintString(LCD_str);
-    uint16 timer_period = helper_Convert2Dec(&data_buffer[20], 5);
+    uint16_t timer_period = helper_Convert2Dec(&data_buffer[20], 5);
 //                
     PWM_isr_WritePeriod(timer_period);
                 
-    uint16 index = LUT_make_dpv(start, end, pulse_height, pulse_inc, 0);
+    uint16_t index = LUT_make_dpv(start, end, pulse_height, pulse_inc, 0);
     lut_value = waveform_lut[0];  // setup the dac so when it starts it will be at the correct voltage
                 
     PWM_isr_Sleep();
@@ -326,32 +326,32 @@ uint16 user_dpv_lut_maker(uint8 data_buffer[]) {
 * Parameters:
 *  uint8 data_buffer[]: array of chars used to make the look up table
 *  input is S|XXXX|YYYY|ZZZZZ|AB: 
-*  XXXX - uint16 with the starting number to put in the DAC for the experiment
-*  YYYY - uint16 with the ending number to put in the dac for the experiment
-*  ZZZZZ - uint16 to put in the period of the PWM timer to set the sampling rate
+*  XXXX - uint16_t with the starting number to put in the DAC for the experiment
+*  YYYY - uint16_t with the ending number to put in the dac for the experiment
+*  ZZZZZ - uint16_t to put in the period of the PWM timer to set the sampling rate
 *  A - char of 'L' or 'C' to make a linear sweep ('L') or a cyclic voltammetry ('C')
 *      look up table
 *  B - char of 'Z' or 'S' to start the waveform at 0 Volts ('Z') or at the value 
 *      entered in the XXXX field
 *  
 * Global variables:
-*  uint16 lut_value: value to get from the look up table and apply to the DAC
-*  uint16 waveform_lut[]:  look up table of the waveform to apply to the DAC
+*  uint16_t lut_value: value to get from the look up table and apply to the DAC
+*  uint16_t waveform_lut[]:  look up table of the waveform to apply to the DAC
 *  
 * Return:
-*  uint16 lut_length - how many look up table elements there are
+*  uint16_t lut_length - how many look up table elements there are
 *
 *******************************************************************************/
 
-uint16 user_lookup_table_maker(uint8 data_buffer[]) {
+uint16_t user_lookup_table_maker(uint8 data_buffer[]) {
     PWM_isr_Wakeup();
-    uint16 start_dac_value = helper_Convert2Dec(&data_buffer[2], 4);
-    uint16 end_dac_value = helper_Convert2Dec(&data_buffer[7], 4);
-    uint16 timer_period = helper_Convert2Dec(&data_buffer[12], 5);
+    uint16_t start_dac_value = helper_Convert2Dec(&data_buffer[2], 4);
+    uint16_t end_dac_value = helper_Convert2Dec(&data_buffer[7], 4);
+    uint16_t timer_period = helper_Convert2Dec(&data_buffer[12], 5);
     uint8 sweep_type = data_buffer[18];
     uint8 start_volt_type = data_buffer[19];
     PWM_isr_WritePeriod(timer_period);
-    uint16 lut_length;
+    uint16_t lut_length;
     if (sweep_type == 'L') {  // Make look up table for linear sweep, ignore start volt type
         lut_length = LUT_make_line(start_dac_value, end_dac_value, 0) + 1; 
     }
@@ -380,18 +380,18 @@ uint16 user_lookup_table_maker(uint8 data_buffer[]) {
 * Parameters:
 *  uint8 data_buffer[]: array of chars used to make the look up table
 *  input is M|XXXX|YYYY
-*  XXXX - uint16 number to set the DAC value to so the electrodes are at the approriate voltage
-*  YYYY - uint16 of how many data points to collect in each ADC buffer before exporting the data
+*  XXXX - uint16_t number to set the DAC value to so the electrodes are at the approriate voltage
+*  YYYY - uint16_t of how many data points to collect in each ADC buffer before exporting the data
 *  
 * Global variables:
-*  uint16 lut_index: current index of the look up table
+*  uint16_t lut_index: current index of the look up table
 *  
 * Return:
-*  uint16 - number of data points to collect in each ADC buffer before exporting the data
+*  uint16_t - number of data points to collect in each ADC buffer before exporting the data
 *
 *******************************************************************************/
 
-uint16 user_run_amperometry(uint8 data_buffer[]) {
+uint16_t user_run_amperometry(uint8 data_buffer[]) {
     helper_HardwareWakeup();  
     if (!isr_adcAmp_GetState()) {  // enable isr if it is not already
         if (isr_dac_GetState()) {  // User selected to run amperometry but a CV is still running 
@@ -399,13 +399,13 @@ uint16 user_run_amperometry(uint8 data_buffer[]) {
             isr_adc_Disable();
         }
     }
-    uint16 dac_value = helper_Convert2Dec(&data_buffer[2], 4);  // get the voltage the user wants and set the dac
+    uint16_t dac_value = helper_Convert2Dec(&data_buffer[2], 4);  // get the voltage the user wants and set the dac
     lut_index = 0;
     DAC_SetValue(dac_value);
     
     ADC_SigDel_StartConvert();
     CyDelay(15);
-    uint16 buffer_size_data_pts = helper_Convert2Dec(&data_buffer[7], 4);  // how many data points to collect in each adc channel before exporting the data
+    uint16_t buffer_size_data_pts = helper_Convert2Dec(&data_buffer[7], 4);  // how many data points to collect in each adc channel before exporting the data
     isr_adcAmp_Enable();
     return buffer_size_data_pts;
 }

@@ -31,6 +31,7 @@
 ***************************************/     
     
 uint8 selected_voltage_source;
+extern uint16_t dac_ground_value;
     
     
 /***************************************
@@ -40,7 +41,7 @@ uint8 selected_voltage_source;
 void DAC_Start(void);
 void DAC_Sleep(void);
 void DAC_Wakeup(void);
-void DAC_SetValue(uint16 value);
+void DAC_SetValue(uint16_t value);
     
 #endif
 /* [] END OF FILE */

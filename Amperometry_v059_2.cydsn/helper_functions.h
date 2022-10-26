@@ -31,8 +31,8 @@ extern uint8 selected_voltage_source;
     
 uint8 helper_check_voltage_source(void);
 void helper_set_voltage_source(uint8 selected_voltage_source);
-void helper_Writebyte_EEPROM(uint8 data, uint16 address);
-uint8 helper_Readbyte_EEPROM(uint16 address);
+uint8 helper_Writebyte_EEPROM(uint8 data, uint16_t address);
+uint8 helper_Readbyte_EEPROM(uint16_t address);
 
 void helper_HardwareSetup(void);
 void helper_HardwareStart(void);
@@ -40,7 +40,7 @@ void helper_HardwareSleep(void);
 void helper_HardwareWakeup(void);
 void make_run_params(const uint8 data_buffer[], const uint8 use_swv, 
                      struct RunParams *run_params);
-uint16 helper_Convert2Dec(const uint8 array[], const uint8 len);
+uint16_t helper_Convert2Dec(const uint8 array[], const uint8 len);
 
 
 #endif

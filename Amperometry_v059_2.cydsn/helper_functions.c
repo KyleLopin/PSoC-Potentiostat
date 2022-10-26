@@ -91,12 +91,13 @@ void helper_set_voltage_source(uint8 voltage_source) {
 *
 *******************************************************************************/
 
-void helper_Writebyte_EEPROM(uint8 data, uint16 address) {
+uint8 helper_Writebyte_EEPROM(uint8 data, uint16_t address) {
     EEPROM_Start();
     CyDelayUs(10);
-    uint8 blank_hold2 = EEPROM_UpdateTemperature();
-    blank_hold2 = EEPROM_WriteByte(data, address);
+    EEPROM_UpdateTemperature();
+    uint8 write_results = EEPROM_WriteByte(data, address);
     EEPROM_Stop();
+    return write_results;
 }
 
 /******************************************************************************
@@ -114,14 +115,14 @@ void helper_Writebyte_EEPROM(uint8 data, uint16 address) {
 *
 *******************************************************************************/
 
-uint8 helper_Readbyte_EEPROM(uint16 address) {
+uint8 helper_Readbyte_EEPROM(uint16_t address) {
     EEPROM_Start();
     CyDelayUs(10);
-    uint8 blank_hold2 = EEPROM_UpdateTemperature();
+    EEPROM_UpdateTemperature();
     CyDelayUs(10);
-    uint8 hold = EEPROM_ReadByte(address);
+    uint8 data = EEPROM_ReadByte(address);
     EEPROM_Stop();
-    return hold;
+    return data;
 }
 
 /******************************************************************************
@@ -234,8 +235,8 @@ void make_run_params(const uint8 data_buffer[], const uint8 use_swv,
 }
 
 
-uint16 helper_Convert2Dec(const uint8 array[], const uint8 len){
-    uint16 num = 0;
+uint16_t helper_Convert2Dec(const uint8 array[], const uint8 len){
+    uint16_t num = 0;
     for (int i = 0; i < len; i++){
         num = num * 10 + (array[i] - '0');
     }

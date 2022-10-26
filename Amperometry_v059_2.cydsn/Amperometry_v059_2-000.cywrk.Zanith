@@ -48,6 +48,39 @@
 <v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Amperometry_v059_2.cydwr\Flash Security</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Amperometry_v059_2.cydwr\EEPROM</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Header Files</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Header Files\calibrate.h</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Header Files\DAC.h</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Header Files\globals.h</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Header Files\helper_functions.h</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Header Files\lut_protocols.h</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Header Files\usb_protocols.h</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Header Files\user_selections.h</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Source Files</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Source Files\calibrate.c</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Source Files\DAC.c</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Source Files\helper_functions.c</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Source Files\lut_protocols.c</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Source Files\main.c</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Source Files\usb_protocols.c</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Source Files\user_selections.c</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\ADC_SigDel</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\ADC_SigDel_Ext_CP_Clk</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\ADC_SigDel_IRQ</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\ADC_SigDel_theACLK</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\AMux_electrode</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\AMux_TIA_input</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\AMux_TIA_resistor_bypass</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\AMux_V_source</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\Clock_PWM</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\Counter_Electrode</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\cy_boot</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\DVDAC</v>
+<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\DVDAC_DMA</v>
 <v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\DVDAC_IntClock</v>
 <v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\DVDAC_VDAC8</v>
 <v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\EEPROM</v>
@@ -56,39 +89,6 @@
 <v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\isr_adc</v>
 <v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\isr_adcAmp</v>
 <v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\isr_dac</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\Opamp_Aux</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\Pin_DVDAC_cap</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\PWM_isr</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\Reference_Electrode</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\TIA</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\TIA_end_pin</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\TIA_resistor1</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\USBFS</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\USBFS_Dm</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\USBFS_Dp</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\VDAC_source</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\VDAC_TIA</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\Working_Electrode</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\cycodeshareexport.ld</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\cycodeshareimport.ld</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\cycodeshareimport.scat</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\cydevice.h</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\cydevice_trm.h</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\cydevicegnu.inc</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\cydevicegnu_trm.inc</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\cydeviceiar.inc</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\cydeviceiar_trm.inc</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\cydevicerv.inc</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\cydevicerv_trm.inc</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\cydisabledsheets.h</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\cyfitter.h</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\cyfitter_cfg.c</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\cyfitter_cfg.h</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\cyfittergnu.inc</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\cyfitteriar.inc</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\cyfitterrv.inc</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\cymetadata.c</v>
-<v>Amperometry_v059_2-000\Amperometry_v059_2\Generated_Source\PSoC5\project.h</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -314,19 +314,27 @@
 </dictName>
 </CyGuid_70084457-cd6a-4593-9ed0-7f6eeb432dc2>
 </dataGuid>
+<dataGuid v="5f2be1a5-0687-4501-bb8c-cf21cb8211bf">
+<CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf type_name="CyDesigner.Common.ProjMgmt.GUI.CyBookmarkData" version="1">
+<indicators />
+</CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf>
+</dataGuid>
 </userData>
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
-<name v=".\Amperometry_v059_2.cydwr" />
-<name v=".\main.c" />
-<name v=".\user_selections.c" />
-<name v=".\user_selections.h" />
-<name v=".\calibrate.c" />
-<name v=".\lut_protocols.c" />
-<name v=".\lut_protocols.h" />
-<name v=".\calibrate.h" />
 <name v=".\TopDesign\TopDesign.cysch" />
+<name v=".\lut_protocols.c" />
+<name v=".\Generated_Source\PSoC5\ADC_SigDel.h" />
+<name v=".\Generated_Source\PSoC5\project.h" />
+<name v=".\calibrate.c" />
+<name v=".\user_selections.c" />
+<name v=".\calibrate.h" />
+<name v=".\usb_protocols.h" />
+<name v=".\DAC.c" />
+<name v=".\DAC.h" />
+<name v=".\main.c" />
+<name v=".\globals.h" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -334,7 +342,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="896, 456" SelectedTabbedMdiWindow="a37d28f5-3234-49cf-b43c-881d38fc0b84"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="5823cdcf-1696-4838-8f58-40872a4257cf" /><DocumentWindow Key="C:\Users\Zanith\Documents\PSoC Creator\psoc_potentiostat\Amperometry_v059_2.cydsn\Amperometry_v059_2.cydwr" Guid="aaeb5563-1a04-495b-b3cc-d3bda3158772" /><DocumentWindow Key="C:\Users\Zanith\Documents\PSoC Creator\psoc_potentiostat\Amperometry_v059_2.cydsn\main.c" Guid="fecd34cc-774d-44b3-9937-feec89c33c5d" /><DocumentWindow Key="C:\Users\Zanith\Documents\PSoC Creator\psoc_potentiostat\Amperometry_v059_2.cydsn\user_selections.c" Guid="45ff0c99-8761-4e11-bc81-16a8cc30b38b" /><DocumentWindow Key="C:\Users\Zanith\Documents\PSoC Creator\psoc_potentiostat\Amperometry_v059_2.cydsn\user_selections.h" Guid="e606bd41-e8ec-42c3-96ff-d5dbfc3037df" /><DocumentWindow Key="C:\Users\Zanith\Documents\PSoC Creator\psoc_potentiostat\Amperometry_v059_2.cydsn\calibrate.c" Guid="1c171b7a-f3e7-47a8-bddb-b7109ed8e9a4" /><DocumentWindow Key="C:\Users\Zanith\Documents\PSoC Creator\psoc_potentiostat\Amperometry_v059_2.cydsn\lut_protocols.c" Guid="a37d28f5-3234-49cf-b43c-881d38fc0b84" /><DocumentWindow Key="C:\Users\Zanith\Documents\PSoC Creator\psoc_potentiostat\Amperometry_v059_2.cydsn\lut_protocols.h" Guid="afc5d123-efef-4334-95f1-4b1b167adcd9" /><DocumentWindow Key="C:\Users\Zanith\Documents\PSoC Creator\psoc_potentiostat\Amperometry_v059_2.cydsn\calibrate.h" Guid="525d7f42-57b3-4bc9-aa13-3d06db9d4169" /><DocumentWindow Key="C:\Users\Zanith\Documents\PSoC Creator\psoc_potentiostat\Amperometry_v059_2.cydsn\TopDesign\TopDesign.cysch" Guid="df712441-23d2-4651-84a9-5aea75af79e7" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1187, 450" SelectedTabbedMdiWindow="6708212c-3c81-47d1-9842-2a23aaca0c51"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="5823cdcf-1696-4838-8f58-40872a4257cf" /><DocumentWindow Key="C:\Users\Zanith\Documents\PSoC-Creator\psoc_potentiostat\Amperometry_v059_2.cydsn\TopDesign\TopDesign.cysch" Guid="0fce00d6-57c6-452c-a7c9-6bde1bc9b343" /><DocumentWindow Key="C:\Users\Zanith\Documents\PSoC-Creator\psoc_potentiostat\Amperometry_v059_2.cydsn\lut_protocols.c" Guid="6708212c-3c81-47d1-9842-2a23aaca0c51" /><DocumentWindow Key="C:\Users\Zanith\Documents\PSoC-Creator\psoc_potentiostat\Amperometry_v059_2.cydsn\Generated_Source\PSoC5\ADC_SigDel.h" Guid="d4c1c4f8-cb8e-454a-b88c-23222b88945a" /><DocumentWindow Key="C:\Users\Zanith\Documents\PSoC-Creator\psoc_potentiostat\Amperometry_v059_2.cydsn\Generated_Source\PSoC5\project.h" Guid="4e24d0ee-eafb-477e-b6dd-93ccd1302b65" /><DocumentWindow Key="C:\Users\Zanith\Documents\PSoC-Creator\psoc_potentiostat\Amperometry_v059_2.cydsn\calibrate.c" Guid="88853d29-dcb5-4810-8eba-c20089dbf329" /><DocumentWindow Key="C:\Users\Zanith\Documents\PSoC-Creator\psoc_potentiostat\Amperometry_v059_2.cydsn\user_selections.c" Guid="6674d0a2-abea-419d-8c26-ac36dce2e515" /><DocumentWindow Key="C:\Users\Zanith\Documents\PSoC-Creator\psoc_potentiostat\Amperometry_v059_2.cydsn\calibrate.h" Guid="3073f64d-bb5b-415e-a020-be15cf68fd3b" /><DocumentWindow Key="C:\Users\Zanith\Documents\PSoC-Creator\psoc_potentiostat\Amperometry_v059_2.cydsn\usb_protocols.h" Guid="df0f7673-2aa5-4326-85a2-d49042e402fd" /><DocumentWindow Key="C:\Users\Zanith\Documents\PSoC-Creator\psoc_potentiostat\Amperometry_v059_2.cydsn\DAC.c" Guid="a7b73ebc-c13d-4982-98e4-28401a8aa29d" /><DocumentWindow Key="C:\Users\Zanith\Documents\PSoC-Creator\psoc_potentiostat\Amperometry_v059_2.cydsn\DAC.h" Guid="3f1d4e97-cf8b-4a95-8813-a00f10103ac5" /><DocumentWindow Key="C:\Users\Zanith\Documents\PSoC-Creator\psoc_potentiostat\Amperometry_v059_2.cydsn\main.c" Guid="06a3758f-d35f-4a51-861b-14fe8dcacb15" /><DocumentWindow Key="C:\Users\Zanith\Documents\PSoC-Creator\psoc_potentiostat\Amperometry_v059_2.cydsn\globals.h" Guid="34eb08c6-6947-46d7-98b5-c5beadac246c" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

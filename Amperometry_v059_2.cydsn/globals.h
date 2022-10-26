@@ -73,6 +73,8 @@
     
 #define VDAC_ADDRESS 0
     
+#define EEPROM_READ_TEMPERATURE_CORRECT        0
+    
     
 /**************************************
 *        AMuX API Constants
@@ -86,51 +88,51 @@
 *        Global Variables
 **************************************/   
     
-uint16 dac_ground_value;  // value to load in the DAC 
+uint16_t dac_ground_value;  // value to load in the DAC
     
 /* Make global variables needed for the DAC/ADC interrupt service routines */
-uint16 lut_value;  // value need to load DAC
-uint16 waveform_lut[MAX_LUT_SIZE];  // look up table to store waveform for variable potential experiments
-uint16 lut_index;  // look up table index
+uint16_t lut_value;  // value need to load DAC
+uint16_t waveform_lut[MAX_LUT_SIZE];  // look up table to store waveform for variable potential experiments
+uint16_t lut_index;  // look up table index
 
 /* Global structs */
 
 union data_usb_union {
-    uint8 usb[2*MAX_LUT_SIZE];
-    int16 data[MAX_LUT_SIZE];
+    uint8_t usb[2*MAX_LUT_SIZE];
+    int16_t data[MAX_LUT_SIZE];
 };
 union data_usb_union ADC_array[ADC_CHANNELS];  // allocate space to put adc measurements
     
 struct TIAMux {  // not used currently
-    uint8 use_extra_resistor;
-    uint8 user_channel;
+    uint8_t use_extra_resistor;
+    uint8_t user_channel;
 };
 struct TIAMux tia_mux;
 
 //struct RunParams {
-//    uint16 start_value;
-//    uint16 end_value;
+//    uint16_t start_value;
+//    uint16_t end_value;
 //    uint8 sweep_type;  // Can be C - cyclic voltammetry, or L for linear sweep
 //    // Can be S for start voltage (triange shape sweep) or Z for starting at zero volts
 //    uint8 start_volt_type;  
 //    uint8 use_swv;
-//    uint16 swv_inc;
-//    uint16 swv_pulse_height;
-//    uint16 timer_period;
+//    uint16_t swv_inc;
+//    uint16_t swv_pulse_height;
+//    uint16_t timer_period;
 //};// run_params_default = {500, 1000, 'C', 'S', false, 10, 100, 20000};
 //
 //struct RunParams run_params;
 
 struct RunParams {
-    uint16 start_value;
-    uint16 end_value;
-    uint8 sweep_type;  // Can be C - cyclic voltammetry, or L for linear sweep
+    uint16_t start_value;
+    uint16_t end_value;
+    uint8_t sweep_type;  // Can be C - cyclic voltammetry, or L for linear sweep
     // Can be S for start voltage (triange shape sweep) or Z for starting at zero volts
-    uint8 start_volt_type;  
-    uint8 use_swv;
-    uint16 swv_inc;
-    uint16 swv_pulse_height;
-    uint16 timer_period;
+    uint8_t start_volt_type;
+    uint8_t use_swv;
+    uint16_t swv_inc;
+    uint16_t swv_pulse_height;
+    uint16_t timer_period;
 };
 
 struct RunParams run_params;

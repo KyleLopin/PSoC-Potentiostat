@@ -32,10 +32,10 @@ void user_start_cv_run(void);
 void user_reset_device(void);
 void user_identify(void);
 void user_set_isr_timer(uint8 data_buffer[]);
-uint16 user_chrono_lut_maker(uint8 data_buffer[]);
-uint16 user_dpv_lut_maker(uint8 data_buffer[]);
-uint16 user_lookup_table_maker(uint8 data_buffer[]);
-uint16 user_run_amperometry(uint8 data_buffer[]);
+uint16_t user_chrono_lut_maker(uint8 data_buffer[]);
+uint16_t user_dpv_lut_maker(uint8 data_buffer[]);
+uint16_t user_lookup_table_maker(uint8 data_buffer[]);
+uint16_t user_run_amperometry(uint8 data_buffer[]);
 
 
 /***************************************

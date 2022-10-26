@@ -60,7 +60,7 @@ uint8 USB_CheckInput(uint8 buffer[]) {
 *
 * Parameters:
 *  uint8 array array: array of data to export
-*  uint16 size: the number of bytes to send in the array
+*  uint16_t size: the number of bytes to send in the array
 *
 * Return:
 *  None
@@ -70,7 +70,7 @@ uint8 USB_CheckInput(uint8 buffer[]) {
 *
 *******************************************************************************************/
 
-void USB_Export_Data(uint8 array[], uint16 size) {
+void USB_Export_Data(uint8 array[], uint16_t size) {
 //    LCD_Position(1,0);
 //    sprintf(LCD_str, "e:%d|%c%c%c%c%c%c| |", size ,array[0], array[1], array[2], array[3], array[4], array[5]);
 //    LCD_PrintString(LCD_str);
@@ -78,7 +78,7 @@ void USB_Export_Data(uint8 array[], uint16 size) {
         while(USBFS_GetEPState(IN_ENDPOINT) != USBFS_IN_BUFFER_EMPTY)
         {
         }
-        uint16 size_to_send = size - i;
+        uint16_t size_to_send = size - i;
         if (size_to_send > MAX_BUFFER_SIZE) {
             size_to_send = MAX_BUFFER_SIZE;
         }
