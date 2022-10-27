@@ -125,7 +125,10 @@ uint16_t LUT_make_line(uint16_t start, uint16_t end, uint16_t index) {
         for (int16_t value = start; value <= end; value++) {
             waveform_lut[index] = value;
             index ++;
-            printf("l: %i, %i 2 \n", index, value);
+            printf("l: %i, %i\n", index, value);
+            if (index >= 4000) {
+                return index;
+            }
         }
     }
     else {
@@ -133,8 +136,8 @@ uint16_t LUT_make_line(uint16_t start, uint16_t end, uint16_t index) {
             waveform_lut[index] = value;
             index ++;
             printf("b: %i, %i\n", index, value);
-            if (index > 50) {
-                break;
+            if (index >= 4000) {
+                return index;
             }
         }
     }
