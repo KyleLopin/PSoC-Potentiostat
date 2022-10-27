@@ -62,14 +62,14 @@ class LuTMakeLineTestCase(unittest.TestCase):
         self.assertEqual(index, 11, msg=f"test_down returned and index of {index} "
                                         f"instead of 11")
         self.assertListEqual(waveform, solutions.test_make_lines_down2,
-                             msg=f"test_down didn't return the proper lut array")
+                             msg=f"test_down2 didn't return the proper lut array")
 
     def test_out_of_range(self):
-        """ Test if the lut will stop when the index hits 4000 """
-        start_index = 3995
+        """ Test if the lut will stop when the index hits 5000 (MAX_LUT_SIZE) """
+        start_index = 4995
         index = self.module.LUT_make_line(20, 40, start_index)
         waveform = helper_funcs.convert_c_array_to_list(self.module.waveform_lut, start_index, index)
-        self.assertEqual(index, 4000, msg=f"test_out_of_range returned and index of {index} "
-                                          f"instead of 4000")
+        self.assertEqual(index, 5000, msg=f"test_out_of_range returned and index of {index} "
+                                          f"instead of 5000")
         self.assertListEqual(waveform, solutions.test_make_lines_out_of_range,
                              msg=f"test_out_of_range didn't return the proper lut array")

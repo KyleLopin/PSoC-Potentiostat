@@ -92,7 +92,9 @@ uint16_t dac_ground_value;  // value to load in the DAC
     
 /* Make global variables needed for the DAC/ADC interrupt service routines */
 uint16_t lut_value;  // value need to load DAC
-uint16_t waveform_lut[MAX_LUT_SIZE];  // look up table to store waveform for variable potential experiments
+// add 5 to the lut to add a buffer cause a few functions go over the MAX_LUT_SIZE
+// by 1, and will use MAX_LUT_SIZE to check for over runs
+uint16_t waveform_lut[MAX_LUT_SIZE+5];  // look up table to store waveform for variable potential experiments
 uint16_t lut_index;  // look up table index
 
 /* Global structs */
