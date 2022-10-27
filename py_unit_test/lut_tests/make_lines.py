@@ -47,13 +47,15 @@ def load(_filename, function_name: str, header_includes=[]):
 
 
 class LuTMakeLineTestCase(unittest.TestCase):
-    def setUp(self):
-        self._filename = 'lut_protocols'
-        self.module = load(self._filename, "LUT_make_line",
-                           header_includes=["uint16_t waveform_lut[];"])
+    @classmethod
+    def setUpClass(cls):
+        cls._filename = 'lut_protocols'
+        cls.module = load(cls._filename, "LUT_make_line",
+                          header_includes=["uint16_t waveform_lut[];"])
 
-    def tearDown(self) -> None:
-        os.remove(self._filename+'_.c')
+    # @classmethod
+    # def tearDown(cls) -> None:
+    #     os.remove(cls._filename+'_.c')
 
     def test1(self):
         """ Test LUT make line function """
@@ -61,8 +63,20 @@ class LuTMakeLineTestCase(unittest.TestCase):
         print(f"index: {index}")
         waveform = helper_funcs.convert_c_array_to_list(self.module.waveform_lut, index)
         print(f"waveform: {waveform}")
-        self.assertEqual(index, 11)
-        self.assertListEqual(waveform, solutions.test1)
+        self.assertEqual(index, 11, msg=f"test 1 returned and index of {index} "
+                                        f"instead of 11")
+        self.assertListEqual(waveform, solutions.test1, msg=f"test 1 didn't return"
+                                        f"the proper lut array")
+
+    def test2(self):
+        index = self.module.LUT_make_line(50, 40, 0)
+        print(f"index: {index}")
+        waveform = helper_funcs.convert_c_array_to_list(self.module.waveform_lut, index)
+        print(f"waveform: {waveform}")
+        self.assertEqual(index, 11, msg=f"test 2 returned and index of {index} "
+                                        f"instead of 11")
+        self.assertListEqual(waveform, solutions.test2, msg=f"test 2 didn't return"
+                                        f"the proper lut array")
 
 
 # filename = 'lut_protocols'
