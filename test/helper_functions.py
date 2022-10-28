@@ -13,7 +13,16 @@ import os
 # installed libraries
 import cffi
 
-project_dir = os.path.join('..', 'Amperometry_v059_2.cydsn')
+# because the test directory can be changed bases on what tests are being run,
+# different paths have to be searched.
+for i in range(1, 4):
+    path_list = ['..'] * i + ['Amperometry_v059_2.cydsn']
+    path = os.path.join(*path_list)
+    if os.path.isdir(path):
+        project_dir = path
+        break
+if not project_dir:
+    raise Exception("Project directory not found")
 
 
 def load(_filename, function_names: str, header_includes=[],

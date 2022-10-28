@@ -1,7 +1,8 @@
 # Copyright (c) 2022 Kyle Lopin (Naresuan University) <kylel@nu.ac.th>
 
 """
-Test that the LUT_make_line works properly
+Test that the LUT_make_line function works properly in the
+lut_protocols.c file
 """
 
 __author__ = "Kyle Vitautus Lopin"
@@ -11,7 +12,7 @@ import unittest
 
 # local files
 import test.helper_functions as helper_funcs
-import test.test_lut.solutions as solutions
+import test.unit_tests.test_lut.solutions as solutions
 
 
 class LuTMakeLineTestCase(unittest.TestCase):
@@ -22,7 +23,7 @@ class LuTMakeLineTestCase(unittest.TestCase):
         cls._filename = 'lut_protocols'
         cls.module = helper_funcs.load(cls._filename, ["LUT_make_line"],
                                        header_includes=["static uint16_t waveform_lut[];"],
-                                       compiled_file_end="1")
+                                       compiled_file_end="make_lines")
 
     def setUp(self) -> None:
         """ Reset the waveform_lut for each test """

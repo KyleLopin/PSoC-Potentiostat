@@ -1,7 +1,8 @@
 # Copyright (c) 2022 Kyle Lopin (Naresuan University) <kylel@nu.ac.th>
 
 """
-
+Test that the LUT_MakeTriangle_Wave function works properly
+in the lut_protocols.c file, needs LUT_make_line to work properly
 """
 
 __author__ = "Kyle Vitautus Lopin"
@@ -11,10 +12,11 @@ import unittest
 
 # local files
 import test.helper_functions as helper_funcs
-import test.test_lut.solutions as solutions
+import test.unit_tests.test_lut.solutions as solutions
 
 
 class LuTMakeTriangleWave(unittest.TestCase):
+    """ Test that the LUT_MakeTriangle_Wave function works properly"""
     @classmethod
     def setUpClass(cls):
         """ Load the file just one time for each test """
@@ -24,7 +26,7 @@ class LuTMakeTriangleWave(unittest.TestCase):
         cls.module = helper_funcs.load(cls._filename,
                                        ["LUT_make_line", "LUT_MakeTriangle_Wave"],
                                        header_includes=["static uint16_t waveform_lut[];"],
-                                       compiled_file_end="2")
+                                       compiled_file_end="make_triangle")
 
     def test_upright(self):
         """ Test it makes a cyclic voltammetry waveform that goes from low to high

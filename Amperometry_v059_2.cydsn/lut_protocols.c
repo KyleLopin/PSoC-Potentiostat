@@ -26,7 +26,7 @@
 *  uint16_t end_value: to peak dac value
 *
 * Return:
-*  uint16: how long the look up table is
+*  uint16_t: how long the look up table is
 *
 * Global variables:
 *  waveform_lut: Array the look up table is stored in
@@ -39,10 +39,10 @@ uint16_t LUT_MakeTriangle_Wave(uint16_t start_value, uint16_t end_value) {
     //LCD_Position(1,0);
     //LCD_PrintDecUint16(end_value);
     printf("p: %i\n", _lut_index);
-    
+
     _lut_index = LUT_make_line(start_value, end_value, 0);
     printf("z: %i\n", _lut_index);
-    
+
     _lut_index = LUT_make_line(end_value, start_value, _lut_index-1);
     printf("v: %i\n", _lut_index);
     waveform_lut[_lut_index] = start_value;  // the DAC is changed before the value is checked in the isr so it will go 1 over so make it stay at last voltage
@@ -52,10 +52,6 @@ uint16_t LUT_MakeTriangle_Wave(uint16_t start_value, uint16_t end_value) {
     printf("%i\n", _lut_index);
     //LCD_PutChar('|');
     return _lut_index;  
-}
-
-int LUT_test() {
-    return 1;
 }
 
 
@@ -73,7 +69,7 @@ int LUT_test() {
 *  uint16_t end_value: the dac value to go to after going to start_value, dac then goes to 0 V (e.g. virtual ground)
 *
 * Return:
-*  uint16: how long the look up table is
+*  uint16_t: how long the look up table is
 *
 * Global variables:
 *  waveform_lut: Array the look up table is stored in
@@ -85,7 +81,7 @@ uint16_t LUT_MakeCVStartZero(const uint16_t start_value, const uint16_t end_valu
     
     //LCD_Position(1,0);
     //LCD_PrintDecUint16(end_value);
-    
+    printf("dac ground value: %i\n", dac_ground_value);
     _lut_index = LUT_make_line(dac_ground_value, start_value, 0);
     
     _lut_index = LUT_make_line(start_value, end_value, _lut_index-1);
@@ -112,7 +108,7 @@ uint16_t LUT_MakeCVStartZero(const uint16_t start_value, const uint16_t end_valu
 *  uint16_t index: the place to start putting in numbers in the look up table
 *
 * Return:
-*  uint16: first place after the filled in area of the look up table
+*  uint16_t: first place after the filled in area of the look up table
 *
 * Global variables:
 *  waveform_lut: Array the look up table is stored in
@@ -150,7 +146,7 @@ uint16_t LUT_make_line(uint16_t start, uint16_t end, uint16_t index) {
 *******************************************************************************
 *
 * Summary:
-*  Make a ramp with a square wave super imposed, from start to end in waveform_lut 
+*  Make a ramp with a square wave super imposed, from start to end in waveform_lut
 *  starting at index
 *  Does not matter if start or end is higher
 *
@@ -169,7 +165,7 @@ uint16_t LUT_make_line(uint16_t start, uint16_t end, uint16_t index) {
 *
 *******************************************************************************/
 
-uint16_t LUT_make_swv_line(uint16_t start, uint16_t end, uint16_t pulse_inc, 
+uint16_t LUT_make_swv_line(uint16_t start, uint16_t end, uint16_t pulse_inc,
                          uint16_t pulse_height, uint16_t index) {
     printf("start: %i, end: %i\n", start, end);
     if (index > 4000) {
@@ -218,7 +214,7 @@ uint16_t LUT_make_swv_line(uint16_t start, uint16_t end, uint16_t pulse_inc,
 *  uint16_t increment: increment of each step
 *
 * Return:
-*  uint16: first place after the filled in area of the look up table
+*  uint16_t: first place after the filled in area of the look up table
 *
 * Global variables:
 *  waveform_lut: Array the look up table is stored in
@@ -227,9 +223,9 @@ uint16_t LUT_make_swv_line(uint16_t start, uint16_t end, uint16_t pulse_inc,
 *
 *******************************************************************************/
 
-uint16_t LUT_make_dpv(uint16_t start, uint16_t end, uint16_t height, 
+uint16_t LUT_make_dpv(uint16_t start, uint16_t end, uint16_t height,
                     uint16_t increment, uint16_t index) {
-    uint16_t level = start;  // variable to store currend dac values in 
+    uint16_t level = start;  // variable to store currend dac values in
     
     waveform_lut[index] = level;
     while (level >= end) {  // >= because the voltages are inverted compared to the dac
