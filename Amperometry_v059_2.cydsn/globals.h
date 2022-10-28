@@ -13,6 +13,7 @@
 #define GLOBALS_H
     
 #include "cytypes.h"
+#include "stdio.h"  // gets rid of the type errors
 
 /**************************************
 *        USB INPUT OPTIONS

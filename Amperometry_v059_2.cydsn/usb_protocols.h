@@ -16,6 +16,7 @@
 #define USB_PROTOCOLS_H
     
 #include <project.h>
+#include "stdio.h"  // gets rid of the type errors
 
 /**************************************
 *      Constants
@@ -34,14 +35,14 @@
 #define MAX_DATA_BUFFER 256 // make this MAX_NUM_BYTES / 2
 
 /* External variable of the device address located in USBFS.h */
-extern uint8 USB_deviceAdress;
+extern uint8_t USB_deviceAdress;
     
 /***************************************
 *        Function Prototypes
 ***************************************/  
     
-uint8 USB_CheckInput(uint8 buffer[]);
-void USB_Export_Data(uint8 array[], uint16_t size);
+uint8_t USB_CheckInput(uint8_t buffer[]);
+void USB_Export_Data(uint8_t array[], uint16_t size);
 
 #endif
 

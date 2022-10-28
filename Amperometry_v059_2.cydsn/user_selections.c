@@ -11,6 +11,7 @@
 *********************************************************************************/
 
 #include <project.h>
+#include "stdio.h"  // gets rid of the type errors
 
 #include "user_selections.h"
 extern char LCD_str[];  // for debug
@@ -41,10 +42,9 @@ extern char LCD_str[];  // for debug
 *
 *******************************************************************************/
 
-void user_setup_TIA_ADC(uint8 data_buffer[]) {
-    uint8 adc_config = data_buffer[2]-'0';
+void user_setup_TIA_ADC(uint8_t data_buffer[]) {
+    uint8_t adc_config = data_buffer[2]-'0';
     if (adc_config == 1 || adc_config == 2) {
-        ADC_SigDel_CFG1;
         ADC_SigDel_SelectConfiguration(adc_config, DO_NOT_RESTART_ADC); 
     }
     TIA_resistor_value_index = data_buffer[4]-'0';
@@ -83,9 +83,9 @@ void user_setup_TIA_ADC(uint8 data_buffer[]) {
 *
 *******************************************************************************/
 
-void user_voltage_source_funcs(uint8 data_buffer[]) {
+void user_voltage_source_funcs(uint8_t data_buffer[]) {
     if (data_buffer[1] == 'R') {  // User wants to read status of VDAC
-        uint8 export_array[2];
+        uint8_t export_array[2];
         export_array[0] = 'V';
         export_array[1] = helper_check_voltage_source();
         USB_Export_Data(export_array, 2);
@@ -143,7 +143,7 @@ void user_start_cv_run(void){
         isr_adc_Enable();  // and the adc
     }
     else {  // if another experiment is running, throw an error
-        USB_Export_Data((uint8*)"Error1", 7);
+        USB_Export_Data((uint8_t*)"Error1", 7);
     }
 }
 
@@ -194,7 +194,7 @@ void user_identify(void) {
     isr_adcAmp_Disable();
     isr_adc_Disable();
     isr_dac_Disable();
-    USB_Export_Data((uint8*)"USB Test - v04", 15);
+    USB_Export_Data((uint8_t*)"USB Test - v04", 15);
     // TODO:  Put in a software reset incase something goes wrong the program can reattach
 }
 
@@ -217,7 +217,7 @@ void user_identify(void) {
 *******************************************************************************/
 
 
-void user_set_isr_timer(uint8 data_buffer[]) {
+void user_set_isr_timer(uint8_t data_buffer[]) {
     PWM_isr_Wakeup();
     uint16_t timer_period = helper_Convert2Dec(&data_buffer[2], 5);
     PWM_isr_WriteCompare(timer_period / 2);  // not used in amperometry run so just set in the middle
@@ -249,7 +249,7 @@ void user_set_isr_timer(uint8 data_buffer[]) {
 *
 *******************************************************************************/
 
-uint16_t user_chrono_lut_maker(uint8 data_buffer[]) {
+uint16_t user_chrono_lut_maker(uint8_t data_buffer[]) {
     PWM_isr_Wakeup();
     uint16_t baseline = helper_Convert2Dec(&data_buffer[2], 4);
     uint16_t pulse = helper_Convert2Dec(&data_buffer[7], 4);
@@ -293,7 +293,7 @@ uint16_t user_chrono_lut_maker(uint8 data_buffer[]) {
 *
 *******************************************************************************/
 
-uint16_t user_dpv_lut_maker(uint8 data_buffer[]) {
+uint16_t user_dpv_lut_maker(uint8_t data_buffer[]) {
     PWM_isr_Wakeup();
     uint16_t start = helper_Convert2Dec(&data_buffer[2], 4);
     uint16_t end = helper_Convert2Dec(&data_buffer[7], 4);
@@ -343,13 +343,13 @@ uint16_t user_dpv_lut_maker(uint8 data_buffer[]) {
 *
 *******************************************************************************/
 
-uint16_t user_lookup_table_maker(uint8 data_buffer[]) {
+uint16_t user_lookup_table_maker(uint8_t data_buffer[]) {
     PWM_isr_Wakeup();
     uint16_t start_dac_value = helper_Convert2Dec(&data_buffer[2], 4);
     uint16_t end_dac_value = helper_Convert2Dec(&data_buffer[7], 4);
     uint16_t timer_period = helper_Convert2Dec(&data_buffer[12], 5);
-    uint8 sweep_type = data_buffer[18];
-    uint8 start_volt_type = data_buffer[19];
+    uint8_t sweep_type = data_buffer[18];
+    uint8_t start_volt_type = data_buffer[19];
     PWM_isr_WritePeriod(timer_period);
     uint16_t lut_length;
     if (sweep_type == 'L') {  // Make look up table for linear sweep, ignore start volt type
@@ -391,7 +391,7 @@ uint16_t user_lookup_table_maker(uint8 data_buffer[]) {
 *
 *******************************************************************************/
 
-uint16_t user_run_amperometry(uint8 data_buffer[]) {
+uint16_t user_run_amperometry(uint8_t data_buffer[]) {
     helper_HardwareWakeup();  
     if (!isr_adcAmp_GetState()) {  // enable isr if it is not already
         if (isr_dac_GetState()) {  // User selected to run amperometry but a CV is still running 

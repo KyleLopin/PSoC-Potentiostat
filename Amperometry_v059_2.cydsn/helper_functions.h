@@ -14,6 +14,7 @@
 
 #include <project.h>
 #include "cytypes.h"
+#include "stdio.h"  // gets rid of the type errors
 #include "globals.h"
 #include "DAC.h"
     
@@ -21,26 +22,26 @@
 *        Variables
 ***************************************/     
     
-extern uint8 selected_voltage_source;
+extern uint8_t selected_voltage_source;
 //extern struct RunParams run_params;
     
     
 /***************************************
 *        Function Prototypes
 ***************************************/ 
-    
-uint8 helper_check_voltage_source(void);
-void helper_set_voltage_source(uint8 selected_voltage_source);
-uint8 helper_Writebyte_EEPROM(uint8 data, uint16_t address);
-uint8 helper_Readbyte_EEPROM(uint16_t address);
+
+uint8_t helper_check_voltage_source(void);
+void helper_set_voltage_source(uint8_t selected_voltage_source);
+uint8_t helper_Writebyte_EEPROM(uint8_t data, uint16_t address);
+uint8_t helper_Readbyte_EEPROM(uint16_t address);
 
 void helper_HardwareSetup(void);
 void helper_HardwareStart(void);
 void helper_HardwareSleep(void);
 void helper_HardwareWakeup(void);
-void make_run_params(const uint8 data_buffer[], const uint8 use_swv, 
+void make_run_params(const uint8_t data_buffer[], const uint8_t use_swv, 
                      struct RunParams *run_params);
-uint16_t helper_Convert2Dec(const uint8 array[], const uint8 len);
+uint16_t helper_Convert2Dec(const uint8_t array[], const uint8_t len);
 
 
 #endif

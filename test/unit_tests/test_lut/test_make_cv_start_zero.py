@@ -56,11 +56,9 @@ class LUTMakeCVStartZero(unittest.TestCase):
         """ Test it makes a cyclic voltammetry waveform that goes from low to high
             that starts at 0 """
         self.module.dac_ground_value = 100
-        index = self.module.LUT_MakeCVStartZero(1000, 95)
+        index = self.module.LUT_MakeCVStartZero(4000, 0)
         print(f"index: {index}")
         waveform = helper_funcs.convert_c_array_to_list(self.module.waveform_lut, 0, index)
         print(f"waveform: {waveform}")
-        self.assertEqual(index, 22, msg=f"test_up returned and index of {index} "
-                                        f"instead of 22")
-        self.assertListEqual(waveform, solutions.test_cv_zero_up_first,
-                             msg=f"test_down_first didn't return the proper lut array")
+        self.assertEqual(index, 5001, msg=f"test_up returned and index of {index} "
+                                          f"instead of 5001")

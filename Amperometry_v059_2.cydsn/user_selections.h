@@ -13,10 +13,12 @@
 #define USER_SELECTIONS_H
     
 #include <project.h>
+#include "stdio.h"  // gets rid of the type errors
+    
 #include "globals.h"
 #include "helper_functions.h"
-#include "lut_protocols.h"
 #include "usb_protocols.h"
+#include "lut_protocols.h"
     
     
 #define DO_NOT_RESTART_ADC      0
@@ -25,25 +27,25 @@
 *        Function Prototypes
 ***************************************/  
    
-void user_setup_TIA_ADC(uint8 data_buffer[]);
-void user_run_cv_experiment(uint8 data_buffer[]);
-void user_voltage_source_funcs(uint8 data_buffer[]);
+void user_setup_TIA_ADC(uint8_t data_buffer[]);
+void user_run_cv_experiment(uint8_t data_buffer[]);
+void user_voltage_source_funcs(uint8_t data_buffer[]);
 void user_start_cv_run(void);
 void user_reset_device(void);
 void user_identify(void);
-void user_set_isr_timer(uint8 data_buffer[]);
-uint16_t user_chrono_lut_maker(uint8 data_buffer[]);
-uint16_t user_dpv_lut_maker(uint8 data_buffer[]);
-uint16_t user_lookup_table_maker(uint8 data_buffer[]);
-uint16_t user_run_amperometry(uint8 data_buffer[]);
+void user_set_isr_timer(uint8_t data_buffer[]);
+uint16_t user_chrono_lut_maker(uint8_t data_buffer[]);
+uint16_t user_dpv_lut_maker(uint8_t data_buffer[]);
+uint16_t user_lookup_table_maker(uint8_t data_buffer[]);
+uint16_t user_run_amperometry(uint8_t data_buffer[]);
 
 
 /***************************************
 * Global variables external identifier
 ***************************************/
 
-extern uint8 TIA_resistor_value_index;
-extern uint8 ADC_buffer_index;
+extern uint8_t TIA_resistor_value_index;
+extern uint8_t ADC_buffer_index;
     
 #endif
 

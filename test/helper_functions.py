@@ -55,3 +55,17 @@ def convert_c_array_to_list(c_array, start_index, end_index):
     for i in range(start_index, end_index):
         return_list.append(c_array[i])
     return return_list
+
+
+def make_mock_files():  # nevermind figure it out with out these functions
+    cytype_mock_file = os.path.join(project_dir, "cytypes_mock.h")
+    cytype_file = os.path.join(project_dir, "cytypes_mock.h")
+    if os.path.isfile(cytype_mock_file) and not os.path.isfile(cytype_file):
+        os.rename(cytype_mock_file, cytype_file)
+
+
+def reverse_mock_files():  # nevermind figure it out with out these functions
+    cytype_mock_file = os.path.join(project_dir, "cytypes_mock.h")
+    cytype_file = os.path.join(project_dir, "cytypes_mock.h")
+    if not os.path.isfile(cytype_mock_file) and os.path.isfile(cytype_file):
+        os.rename(cytype_file, cytype_mock_file)

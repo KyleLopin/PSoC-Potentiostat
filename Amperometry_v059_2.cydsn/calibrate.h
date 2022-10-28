@@ -13,8 +13,10 @@
 #if !defined(CALIBRATE_H)
 #define CALIBRATE_H
 
+#include <project.h>
 #include "cytypes.h"
 #include "math.h"
+#include "stdio.h"  // gets rid of the type errors
     
 /**************************************
 *      Constants
@@ -26,8 +28,8 @@
   
     
 union calibrate_data_usb_union {
-    uint8 usb[4*Number_calibration_points];  // 2 * the number of data points
-    int16 data[2*Number_calibration_points];  // 2 * data points because 1 for the IDAC value and the other for the ADC result
+    uint8_t usb[4*Number_calibration_points];  // 2 * the number of data points
+    int16_t data[2*Number_calibration_points];  // 2 * data points because 1 for the IDAC value and the other for the ADC result
 };
 union calibrate_data_usb_union calibrate_array;  // allocate space to put adc measurements
 /* This union will save the calibration results and the IDAC values used in the format of
@@ -40,8 +42,8 @@ ADC reading 0 IDAC input, ADC reading for 2nd lowest IDAC value, ADC reading for
 * Global variables identifier 
 ***************************************/
 
-uint8 TIA_resistor_value_index;
-uint8 ADC_buffer_index;
+uint8_t TIA_resistor_value_index;
+uint8_t ADC_buffer_index;
 extern float32 uA_per_adc_count;
 extern float32 R_analog_route;
 

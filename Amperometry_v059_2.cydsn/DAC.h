@@ -30,7 +30,7 @@
 *        Variables
 ***************************************/     
     
-uint8 selected_voltage_source;
+uint8_t selected_voltage_source;
 extern uint16_t dac_ground_value;
     
     

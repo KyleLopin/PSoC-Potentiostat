@@ -33,20 +33,20 @@
 //union small_data_usb_union amp_union;
 
 /* make buffers for the USB ENDPOINTS */
-uint8 IN_Data_Buffer[MAX_NUM_BYTES];
-uint8 OUT_Data_Buffer[MAX_NUM_BYTES];
+uint8_t IN_Data_Buffer[MAX_NUM_BYTES];
+uint8_t OUT_Data_Buffer[MAX_NUM_BYTES];
 
 char LCD_str[32];  // buffer for LCD screen, make it extra big to avoid overflow
 char usb_str[64];  // buffer for string to send to the usb
 
-uint8 Input_Flag = false;  // if there is an input, set this flag to process it
-uint8 AMux_channel_select = 0;  // Let the user choose to use the two electrode configuration (set to 0) or a three
+uint8_t Input_Flag = false;  // if there is an input, set this flag to process it
+uint8_t AMux_channel_select = 0;  // Let the user choose to use the two electrode configuration (set to 0) or a three
 // electrode configuration (set to 1) by choosing the correct AMux channel
 
-uint8 adc_recording_channel = 0;
+uint8_t adc_recording_channel = 0;
 uint16_t lut_length = 3000;  // how long the look up table is,initialize large so when starting isr the ending doesn't get triggered
 //uint16_t lut_hold = 0;  // for debugging
-uint8 adc_hold;  // value to hold what adc buffer was just filled
+uint8_t adc_hold;  // value to hold what adc buffer was just filled
 // uint8 counter = 0;  // for debug
 uint16_t buffer_size_bytes;  // number of bytes of data stored to export for amperometry experiments
 // for amperometry experiments, how many data points to save before exporting the adc buffer
@@ -56,7 +56,6 @@ uint16_t dac_value_hold = 0;
 
 CY_ISR(dacInterrupt)
 {
-    
     DAC_SetValue(lut_value);
     lut_index++;
     if (lut_index >= lut_length) { // all the data points have been given
@@ -65,7 +64,7 @@ CY_ISR(dacInterrupt)
         ADC_array[0].data[lut_index] = 0xC000;  // mark that the data array is done
         helper_HardwareSleep();
         lut_index = 0; 
-        USB_Export_Data((uint8*)"Done", 5); // calls a function in an isr but only after the current isr has been disabled
+        USB_Export_Data((uint8_t*)"Done", 5); // calls a function in an isr but only after the current isr has been disabled
     }
     lut_value = waveform_lut[lut_index];
 }
@@ -84,7 +83,7 @@ CY_ISR(adcAmpInterrupt){
         adc_recording_channel = (adc_recording_channel + 1) % ADC_CHANNELS;
         
         sprintf(usb_str, "Done%d", adc_hold);  // tell the user the data is ready to pick up and which channel its on
-        USB_Export_Data((uint8*)usb_str, 6);  // use the 'F' command to retreive the data
+        USB_Export_Data((uint8_t*)usb_str, 6);  // use the 'F' command to retreive the data
     }
 }
 
