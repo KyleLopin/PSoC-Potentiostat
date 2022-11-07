@@ -25,14 +25,27 @@ if not project_dir:
     raise Exception("Project directory not found")
 
 
-def load(_filename, function_names: str, header_includes=[],
-         compiled_file_end=""):
-    compiled_filename = _filename + '_' + compiled_file_end
+def load_file(_filename):
     file_path = os.path.join(project_dir, _filename)
-    with open(file_path+'.c', 'r') as fp:
+    with open(file_path + '.c', 'r') as fp:
         source = fp.read()
-    with open(file_path+'.h', 'r') as fp:
+    with open(file_path + '.h', 'r') as fp:
         raw_header = fp.read()
+    return source, raw_header
+
+
+def load(_filenames, function_names: str, header_includes=[],
+         compiled_file_end=""):
+    compiled_filename = 'pytest_' + compiled_file_end
+    if type(_filenames) is str:
+        source, raw_header = load_file(_filenames)
+    else:
+        source = ""
+        raw_header = ""
+        for filename in _filenames:
+            next_src, next_raw_head = load_file(filename)
+            source += next_src
+            raw_header += next_raw_head
     cdef = ""
 
     for line in raw_header.splitlines():
