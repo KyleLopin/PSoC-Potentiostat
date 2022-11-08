@@ -352,6 +352,7 @@ uint16_t user_lookup_table_maker(uint8_t data_buffer[]) {
     uint8_t start_volt_type = data_buffer[19];
     PWM_isr_WritePeriod(timer_period);
     uint16_t lut_length;
+    printf("user lookup table: %i, %i\n", start_dac_value, end_dac_value);
     if (sweep_type == 'L') {  // Make look up table for linear sweep, ignore start volt type
         lut_length = LUT_make_line(start_dac_value, end_dac_value, 0) + 1; 
     }

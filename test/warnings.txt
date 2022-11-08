@@ -1,0 +1,75 @@
+pytest_input_to_lut.c(900): warning C4013: 'ADC_SigDel_SelectConfiguration' undefined; assuming extern returning int
+pytest_input_to_lut.c(904): warning C4013: 'TIA_SetResFB' undefined; assuming extern returning int
+pytest_input_to_lut.c(908): warning C4013: 'ADC_SigDel_SetBufferGain' undefined; assuming extern returning int
+pytest_input_to_lut.c(914): warning C4013: 'AMux_TIA_resistor_bypass_Connect' undefined; assuming extern returning int
+pytest_input_to_lut.c(917): warning C4013: 'AMux_TIA_resistor_bypass_Disconnect' undefined; assuming extern returning int
+pytest_input_to_lut.c(976): warning C4013: 'isr_dac_GetState' undefined; assuming extern returning int
+pytest_input_to_lut.c(977): warning C4013: 'isr_adcAmp_GetState' undefined; assuming extern returning int
+pytest_input_to_lut.c(978): warning C4013: 'isr_adcAmp_Disable' undefined; assuming extern returning int
+pytest_input_to_lut.c(984): warning C4013: 'CyDelay' undefined; assuming extern returning int
+pytest_input_to_lut.c(985): warning C4013: 'ADC_SigDel_StartConvert' undefined; assuming extern returning int
+pytest_input_to_lut.c(987): warning C4013: 'PWM_isr_WriteCounter' undefined; assuming extern returning int
+pytest_input_to_lut.c(988): warning C4013: 'ADC_SigDel_GetResult16' undefined; assuming extern returning int
+pytest_input_to_lut.c(994): warning C4013: 'isr_dac_Enable' undefined; assuming extern returning int
+pytest_input_to_lut.c(995): warning C4013: 'isr_adc_Enable' undefined; assuming extern returning int
+pytest_input_to_lut.c(1021): warning C4013: 'isr_dac_Disable' undefined; assuming extern returning int
+pytest_input_to_lut.c(1022): warning C4013: 'isr_adc_Disable' undefined; assuming extern returning int
+pytest_input_to_lut.c(1073): warning C4013: 'PWM_isr_Wakeup' undefined; assuming extern returning int
+pytest_input_to_lut.c(1075): warning C4013: 'PWM_isr_WriteCompare' undefined; assuming extern returning int
+pytest_input_to_lut.c(1076): warning C4013: 'PWM_isr_WritePeriod' undefined; assuming extern returning int
+pytest_input_to_lut.c(1077): warning C4013: 'PWM_isr_Sleep' undefined; assuming extern returning int
+pytest_input_to_lut.c(1262): warning C4013: 'isr_adcAmp_Enable' undefined; assuming extern returning int
+pytest_input_to_lut.c(1325): error C2146: syntax error: missing ')' before identifier 'voltage_source'
+pytest_input_to_lut.c(1325): error C2061: syntax error: identifier 'voltage_source'
+pytest_input_to_lut.c(1325): error C2059: syntax error: ';'
+pytest_input_to_lut.c(1325): error C2059: syntax error: ')'
+pytest_input_to_lut.c(1325): error C2449: found '{' at file scope (missing function header?)
+pytest_input_to_lut.c(1342): error C2059: syntax error: '}'
+pytest_input_to_lut.c(1385): error C2061: syntax error: identifier 'helper_Readbyte_EEPROM'
+pytest_input_to_lut.c(1385): error C2059: syntax error: ';'
+pytest_input_to_lut.c(1385): error C2059: syntax error: '<parameter-list>'
+pytest_input_to_lut.c(1411): warning C4013: 'AMux_electrode_Init' undefined; assuming extern returning int
+pytest_input_to_lut.c(1412): warning C4013: 'AMux_TIA_input_Init' undefined; assuming extern returning int
+pytest_input_to_lut.c(1413): warning C4013: 'AMux_TIA_resistor_bypass_Init' undefined; assuming extern returning int
+pytest_input_to_lut.c(1414): warning C4013: 'AMux_V_source_Init' undefined; assuming extern returning int
+pytest_input_to_lut.c(1419): warning C4013: 'AMux_electrode_Select' undefined; assuming extern returning int
+pytest_input_to_lut.c(1420): warning C4013: 'AMux_TIA_input_Select' undefined; assuming extern returning int
+pytest_input_to_lut.c(1421): warning C4013: 'AMux_TIA_resistor_bypass_Select' undefined; assuming extern returning int
+pytest_input_to_lut.c(1435): warning C4013: 'ADC_SigDel_Start' undefined; assuming extern returning int
+pytest_input_to_lut.c(1436): warning C4013: 'TIA_Start' undefined; assuming extern returning int
+pytest_input_to_lut.c(1437): warning C4013: 'VDAC_TIA_Start' undefined; assuming extern returning int
+pytest_input_to_lut.c(1438): warning C4013: 'Opamp_Aux_Start' undefined; assuming extern returning int
+pytest_input_to_lut.c(1439): warning C4013: 'PWM_isr_Start' undefined; assuming extern returning int
+pytest_input_to_lut.c(1452): warning C4013: 'ADC_SigDel_Wakeup' undefined; assuming extern returning int
+pytest_input_to_lut.c(1453): warning C4013: 'TIA_Wakeup' undefined; assuming extern returning int
+pytest_input_to_lut.c(1454): warning C4013: 'VDAC_TIA_Wakeup' undefined; assuming extern returning int
+pytest_input_to_lut.c(1459): warning C4013: 'Opamp_Aux_Wakeup' undefined; assuming extern returning int
+pytest_input_to_lut.c(1475): warning C4013: 'ADC_SigDel_Sleep' undefined; assuming extern returning int
+pytest_input_to_lut.c(1477): warning C4013: 'TIA_Sleep' undefined; assuming extern returning int
+pytest_input_to_lut.c(1478): warning C4013: 'VDAC_TIA_Sleep' undefined; assuming extern returning int
+pytest_input_to_lut.c(1479): warning C4013: 'Opamp_Aux_Sleep' undefined; assuming extern returning int
+pytest_input_to_lut.c(1485): error C2146: syntax error: missing ')' before identifier 'data_buffer'
+pytest_input_to_lut.c(1485): error C2061: syntax error: identifier 'data_buffer'
+pytest_input_to_lut.c(1485): error C2059: syntax error: ';'
+pytest_input_to_lut.c(1485): error C2059: syntax error: '['
+pytest_input_to_lut.c(1486): error C2059: syntax error: ')'
+pytest_input_to_lut.c(1505): error C2146: syntax error: missing ')' before identifier 'array'
+pytest_input_to_lut.c(1505): error C2061: syntax error: identifier 'array'
+pytest_input_to_lut.c(1505): error C2059: syntax error: ';'
+pytest_input_to_lut.c(1505): error C2059: syntax error: '['
+pytest_input_to_lut.c(1505): error C2059: syntax error: ')'
+pytest_input_to_lut.c(1330): warning C4013: 'VDAC_source_Stop' undefined; assuming extern returning int
+pytest_input_to_lut.c(1336): warning C4013: 'DVDAC_Stop' undefined; assuming extern returning int
+pytest_input_to_lut.c(1362): warning C4013: 'EEPROM_Start' undefined; assuming extern returning int
+pytest_input_to_lut.c(1363): warning C4013: 'CyDelayUs' undefined; assuming extern returning int
+pytest_input_to_lut.c(1364): warning C4013: 'EEPROM_UpdateTemperature' undefined; assuming extern returning int
+pytest_input_to_lut.c(1365): warning C4013: 'EEPROM_WriteByte' undefined; assuming extern returning int
+pytest_input_to_lut.c(1366): warning C4013: 'EEPROM_Stop' undefined; assuming extern returning int
+pytest_input_to_lut.obj : error LNK2001: unresolved external symbol _DAC_SetValue
+pytest_input_to_lut.obj : error LNK2001: unresolved external symbol _USB_Export_Data
+pytest_input_to_lut.obj : error LNK2001: unresolved external symbol _EEPROM_ReadByte
+pytest_input_to_lut.obj : error LNK2001: unresolved external symbol _ADC_buffer_index
+pytest_input_to_lut.obj : error LNK2001: unresolved external symbol _DAC_Wakeup
+pytest_input_to_lut.obj : error LNK2001: unresolved external symbol _DAC_Sleep
+pytest_input_to_lut.obj : error LNK2001: unresolved external symbol _DAC_Start
+pytest_input_to_lut.obj : error LNK2001: unresolved external symbol _TIA_resistor_value_index

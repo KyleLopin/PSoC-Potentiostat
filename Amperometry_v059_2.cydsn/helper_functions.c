@@ -34,7 +34,7 @@
 *
 *******************************************************************************/
 
-uint8 helper_check_voltage_source(void) {
+uint8_t helper_check_voltage_source(void) {
     // start eeprom and read the value at voltage source address
     return helper_Readbyte_EEPROM(VDAC_ADDRESS);
 }
@@ -55,7 +55,7 @@ uint8 helper_check_voltage_source(void) {
 *
 *******************************************************************************/
 
-void helper_set_voltage_source(uint8 voltage_source) {
+void helper_set_voltage_source(uint8_t voltage_source) {
     selected_voltage_source = voltage_source;
     helper_Writebyte_EEPROM(voltage_source, VDAC_ADDRESS);
     
@@ -91,11 +91,11 @@ void helper_set_voltage_source(uint8 voltage_source) {
 *
 *******************************************************************************/
 
-uint8 helper_Writebyte_EEPROM(uint8 data, uint16_t address) {
+uint8_t helper_Writebyte_EEPROM(uint8_t data, uint16_t address) {
     EEPROM_Start();
     CyDelayUs(10);
     EEPROM_UpdateTemperature();
-    uint8 write_results = EEPROM_WriteByte(data, address);
+    uint8_t write_results = EEPROM_WriteByte(data, address);
     EEPROM_Stop();
     return write_results;
 }
@@ -115,12 +115,12 @@ uint8 helper_Writebyte_EEPROM(uint8 data, uint16_t address) {
 *
 *******************************************************************************/
 
-uint8 helper_Readbyte_EEPROM(uint16_t address) {
+uint8_t helper_Readbyte_EEPROM(uint16_t address) {
     EEPROM_Start();
     CyDelayUs(10);
     EEPROM_UpdateTemperature();
     CyDelayUs(10);
-    uint8 data = EEPROM_ReadByte(address);
+    uint8_t data = EEPROM_ReadByte(address);
     EEPROM_Stop();
     return data;
 }
@@ -215,7 +215,7 @@ void helper_HardwareSleep(void){  // put to sleep all the components that have t
 }
 
 
-void make_run_params(const uint8 data_buffer[], const uint8 use_swv, 
+void make_run_params(const uint8_t data_buffer[], const uint8_t use_swv,
                      struct RunParams *run_params) {
     run_params->start_value = helper_Convert2Dec(&data_buffer[2], 4);
     run_params->end_value = helper_Convert2Dec(&data_buffer[7], 4);
@@ -235,7 +235,8 @@ void make_run_params(const uint8 data_buffer[], const uint8 use_swv,
 }
 
 
-uint16_t helper_Convert2Dec(const uint8 array[], const uint8 len){
+uint16_t helper_Convert2Dec(const uint8_t array[], const uint8_t len){
+    printf("in convert2dec");
     uint16_t num = 0;
     for (int i = 0; i < len; i++){
         num = num * 10 + (array[i] - '0');

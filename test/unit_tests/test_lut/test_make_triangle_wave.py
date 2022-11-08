@@ -33,7 +33,7 @@ class LuTMakeTriangleWave(unittest.TestCase):
             that starts at 0 """
         index = self.module.LUT_MakeTriangle_Wave(0, 10)
         waveform = helper_funcs.convert_c_array_to_list(self.module.waveform_lut, 0, index)
-        self.assertEqual(index, 22, msg=f"test_up returned and index of {index} "
+        self.assertEqual(index, 22, msg=f"test_up returned an index of {index} "
                                         f"instead of 22")
         self.assertListEqual(waveform, solutions.test_triangle_upright,
                              msg=f"test_upright didn't return the proper lut array")
@@ -43,7 +43,7 @@ class LuTMakeTriangleWave(unittest.TestCase):
             that doesn't start at 0 """
         index = self.module.LUT_MakeTriangle_Wave(100, 105)
         waveform = helper_funcs.convert_c_array_to_list(self.module.waveform_lut, 0, index)
-        self.assertEqual(index, 12, msg=f"test_up returned and index of {index} "
+        self.assertEqual(index, 12, msg=f"test_up returned an index of {index} "
                                         f"instead of 12")
         self.assertListEqual(waveform, solutions.test_triangle_upright2,
                              msg=f"test_upright didn't return the proper lut array")
@@ -55,7 +55,7 @@ class LuTMakeTriangleWave(unittest.TestCase):
         print(f"index: {index}")
         waveform = helper_funcs.convert_c_array_to_list(self.module.waveform_lut, 0, index)
         print(f"waveform: {waveform}")
-        self.assertEqual(index, 22, msg=f"test_up returned and index of {index} "
+        self.assertEqual(index, 22, msg=f"test_up returned an index of {index} "
                                         f"instead of 22")
         self.assertListEqual(waveform, solutions.test_triangle_downward,
                              msg=f"test_downward didn't return the proper lut array")
@@ -65,7 +65,7 @@ class LuTMakeTriangleWave(unittest.TestCase):
             not to 0 """
         index = self.module.LUT_MakeTriangle_Wave(120, 110)
         waveform = helper_funcs.convert_c_array_to_list(self.module.waveform_lut, 0, index)
-        self.assertEqual(index, 22, msg=f"test_up returned and index of {index} "
+        self.assertEqual(index, 22, msg=f"test_up returned an index of {index} "
                                         f"instead of 22")
         self.assertListEqual(waveform, solutions.test_triangle_downward2,
                              msg=f"test_downward didn't return the proper lut array")
@@ -74,5 +74,5 @@ class LuTMakeTriangleWave(unittest.TestCase):
         """ Test if the lut will stop when the index hits 5000 (MAX_LUT_SIZE) """
         index = self.module.LUT_MakeTriangle_Wave(120, 5110)
         print(f"index: {index}")
-        self.assertEqual(index, 5001, msg=f"test_out_of_range returned and index of {index} "
-                                          f"instead of 5000")
+        self.assertEqual(index, 5001, msg=f"test_out_of_range returned an "
+                                          f"index of {index} instead of 5000")

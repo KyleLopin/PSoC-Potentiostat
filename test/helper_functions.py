@@ -1,7 +1,8 @@
 # Copyright (c) 2022 Kyle Lopin (Naresuan University) <kylel@nu.ac.th>
 
 """
-
+Helper functions used for unit and integration testing including a file to
+load c files into python and convert c arrays to python lists for testing
 """
 
 __author__ = "Kyle Vitatus Lopin"
@@ -26,6 +27,14 @@ if not project_dir:
 
 
 def load_file(_filename):
+    """
+    Return the raw source (.c) and header (.h) text of the file given
+    Args:
+        _filename: string, name of the file WITHOUT an extension
+
+    Returns: text of the .c and .h files
+
+    """
     file_path = os.path.join(project_dir, _filename)
     with open(file_path + '.c', 'r') as fp:
         source = fp.read()
@@ -36,34 +45,68 @@ def load_file(_filename):
 
 def load(_filenames, function_names: str, header_includes=[],
          compiled_file_end=""):
-    compiled_filename = 'pytest_' + compiled_file_end
-    if type(_filenames) is str:
+    """
+    Takes in a list of c files and functions and makes a compiled module out
+    of them that can be used in python programs.  Originally developed for
+    unit testing c files in python.
+
+    NOTE: errors may show up from missing functions and variables, use the
+    make_mock_project_h.py file to make the project.h file that is needed to mock those
+    errors away
+
+    Args:
+        _filenames: string, or list of strings of the file names of the c files to load
+        function_names: list of the names of the functions that will be tested
+        header_includes: list of strings to add to the header file, this is needed
+        if you want to use a variable that is not in a file in _filenames
+        compiled_file_end: string, the aggrecated source files will be made into
+        1 c file with the name pytest_+comipiled_file_end
+
+    Returns: the compiled files in a module
+
+    """
+    compiled_filename = 'pytest_' + compiled_file_end  # name of saved file
+    if type(_filenames) is str:  # if just a string, just load 1 file
         source, raw_header = load_file(_filenames)
-    else:
+    else:  # load each file in the list
         source = ""
         raw_header = ""
         for filename in _filenames:
             next_src, next_raw_head = load_file(filename)
             source += next_src
             raw_header += next_raw_head
+    # make the cdef with just the functions we want
+    # TODO: test if removing this means less work for project.h, or if just causes
+    #  more problems
     cdef = ""
-
     for line in raw_header.splitlines():
         for function_name in function_names:
             if function_name in line:
                 cdef += line
+    # everything is made, so put it together and compile it
     cdef += "".join(header_includes)
     ffi_builder = cffi.FFI()
     ffi_builder.cdef(cdef)
+    # there should be mocked file in the current directory also so include that
     ffi_builder.set_source(compiled_filename, source,
-                           include_dirs=[project_dir])
+                           include_dirs=[project_dir, "."])
     ffi_builder.compile()
-
+    # import the module and return it
     _module = importlib.import_module(compiled_filename)
     return _module.lib
 
 
 def convert_c_array_to_list(c_array, start_index, end_index):
+    """
+    Convert a c array to a python list.
+    Args:
+        c_array: array from a cffi c module
+        start_index: where to start in the array
+        end_index: where to stop
+
+    Returns: list
+
+    """
     return_list = []
     for i in range(start_index, end_index):
         return_list.append(c_array[i])
