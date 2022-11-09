@@ -236,7 +236,6 @@ void make_run_params(const uint8_t data_buffer[], const uint8_t use_swv,
 
 
 uint16_t helper_Convert2Dec(const uint8_t array[], const uint8_t len){
-    printf("in convert2dec");
     uint16_t num = 0;
     for (int i = 0; i < len; i++){
         num = num * 10 + (array[i] - '0');

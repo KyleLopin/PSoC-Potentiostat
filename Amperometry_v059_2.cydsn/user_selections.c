@@ -354,7 +354,11 @@ uint16_t user_lookup_table_maker(uint8_t data_buffer[]) {
     uint16_t lut_length;
     printf("user lookup table: %i, %i\n", start_dac_value, end_dac_value);
     if (sweep_type == 'L') {  // Make look up table for linear sweep, ignore start volt type
-        lut_length = LUT_make_line(start_dac_value, end_dac_value, 0) + 1; 
+        // The dac changes once after the run, so hold the voltage at the end constant
+        // for 1 more tick
+        lut_length = LUT_make_line(start_dac_value, end_dac_value, 0);
+        waveform_lut[lut_length] = waveform_lut[lut_length-1];
+        lut_length += 1;
     }
     else if (start_volt_type == 'Z') {  // Make a Cyclic voltammetry look up table that starts at 0 volts
         lut_length = LUT_MakeCVStartZero(start_dac_value, end_dac_value);

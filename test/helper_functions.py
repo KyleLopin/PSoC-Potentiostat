@@ -43,8 +43,8 @@ def load_file(_filename):
     return source, raw_header
 
 
-def load(_filenames, function_names: str, header_includes=[],
-         compiled_file_end=""):
+def load(_filenames, function_names: list[str], header_includes: list[str] = [],
+         compiled_file_end: str = ""):
     """
     Takes in a list of c files and functions and makes a compiled module out
     of them that can be used in python programs.  Originally developed for
