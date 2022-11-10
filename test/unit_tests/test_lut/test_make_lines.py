@@ -16,7 +16,13 @@ import test.unit_tests.test_lut.solutions as solutions
 
 
 class LuTMakeLineTestCase(unittest.TestCase):
-    """Test that the LUT_make_line works properly"""
+    """ Test that the LUT_make_line works properly
+
+    Attributes:
+        _filename (list[str]): names of the c and h files
+        used in the integration tests
+        module: compiles c module to use for testing
+    """
     @classmethod
     def setUpClass(cls):
         """ Load the file just one time for each test """

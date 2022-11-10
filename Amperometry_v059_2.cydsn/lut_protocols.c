@@ -167,35 +167,36 @@ uint16_t LUT_make_line(uint16_t start, uint16_t end, uint16_t index) {
 
 uint16_t LUT_make_swv_line(uint16_t start, uint16_t end, uint16_t pulse_inc,
                          uint16_t pulse_height, uint16_t index) {
-    printf("start: %i, end: %i\n", start, end);
-    if (index > 4000) {
+    // printf("start: %i, end: %i\n", start, end);
+    if (index > MAX_LUT_SIZE) {
         return index;
     }
+    uint16_t half_pulse = pulse_height / 2;
     if (start < end) {
         for (int16_t value = start; value <= end; value+=pulse_inc) {
-            waveform_lut[index] = value + pulse_height;
+            waveform_lut[index] = value + half_pulse;
             index ++;
-            waveform_lut[index] = value - pulse_height;
+            waveform_lut[index] = value - half_pulse;
             index ++;
-            printf("l: %i, %i\n", index, value);
-            if (index > 4000) {
+            //printf("l: %i, %i\n", index, value);
+            if (index > MAX_LUT_SIZE) {
                 break;
             }
         }
     }
     else {
         for (int16_t value = start; value >= end; value-=pulse_inc) {
-            waveform_lut[index] = value + pulse_height;
+            waveform_lut[index] = value + half_pulse;
             index ++;
-            waveform_lut[index] = value - pulse_height;
+            waveform_lut[index] = value - half_pulse;
             index ++;
-            printf("b: %i, %i\n", index, value);
-            if (index > 4000) {
+            //printf("b: %i, %i\n", index, value);
+            if (index > MAX_LUT_SIZE) {
                 break;
             }
         }
     }
-    printf("m: %i\n", index);
+    //printf("m: %i\n", index);
     return index;
 }
 

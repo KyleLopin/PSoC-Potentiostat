@@ -76,13 +76,14 @@ def load(_filenames, function_names: list[str], header_includes: list[str] = [],
             source += next_src
             raw_header += next_raw_head
     # make the cdef with just the functions we want
-    # TODO: test if removing this means less work for project.h, or if just causes
-    #  more problems
+    # cdef can not deal with comments or directives
     cdef = ""
-    for line in raw_header.splitlines():
+    # split the str by ;, not lines
+    for line in raw_header.split(';'):
         for function_name in function_names:
             if function_name in line:
                 cdef += line
+                cdef += ';\n'  # ; was stripped out so add it and the line break
     # everything is made, so put it together and compile it
     cdef += "".join(header_includes)
     ffi_builder = cffi.FFI()
