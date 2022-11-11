@@ -42,7 +42,7 @@ class LuTMakeLineTestCase(unittest.TestCase):
         self.assertEqual(index, 11, msg=f"test_up returned and index of {index} "
                                         f"instead of 11")
         self.assertListEqual(waveform, solutions.test_make_lines_up,
-                             msg=f"test_up didn't return the proper lut array")
+                             msg="test_up didn't return the proper lut array")
 
     def test_up2(self):
         """ Test LUT make line function going up not from the start """
@@ -51,7 +51,7 @@ class LuTMakeLineTestCase(unittest.TestCase):
         self.assertEqual(index, 11, msg=f"test_up2 returned and index of {index} "
                                         f"instead of 11")
         self.assertListEqual(waveform, solutions.test_make_lines_up2,
-                             msg=f"test_up2 didn't return the proper lut array")
+                             msg="test_up2 didn't return the proper lut array")
 
     def test_down(self):
         """ Test LUT make line function going down """

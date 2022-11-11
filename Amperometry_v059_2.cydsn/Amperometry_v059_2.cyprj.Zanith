@@ -10,104 +10,6 @@
 <deps_list>
 <v>.\TopDesign\TopDesign.cysch</v>
 <v>.\TopDesign</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\EEPROM_v3_0\EEPROM_v3_0.cysym</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\EEPROM_v3_0\EEPROM_v3_0.pdf</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\EEPROM_v3_0\EEPROM_v3_0.cystate</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\EEPROM_v3_0\version.cypatch</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\EEPROM_v3_0\API\eeprom.c</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\EEPROM_v3_0\API\eeprom.h</v>
-<v>..\..\..\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_isr_v1_71\cy_isr_v1_71.cysym</v>
-<v>..\..\..\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_isr_v1_71\cy_isr_v1_71.pdf</v>
-<v>..\..\..\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_isr_v1_71\cy_isr_v1_71.primitive</v>
-<v>..\..\..\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_isr_v1_71\cy_isr_v1_71.cystate</v>
-<v>..\..\..\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_isr_v1_71\version.cypatch</v>
-<v>..\..\..\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_isr_v1_71\Custom\custom.cs</v>
-<v>..\..\..\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_isr_v1_71\PSoC5\API\intc.c</v>
-<v>..\..\..\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_isr_v1_71\PSoC5\API\intc.h</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_clock_v2_20\cy_clock_v2_20.cyprimitive</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_clock_v2_20\cy_clock_v2_20.cysym</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_clock_v2_20\cy_clock_v2_20.cystate</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_clock_v2_20\version.cypatch</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_clock_v2_20\API\clk.c</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_clock_v2_20\API\clk.h</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_clock_v2_20\Custom\custom.cs</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\PWM_v3_30.cysym</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\PWM_v3_30.pdf</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\PWM_v3_30.cystate</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\PWM_v3_30.cycdx</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\version.cypatch</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\API\PWM.c</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\API\PWM.h</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\API\PWM_PM.c</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\cypwmcontrol.cs</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\cypwmcontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\cypwmcontroladv.cs</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\cypwmcontroladv.Designer.cs</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\cypwmcustomizer.cs</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\pwmparameters.cs</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\Resources.Designer.cs</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\tabwrapper.cs</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\cypwmcontrol.resx</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\cypwmcontroladv.resx</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\Resources.resx</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\tabwrapper.resx</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\PSoC5\PWM_v3_30.cysch</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\B_PWM_v3_30\B_PWM_v3_30.cysym</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\B_PWM_v3_30\B_PWM_v3_30.v</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.cysym</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.pdf</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_virtualmux_v1_0\version.cypatch</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_virtualmux_v1_0\Custom\custom.cs</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\OneTerminal\OneTerminal.cysym</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\OneTerminal\OneTerminal.pdf</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\OneTerminal\OneTerminal.v</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\OneTerminal\version.cypatch</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.cysym</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.pdf</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.v</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\version.cypatch</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\IDAC8_v2_0\IDAC8_v2_0.cysch</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\IDAC8_v2_0\IDAC8_v2_0.cysym</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\IDAC8_v2_0\IDAC8_v2_0.pdf</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\IDAC8_v2_0\IDAC8_v2_0.cystate</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\IDAC8_v2_0\IDAC8_v2_0.cycdx</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\IDAC8_v2_0\IDAC8_v2_0.cydmacap</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\IDAC8_v2_0\version.cypatch</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\IDAC8_v2_0\API\IDAC8.c</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\IDAC8_v2_0\API\IDAC8.h</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\IDAC8_v2_0\API\IDAC8_PM.c</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\IDAC8_v2_0\Custom\IDACControl.cs</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\IDAC8_v2_0\Custom\IDACControl.Designer.cs</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\IDAC8_v2_0\Custom\IDACCustomizer.cs</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\IDAC8_v2_0\Custom\IDACParameter.cs</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\IDAC8_v2_0\Custom\IDACControl.resx</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_psoc3_vidac8_v1_0\cy_psoc3_vidac8_v1_0.cyprimitive</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_psoc3_vidac8_v1_0\cy_psoc3_vidac8_v1_0.cysym</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\not_v1_0\not_v1_0.cysym</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\not_v1_0\not_v1_0.pdf</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\not_v1_0\not_v1_0.v</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\not_v1_0\version.cypatch</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\not_v1_0\Custom\custom.cs</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_analog_noconnect_v1_0\cy_analog_noconnect_v1_0.cysym</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_analog_noconnect_v1_0\cy_analog_noconnect_v1_0.pdf</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_analog_noconnect_v1_0\cy_analog_noconnect_v1_0.primitive</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_analog_noconnect_v1_0\version.cypatch</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_analog_noconnect_v1_0\Custom\custom.cs</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.cysym</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.cystate</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.pdf</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_constant_v1_0\version.cypatch</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_constant_v1_0</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_constant_v1_0\Custom\custom.cs</v>
-<v>${CyRoot}\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\Gnd_v1_0\Gnd_v1_0.cysym</v>
-<v>${CyRoot}\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\Gnd_v1_0\Gnd_v1_0.pdf</v>
-<v>${CyRoot}\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\Gnd_v1_0\version.cypatch</v>
-<v>${CyRoot}\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\Capacitor_v1_0\Capacitor_v1_0.cysym</v>
-<v>${CyRoot}\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\Capacitor_v1_0\Capacitor_v1_0.pdf</v>
-<v>${CyRoot}\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\Capacitor_v1_0\version.cypatch</v>
 <v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.cysym</v>
 <v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
 <v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_pins_v2_20\cy_pins_v2_20.cystate</v>
@@ -148,22 +50,49 @@
 <v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_pins_v2_20\PSoC5\API\aliases.h</v>
 <v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_pins_v2_20\PSoC5\API\pins.c</v>
 <v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_pins_v2_20\PSoC5\API\pins.h</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\TIA_v2_0\TIA_v2_0.cysch</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\TIA_v2_0\TIA_v2_0.cysym</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\TIA_v2_0\TIA_v2_0.pdf</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\TIA_v2_0\TIA_v2_0.cycdx</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\TIA_v2_0\TIA_v2_0.cystate</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\TIA_v2_0\version.cypatch</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\TIA_v2_0\API\TIA.c</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\TIA_v2_0\API\TIA.h</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\TIA_v2_0\API\TIA_PM.c</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\TIA_v2_0\Custom\cytiacontrol.cs</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\TIA_v2_0\Custom\cytiacontrol.Designer.cs</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\TIA_v2_0\Custom\cytiacustomizer.cs</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\TIA_v2_0\Custom\cytiaparameters.cs</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\TIA_v2_0\Custom\cytiacontrol.resx</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_psoc3_scblock_v1_0\cy_psoc3_scblock_v1_0.cyprimitive</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_psoc3_scblock_v1_0\cy_psoc3_scblock_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\AMux_v1_80\AMux_v1_80.cysym</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\AMux_v1_80\AMux_v1_80.pdf</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\AMux_v1_80\AMux_v1_80.v</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\AMux_v1_80\AMux_v1_80.cystate</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\AMux_v1_80\version.cypatch</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\AMux_v1_80\API\AMux.c</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\AMux_v1_80\API\AMux.h</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\AMux_v1_80\Custom\cyamuxcustomizer.cs</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\AMux_v1_80\Custom\cyverilogbuilder.cs</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\DVDAC_v2_10\DVDAC_v2_10.cysym</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\DVDAC_v2_10\DVDAC_v2_10.cystate</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\DVDAC_v2_10\DVDAC_v2_10.pdf</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\DVDAC_v2_10\version.cypatch</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\DVDAC_v2_10\API\DVDAC.h</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\DVDAC_v2_10\API\DVDAC.c</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\DVDAC_v2_10\API\DVDAC_PM.c</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\DVDAC_v2_10\Custom\cycustomizer.cs</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\DVDAC_v2_10\Custom\cyparameters.cs</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\DVDAC_v2_10\Custom\cyconfiguretab.cs</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\DVDAC_v2_10\Custom\cyconfiguretab.designer.cs</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\DVDAC_v2_10\Custom\Resources.designer.cs</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\DVDAC_v2_10\Custom\cyconfiguretab.resx</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\DVDAC_v2_10\Custom\Resources.resx</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\DVDAC_v2_10\PSoC5\DVDAC_v2_10.cysch</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_clock_v2_20\cy_clock_v2_20.cyprimitive</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_clock_v2_20\cy_clock_v2_20.cysym</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_clock_v2_20\cy_clock_v2_20.pdf</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_clock_v2_20\cy_clock_v2_20.cystate</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_clock_v2_20\version.cypatch</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_clock_v2_20\API\clk.c</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_clock_v2_20\API\clk.h</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_clock_v2_20\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_dma_v1_70\cy_dma_v1_70.cyprimitive</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_dma_v1_70\cy_dma_v1_70.cysym</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_dma_v1_70\cy_dma_v1_70.pdf</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_dma_v1_70\cy_dma_v1_70.cystate</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_dma_v1_70\version.cypatch</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_dma_v1_70\API\dma.c</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_dma_v1_70\API\dma.h</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_dma_v1_70\Custom\cycustomizer.cs</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_dma_v1_70\Custom\cydmacontrol.cs</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_dma_v1_70\Custom\cydmacontrol.designer.cs</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_dma_v1_70\Custom\cydmacontrol.resx</v>
 <v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\VDAC8_v1_90\VDAC8_v1_90.cydmacap</v>
 <v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\VDAC8_v1_90\VDAC8_v1_90.cysch</v>
 <v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\VDAC8_v1_90\VDAC8_v1_90.cysym</v>
@@ -179,6 +108,64 @@
 <v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\VDAC8_v1_90\Custom\VDACCustomizer.cs</v>
 <v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\VDAC8_v1_90\Custom\VDACParameters.cs</v>
 <v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\VDAC8_v1_90\Custom\VDACControl.resx</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_psoc3_vidac8_v1_0\cy_psoc3_vidac8_v1_0.cyprimitive</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_psoc3_vidac8_v1_0\cy_psoc3_vidac8_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.cysym</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.pdf</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\ZeroTerminal.v</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\ZeroTerminal\version.cypatch</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_analog_noconnect_v1_0\cy_analog_noconnect_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_analog_noconnect_v1_0\cy_analog_noconnect_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_analog_noconnect_v1_0\cy_analog_noconnect_v1_0.primitive</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_analog_noconnect_v1_0\version.cypatch</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_analog_noconnect_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_virtualmux_v1_0\cy_virtualmux_v1_0.v</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_virtualmux_v1_0\version.cypatch</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_virtualmux_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\or_v1_0\or_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\or_v1_0\or_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\or_v1_0\or_v1_0.v</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\or_v1_0\version.cypatch</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\or_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\Capacitor_v1_0\Capacitor_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\Capacitor_v1_0\Capacitor_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\Capacitor_v1_0\version.cypatch</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\PWM_v3_30.cysym</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\PWM_v3_30.pdf</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\PWM_v3_30.cystate</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\PWM_v3_30.cycdx</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\version.cypatch</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\API\PWM.c</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\API\PWM.h</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\API\PWM_PM.c</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\cypwmcontrol.cs</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\cypwmcontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\cypwmcontroladv.cs</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\cypwmcontroladv.Designer.cs</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\cypwmcustomizer.cs</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\pwmparameters.cs</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\Resources.Designer.cs</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\tabwrapper.cs</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\cypwmcontrol.resx</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\cypwmcontroladv.resx</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\Resources.resx</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\Custom\tabwrapper.resx</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\PWM_v3_30\PSoC5\PWM_v3_30.cysch</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\B_PWM_v3_30\B_PWM_v3_30.cysym</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\B_PWM_v3_30\B_PWM_v3_30.v</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\OneTerminal\OneTerminal.cysym</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\OneTerminal\OneTerminal.pdf</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\OneTerminal\OneTerminal.v</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\OneTerminal\version.cypatch</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.v</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.cystate</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_constant_v1_0\cy_constant_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_constant_v1_0\version.cypatch</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_constant_v1_0</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_constant_v1_0\Custom\custom.cs</v>
 <v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\ADC_DelSig_v3_30\ADC_DelSig_v3_30.cydmacap</v>
 <v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\ADC_DelSig_v3_30\ADC_DelSig_v3_30.cysym</v>
 <v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\ADC_DelSig_v3_30\ADC_DelSig_v3_30.pdf</v>
@@ -221,46 +208,33 @@
 <v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_isr_v1_70\PSoC5\API\intc.h</v>
 <v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_psoc3_decimator_v1_0\cy_psoc3_decimator_v1_0.cyprimitive</v>
 <v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_psoc3_decimator_v1_0\cy_psoc3_decimator_v1_0.cysym</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\or_v1_0\or_v1_0.cysym</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\or_v1_0\or_v1_0.pdf</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\or_v1_0\or_v1_0.v</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\or_v1_0\version.cypatch</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\or_v1_0\Custom\custom.cs</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\DVDAC_v2_10\DVDAC_v2_10.cysym</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\DVDAC_v2_10\DVDAC_v2_10.cystate</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\DVDAC_v2_10\DVDAC_v2_10.pdf</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\DVDAC_v2_10\version.cypatch</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\DVDAC_v2_10\API\DVDAC.h</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\DVDAC_v2_10\API\DVDAC.c</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\DVDAC_v2_10\API\DVDAC_PM.c</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\DVDAC_v2_10\Custom\cycustomizer.cs</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\DVDAC_v2_10\Custom\cyparameters.cs</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\DVDAC_v2_10\Custom\cyconfiguretab.cs</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\DVDAC_v2_10\Custom\cyconfiguretab.designer.cs</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\DVDAC_v2_10\Custom\Resources.designer.cs</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\DVDAC_v2_10\Custom\cyconfiguretab.resx</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\DVDAC_v2_10\Custom\Resources.resx</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\DVDAC_v2_10\PSoC5\DVDAC_v2_10.cysch</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_dma_v1_70\cy_dma_v1_70.cyprimitive</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_dma_v1_70\cy_dma_v1_70.cysym</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_dma_v1_70\cy_dma_v1_70.pdf</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_dma_v1_70\cy_dma_v1_70.cystate</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_dma_v1_70\version.cypatch</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_dma_v1_70\API\dma.c</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_dma_v1_70\API\dma.h</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_dma_v1_70\Custom\cycustomizer.cs</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_dma_v1_70\Custom\cydmacontrol.cs</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_dma_v1_70\Custom\cydmacontrol.designer.cs</v>
-<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_dma_v1_70\Custom\cydmacontrol.resx</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\AMux_v1_80\AMux_v1_80.cysym</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\AMux_v1_80\AMux_v1_80.pdf</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\AMux_v1_80\AMux_v1_80.v</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\AMux_v1_80\AMux_v1_80.cystate</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\AMux_v1_80\version.cypatch</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\AMux_v1_80\API\AMux.c</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\AMux_v1_80\API\AMux.h</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\AMux_v1_80\Custom\cyamuxcustomizer.cs</v>
-<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\AMux_v1_80\Custom\cyverilogbuilder.cs</v>
+<v>..\..\..\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_isr_v1_71\cy_isr_v1_71.cysym</v>
+<v>..\..\..\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_isr_v1_71\cy_isr_v1_71.pdf</v>
+<v>..\..\..\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_isr_v1_71\cy_isr_v1_71.primitive</v>
+<v>..\..\..\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_isr_v1_71\cy_isr_v1_71.cystate</v>
+<v>..\..\..\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_isr_v1_71\version.cypatch</v>
+<v>..\..\..\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_isr_v1_71\Custom\custom.cs</v>
+<v>..\..\..\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_isr_v1_71\PSoC5\API\intc.c</v>
+<v>..\..\..\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_isr_v1_71\PSoC5\API\intc.h</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\TIA_v2_0\TIA_v2_0.cysch</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\TIA_v2_0\TIA_v2_0.cysym</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\TIA_v2_0\TIA_v2_0.pdf</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\TIA_v2_0\TIA_v2_0.cycdx</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\TIA_v2_0\TIA_v2_0.cystate</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\TIA_v2_0\version.cypatch</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\TIA_v2_0\API\TIA.c</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\TIA_v2_0\API\TIA.h</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\TIA_v2_0\API\TIA_PM.c</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\TIA_v2_0\Custom\cytiacontrol.cs</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\TIA_v2_0\Custom\cytiacontrol.Designer.cs</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\TIA_v2_0\Custom\cytiacustomizer.cs</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\TIA_v2_0\Custom\cytiaparameters.cs</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\TIA_v2_0\Custom\cytiacontrol.resx</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_psoc3_scblock_v1_0\cy_psoc3_scblock_v1_0.cyprimitive</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_psoc3_scblock_v1_0\cy_psoc3_scblock_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\Gnd_v1_0\Gnd_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\Gnd_v1_0\Gnd_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\Gnd_v1_0\version.cypatch</v>
 <v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\USBFS_v3_20\USBFS_v3_20.cysym</v>
 <v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\USBFS_v3_20\USBFS_v3_20.pdf</v>
 <v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\USBFS_v3_20\USBFS_v3_20.cycdx</v>
@@ -392,6 +366,32 @@
 <v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\USBFS_v3_20\PSoC5\USBFS_v3_20.cysch</v>
 <v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_psoc3_usb_v1_0\cy_psoc3_usb_v1_0.cyprimitive</v>
 <v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_psoc3_usb_v1_0\cy_psoc3_usb_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\IDAC8_v2_0\IDAC8_v2_0.cysch</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\IDAC8_v2_0\IDAC8_v2_0.cysym</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\IDAC8_v2_0\IDAC8_v2_0.pdf</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\IDAC8_v2_0\IDAC8_v2_0.cystate</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\IDAC8_v2_0\IDAC8_v2_0.cycdx</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\IDAC8_v2_0\IDAC8_v2_0.cydmacap</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\IDAC8_v2_0\version.cypatch</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\IDAC8_v2_0\API\IDAC8.c</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\IDAC8_v2_0\API\IDAC8.h</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\IDAC8_v2_0\API\IDAC8_PM.c</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\IDAC8_v2_0\Custom\IDACControl.cs</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\IDAC8_v2_0\Custom\IDACControl.Designer.cs</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\IDAC8_v2_0\Custom\IDACCustomizer.cs</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\IDAC8_v2_0\Custom\IDACParameter.cs</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\IDAC8_v2_0\Custom\IDACControl.resx</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\not_v1_0\not_v1_0.cysym</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\not_v1_0\not_v1_0.pdf</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\not_v1_0\not_v1_0.v</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\not_v1_0\version.cypatch</v>
+<v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\not_v1_0\Custom\custom.cs</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\EEPROM_v3_0\EEPROM_v3_0.cysym</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\EEPROM_v3_0\EEPROM_v3_0.pdf</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\EEPROM_v3_0\EEPROM_v3_0.cystate</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\EEPROM_v3_0\version.cypatch</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\EEPROM_v3_0\API\eeprom.c</v>
+<v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\EEPROM_v3_0\API\eeprom.h</v>
 <v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\OpAmp_v1_90\OpAmp_v1_90.cysch</v>
 <v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\OpAmp_v1_90\OpAmp_v1_90.cysym</v>
 <v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\OpAmp_v1_90\OpAmp_v1_90.pdf</v>
@@ -412,33 +412,33 @@
 <v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_psoc3_abuf_v1_0\cy_psoc3_abuf_v1_0.cyprimitive</v>
 <v>${CyRoot}\psoc\content\CyPrimitives\cyprimitives.cylib\cy_psoc3_abuf_v1_0\cy_psoc3_abuf_v1_0.cysym</v>
 <v>.\Amperometry_v059_2.cydwr</v>
-<v>..\..\..\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_10\PSoC5\API\cm3gcc.ld</v>
-<v>..\..\..\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_10\PSoC5\API\Cm3RealView.scat</v>
-<v>..\..\..\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_10\PSoC5\API\Cm3Start.c</v>
-<v>..\..\..\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_10\PSoC5\API\core_cm3.h</v>
-<v>..\..\..\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_10\PSoC5\API\core_cm3_psoc5.h</v>
-<v>..\..\..\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_10\PSoC5\API\CyBootAsmGnu.s</v>
-<v>..\..\..\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_10\PSoC5\API\CyBootAsmRv.s</v>
-<v>..\..\..\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_10\PSoC5\API\CyDmac.c</v>
-<v>..\..\..\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_10\PSoC5\API\CyDmac.h</v>
-<v>..\..\..\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_10\PSoC5\API\CyFlash.c</v>
-<v>..\..\..\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_10\PSoC5\API\CyFlash.h</v>
-<v>..\..\..\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_10\PSoC5\API\CyLib.c</v>
-<v>..\..\..\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_10\PSoC5\API\CyLib.h</v>
-<v>..\..\..\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_10\PSoC5\API\cypins.h</v>
-<v>..\..\..\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_10\PSoC5\API\cyPm.c</v>
-<v>..\..\..\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_10\PSoC5\API\cyPm.h</v>
-<v>..\..\..\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_10\PSoC5\API\CySpc.c</v>
-<v>..\..\..\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_10\PSoC5\API\CySpc.h</v>
-<v>..\..\..\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_10\PSoC5\API\cytypes.h</v>
-<v>..\..\..\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_10\PSoC5\API\cyutils.c</v>
-<v>..\..\..\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_10\PSoC5\API\core_cmFunc.h</v>
-<v>..\..\..\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_10\PSoC5\API\core_cmInstr.h</v>
-<v>..\..\..\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_10\PSoC5\API\Cm3Iar.icf</v>
-<v>..\..\..\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_10\PSoC5\API\CyBootAsmIar.s</v>
-<v>..\..\..\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_10\PSoC5\API\cmsis_armcc.h</v>
-<v>..\..\..\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_10\PSoC5\API\cmsis_gcc.h</v>
-<v>..\..\..\PSoC Creator\4.3\Downloads ( 4.3).cylib\cy_boot_v6_10\PSoC5\API\cmsis_compiler.h</v>
+<v>..\..\..\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_boot_v6_10\PSoC5\API\cm3gcc.ld</v>
+<v>..\..\..\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_boot_v6_10\PSoC5\API\Cm3RealView.scat</v>
+<v>..\..\..\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_boot_v6_10\PSoC5\API\Cm3Start.c</v>
+<v>..\..\..\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_boot_v6_10\PSoC5\API\core_cm3.h</v>
+<v>..\..\..\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_boot_v6_10\PSoC5\API\core_cm3_psoc5.h</v>
+<v>..\..\..\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_boot_v6_10\PSoC5\API\CyBootAsmGnu.s</v>
+<v>..\..\..\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_boot_v6_10\PSoC5\API\CyBootAsmRv.s</v>
+<v>..\..\..\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_boot_v6_10\PSoC5\API\CyDmac.c</v>
+<v>..\..\..\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_boot_v6_10\PSoC5\API\CyDmac.h</v>
+<v>..\..\..\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_boot_v6_10\PSoC5\API\CyFlash.c</v>
+<v>..\..\..\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_boot_v6_10\PSoC5\API\CyFlash.h</v>
+<v>..\..\..\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_boot_v6_10\PSoC5\API\CyLib.c</v>
+<v>..\..\..\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_boot_v6_10\PSoC5\API\CyLib.h</v>
+<v>..\..\..\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_boot_v6_10\PSoC5\API\cypins.h</v>
+<v>..\..\..\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_boot_v6_10\PSoC5\API\cyPm.c</v>
+<v>..\..\..\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_boot_v6_10\PSoC5\API\cyPm.h</v>
+<v>..\..\..\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_boot_v6_10\PSoC5\API\CySpc.c</v>
+<v>..\..\..\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_boot_v6_10\PSoC5\API\CySpc.h</v>
+<v>..\..\..\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_boot_v6_10\PSoC5\API\cytypes.h</v>
+<v>..\..\..\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_boot_v6_10\PSoC5\API\cyutils.c</v>
+<v>..\..\..\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_boot_v6_10\PSoC5\API\core_cmFunc.h</v>
+<v>..\..\..\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_boot_v6_10\PSoC5\API\core_cmInstr.h</v>
+<v>..\..\..\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_boot_v6_10\PSoC5\API\Cm3Iar.icf</v>
+<v>..\..\..\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_boot_v6_10\PSoC5\API\CyBootAsmIar.s</v>
+<v>..\..\..\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_boot_v6_10\PSoC5\API\cmsis_armcc.h</v>
+<v>..\..\..\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_boot_v6_10\PSoC5\API\cmsis_gcc.h</v>
+<v>..\..\..\PSoC Creator\4.4\Downloads ( 4.4).cylib\cy_boot_v6_10\PSoC5\API\cmsis_compiler.h</v>
 <v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\Em_EEPROM_Dynamic_v2_20\API\cy_em_eeprom.c</v>
 <v>${CyRoot}\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\Em_EEPROM_Dynamic_v2_20\API\cy_em_eeprom.h</v>
 </deps_list>
@@ -596,23 +596,20 @@
 <v>Generated_Source\PSoC5\cycodeshareimport.ld</v>
 <v>Generated_Source\PSoC5\cycodeshareexport.ld</v>
 <v>Generated_Source\PSoC5\cycodeshareimport.scat</v>
-<v>Generated_Source\PSoC5\PWM_1.c</v>
-<v>Generated_Source\PSoC5\PWM_1.h</v>
-<v>Generated_Source\PSoC5\PWM_1_PM.c</v>
-<v>Generated_Source\PSoC5\Clock_PWM_1.c</v>
-<v>Generated_Source\PSoC5\Clock_PWM_1.h</v>
+<v>Generated_Source\PSoC5\Clock_1.c</v>
+<v>Generated_Source\PSoC5\Clock_1.h</v>
 </gen_list>
 <warp_dep>
-<v>C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\warp\lib\ieee\work\stdlogic.vif</v>
-<v>C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif</v>
-<v>C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\warp\lib\common\cypress.v</v>
-<v>C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\warp\lib\common\cy_psoc3_inc.v</v>
-<v>C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif</v>
-<v>C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif</v>
+<v>C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\ieee\work\stdlogic.vif</v>
+<v>C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\stdlogic\mod_genv.vif</v>
+<v>C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\cypress.v</v>
+<v>C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\cy_psoc3_inc.v</v>
+<v>C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif</v>
+<v>C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif</v>
 </warp_dep>
-<deps_time v="133114029051618513" />
+<deps_time v="133126097985554758" />
 <top_block v="TopDesign" />
-<last_generation v="20" />
+<last_generation v="124" />
 <pdl_path v="" />
 <sw_packages />
 </CyGuid_925cc1e1-309e-4e08-b0a1-09a83c35b157>
@@ -2052,13 +2049,13 @@
 <dependency_info name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM3" xml_contents_version="2">
 <CyGuid_1173175f-1b9b-4ad4-a065-754a48a27021 type_name="CyDesigner.Common.Base.CyFileDeps" version="1">
 <file name=".\CortexM3\ARM_GCC_541\Debug\Amperometry_v059_2.hex">
-<dep name=".\CortexM3\ARM_GCC_541\Debug\main.o" />
 <dep name=".\CortexM3\ARM_GCC_541\Debug\calibrate.o" />
+<dep name=".\CortexM3\ARM_GCC_541\Debug\DAC.o" />
+<dep name=".\CortexM3\ARM_GCC_541\Debug\helper_functions.o" />
 <dep name=".\CortexM3\ARM_GCC_541\Debug\lut_protocols.o" />
 <dep name=".\CortexM3\ARM_GCC_541\Debug\usb_protocols.o" />
-<dep name=".\CortexM3\ARM_GCC_541\Debug\helper_functions.o" />
-<dep name=".\CortexM3\ARM_GCC_541\Debug\DAC.o" />
 <dep name=".\CortexM3\ARM_GCC_541\Debug\user_selections.o" />
+<dep name=".\CortexM3\ARM_GCC_541\Debug\main.o" />
 <dep name=".\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o" />
 <dep name=".\CortexM3\ARM_GCC_541\Debug\cymetadata.o" />
 <dep name=".\CortexM3\ARM_GCC_541\Debug\EEPROM.o" />
@@ -2216,15 +2213,17 @@
 <name_val_pair name="Generated_Source\PSoC5\PWM_1.c" v="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -std=gnu99" />
 <name_val_pair name="Generated_Source\PSoC5\PWM_1_PM.c" v="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -std=gnu99" />
 <name_val_pair name="Generated_Source\PSoC5\Clock_PWM_1.c" v="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -std=gnu99" />
+<name_val_pair name="Generated_Source\PSoC5\Clock_1.c" v="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -std=gnu99" />
+<name_val_pair name="C:\Users\Zanith\Documents\PSoC-Creator\PSoC-Potentiostat\Amperometry_v059_2.cydsn\CortexM3\ARM_GCC_541\Debug\Amperometry_v059_2.hex" v="-mcpu=cortex-m3 -mthumb -l m -L Generated_Source\PSoC5 -Wl,-Map,${OutputDir}/${ProjectShortName}.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -O0 -ffat-lto-objects" />
 </name>
 </genericCmdLineData>
-<codeGenCmdLineTag v="-.appdatapath &quot;C:\Users\Zanith\AppData\Local\Cypress Semiconductor\PSoC Creator\4.3&quot; -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p C:\Users\Zanith\Documents\PSoC-Creator\psoc_potentiostat\Amperometry_v059_2.cydsn\Amperometry_v059_2.cyprj -d CY8C5888LTI-LP097 -s C:\Users\Zanith\Documents\PSoC-Creator\psoc_potentiostat\Amperometry_v059_2.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE" />
+<codeGenCmdLineTag v="-.appdatapath &quot;C:\Users\Zanith\AppData\Local\Cypress Semiconductor\PSoC Creator\4.4&quot; -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p C:\Users\Zanith\Documents\PSoC-Creator\PSoC-Potentiostat\Amperometry_v059_2.cydsn\Amperometry_v059_2.cyprj -d CY8C5888LTI-LP097 -s C:\Users\Zanith\Documents\PSoC-Creator\PSoC-Potentiostat\Amperometry_v059_2.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE" />
 </CyGuid_b0374e30-ce3a-47f2-ad85-821643292c68>
 </dataGuid>
 <dataGuid v="769d31ea-68b1-4f0c-b90a-7c10a43ee563">
 <CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563 type_name="CyDesigner.Common.ProjMgmt.Model.CyLinkCustomData" version="1">
 <link_deps_times>
-<name_val_pair name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM3" v="133114029107404960" />
+<name_val_pair name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM3" v="133126098071072663" />
 </link_deps_times>
 </CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563>
 </dataGuid>

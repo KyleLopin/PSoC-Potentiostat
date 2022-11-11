@@ -190,7 +190,7 @@ uint16_t LUT_make_swv_line(uint16_t start, uint16_t end, uint16_t pulse_inc,
             index ++;
             waveform_lut[index] = value - half_pulse;
             index ++;
-            //printf("b: %i, %i\n", index, value);
+            printf("b: %i, %i\n", index, value);
             if (index > MAX_LUT_SIZE) {
                 break;
             }

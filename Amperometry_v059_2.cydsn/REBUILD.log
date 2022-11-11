@@ -1,11 +1,11 @@
---------------- Rebuild Started: 09/16/2022 12:39:36 Project: Amperometry_v059_2, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\main.o"
+--------------- Rebuild Started: 11/11/2022 10:09:45 Project: Amperometry_v059_2, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\calibrate.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\DAC.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\helper_functions.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\lut_protocols.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\usb_protocols.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\helper_functions.o"
-Deleting file ".\CortexM3\ARM_GCC_541\Debug\DAC.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\user_selections.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\main.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\cymetadata.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\EEPROM.o"
@@ -81,7 +81,7 @@ Deleting file ".\Amperometry_v059_2.rpt"
 Deleting file ".\Amperometry_v059_2_timing.html"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\.deps\SOURCE_C__ARM_GCC_GENERIC.P"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\.deps\SOURCE_ASM__ARM_GCC_GENERIC.P"
-cydsfit.exe -.appdatapath "C:\Users\Zanith\AppData\Local\Cypress Semiconductor\PSoC Creator\4.3" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p C:\Users\Zanith\Documents\PSoC-Creator\psoc_potentiostat\Amperometry_v059_2.cydsn\Amperometry_v059_2.cyprj -d CY8C5888LTI-LP097 -s C:\Users\Zanith\Documents\PSoC-Creator\psoc_potentiostat\Amperometry_v059_2.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
+cydsfit.exe -.appdatapath "C:\Users\Zanith\AppData\Local\Cypress Semiconductor\PSoC Creator\4.4" -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p C:\Users\Zanith\Documents\PSoC-Creator\PSoC-Potentiostat\Amperometry_v059_2.cydsn\Amperometry_v059_2.cyprj -d CY8C5888LTI-LP097 -s C:\Users\Zanith\Documents\PSoC-Creator\PSoC-Potentiostat\Amperometry_v059_2.cydsn\Generated_Source\PSoC5 -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE
 Elaborating Design...
 HDL Generation...
 Synthesis...
@@ -102,30 +102,13 @@ Static timing analysis...
 API Generation...
 Dependency Generation...
 Cleanup...
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/main.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -std=gnu99 -c main.c -o .\CortexM3\ARM_GCC_541\Debug\main.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/calibrate.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -std=gnu99 -c calibrate.c -o .\CortexM3\ARM_GCC_541\Debug\calibrate.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/DAC.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -std=gnu99 -c DAC.c -o .\CortexM3\ARM_GCC_541\Debug\DAC.o
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/helper_functions.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -std=gnu99 -c helper_functions.c -o .\CortexM3\ARM_GCC_541\Debug\helper_functions.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/lut_protocols.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -std=gnu99 -c lut_protocols.c -o .\CortexM3\ARM_GCC_541\Debug\lut_protocols.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/usb_protocols.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -std=gnu99 -c usb_protocols.c -o .\CortexM3\ARM_GCC_541\Debug\usb_protocols.o
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/helper_functions.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -std=gnu99 -c helper_functions.c -o .\CortexM3\ARM_GCC_541\Debug\helper_functions.o
-helper_functions.c: In function 'helper_Writebyte_EEPROM':
-helper_functions.c:97:11: warning: variable 'blank_hold2' set but not used [-Wunused-but-set-variable]
-     uint8 blank_hold2 = EEPROM_UpdateTemperature();
-           ^
-helper_functions.c: In function 'helper_Readbyte_EEPROM':
-helper_functions.c:120:11: warning: unused variable 'blank_hold2' [-Wunused-variable]
-     uint8 blank_hold2 = EEPROM_UpdateTemperature();
-           ^
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/DAC.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -std=gnu99 -c DAC.c -o .\CortexM3\ARM_GCC_541\Debug\DAC.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/user_selections.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -std=gnu99 -c user_selections.c -o .\CortexM3\ARM_GCC_541\Debug\user_selections.o
-In file included from Generated_Source\PSoC5/project.h:36:0,
-                 from user_selections.c:13:
-user_selections.c: In function 'user_setup_TIA_ADC':
-Generated_Source\PSoC5/ADC_SigDel.h:117:40: warning: statement with no effect [-Wunused-value]
- #define ADC_SigDel_CFG1                (1u)
-                                        ^
-user_selections.c:47:9: note: in expansion of macro 'ADC_SigDel_CFG1'
-         ADC_SigDel_CFG1;
-         ^
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/main.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -std=gnu99 -c main.c -o .\CortexM3\ARM_GCC_541\Debug\main.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/cyfitter_cfg.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -std=gnu99 -c Generated_Source\PSoC5\cyfitter_cfg.c -o .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/cymetadata.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -std=gnu99 -c Generated_Source\PSoC5\cymetadata.c -o .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/EEPROM.lst -g -D DEBUG -Wall -ffunction-sections -ffat-lto-objects -O0 -std=gnu99 -c Generated_Source\PSoC5\EEPROM.c -o .\CortexM3\ARM_GCC_541\Debug\EEPROM.o
@@ -194,12 +177,12 @@ arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-
 arm-none-eabi-as.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -alh=.\CortexM3\ARM_GCC_541\Debug/CyBootAsmGnu.lst -g -W -o .\CortexM3\ARM_GCC_541\Debug\CyBootAsmGnu.o Generated_Source\PSoC5\CyBootAsmGnu.s
 arm-none-eabi-ar.exe -rs .\CortexM3\ARM_GCC_541\Debug\Amperometry_v059_2.a .\CortexM3\ARM_GCC_541\Debug\EEPROM.o .\CortexM3\ARM_GCC_541\Debug\isr_adc.o .\CortexM3\ARM_GCC_541\Debug\Clock_PWM.o .\CortexM3\ARM_GCC_541\Debug\isr_dac.o .\CortexM3\ARM_GCC_541\Debug\PWM_isr.o .\CortexM3\ARM_GCC_541\Debug\PWM_isr_PM.o .\CortexM3\ARM_GCC_541\Debug\IDAC_calibrate.o .\CortexM3\ARM_GCC_541\Debug\IDAC_calibrate_PM.o .\CortexM3\ARM_GCC_541\Debug\Pin_DVDAC_cap.o .\CortexM3\ARM_GCC_541\Debug\TIA.o .\CortexM3\ARM_GCC_541\Debug\TIA_PM.o .\CortexM3\ARM_GCC_541\Debug\VDAC_TIA.o .\CortexM3\ARM_GCC_541\Debug\VDAC_TIA_PM.o .\CortexM3\ARM_GCC_541\Debug\Working_Electrode.o .\CortexM3\ARM_GCC_541\Debug\TIA_end_pin.o .\CortexM3\ARM_GCC_541\Debug\ADC_SigDel.o .\CortexM3\ARM_GCC_541\Debug\ADC_SigDel_PM.o .\CortexM3\ARM_GCC_541\Debug\ADC_SigDel_INT.o .\CortexM3\ARM_GCC_541\Debug\DVDAC.o .\CortexM3\ARM_GCC_541\Debug\DVDAC_PM.o .\CortexM3\ARM_GCC_541\Debug\TIA_resistor1.o .\CortexM3\ARM_GCC_541\Debug\AMux_V_source.o .\CortexM3\ARM_GCC_541\Debug\AMux_TIA_resistor_bypass.o .\CortexM3\ARM_GCC_541\Debug\Reference_Electrode.o .\CortexM3\ARM_GCC_541\Debug\AMux_TIA_input.o .\CortexM3\ARM_GCC_541\Debug\VDAC_source.o .\CortexM3\ARM_GCC_541\Debug\VDAC_source_PM.o .\CortexM3\ARM_GCC_541\Debug\AMux_electrode.o .\CortexM3\ARM_GCC_541\Debug\USBFS.o .\CortexM3\ARM_GCC_541\Debug\USBFS_audio.o .\CortexM3\ARM_GCC_541\Debug\USBFS_boot.o .\CortexM3\ARM_GCC_541\Debug\USBFS_cdc.o .\CortexM3\ARM_GCC_541\Debug\USBFS_cls.o .\CortexM3\ARM_GCC_541\Debug\USBFS_descr.o .\CortexM3\ARM_GCC_541\Debug\USBFS_drv.o .\CortexM3\ARM_GCC_541\Debug\USBFS_episr.o .\CortexM3\ARM_GCC_541\Debug\USBFS_hid.o .\CortexM3\ARM_GCC_541\Debug\USBFS_pm.o .\CortexM3\ARM_GCC_541\Debug\USBFS_std.o .\CortexM3\ARM_GCC_541\Debug\USBFS_vnd.o .\CortexM3\ARM_GCC_541\Debug\USBFS_midi.o .\CortexM3\ARM_GCC_541\Debug\USBFS_msc.o .\CortexM3\ARM_GCC_541\Debug\Counter_Electrode.o .\CortexM3\ARM_GCC_541\Debug\Opamp_Aux.o .\CortexM3\ARM_GCC_541\Debug\Opamp_Aux_PM.o .\CortexM3\ARM_GCC_541\Debug\isr_adcAmp.o .\CortexM3\ARM_GCC_541\Debug\ADC_SigDel_Ext_CP_Clk.o .\CortexM3\ARM_GCC_541\Debug\ADC_SigDel_IRQ.o .\CortexM3\ARM_GCC_541\Debug\ADC_SigDel_theACLK.o .\CortexM3\ARM_GCC_541\Debug\DVDAC_DMA_dma.o .\CortexM3\ARM_GCC_541\Debug\DVDAC_VDAC8.o .\CortexM3\ARM_GCC_541\Debug\DVDAC_VDAC8_PM.o .\CortexM3\ARM_GCC_541\Debug\DVDAC_IntClock.o .\CortexM3\ARM_GCC_541\Debug\USBFS_Dm.o .\CortexM3\ARM_GCC_541\Debug\USBFS_Dp.o .\CortexM3\ARM_GCC_541\Debug\CyDmac.o .\CortexM3\ARM_GCC_541\Debug\CyFlash.o .\CortexM3\ARM_GCC_541\Debug\CyLib.o .\CortexM3\ARM_GCC_541\Debug\cyPm.o .\CortexM3\ARM_GCC_541\Debug\CySpc.o .\CortexM3\ARM_GCC_541\Debug\cyutils.o .\CortexM3\ARM_GCC_541\Debug\cy_em_eeprom.o .\CortexM3\ARM_GCC_541\Debug\CyBootAsmGnu.o
 arm-none-eabi-ar.exe: creating .\CortexM3\ARM_GCC_541\Debug\Amperometry_v059_2.a
-arm-none-eabi-gcc.exe -Wl,--start-group -o C:\Users\Zanith\Documents\PSoC-Creator\psoc_potentiostat\Amperometry_v059_2.cydsn\CortexM3\ARM_GCC_541\Debug\Amperometry_v059_2.elf .\CortexM3\ARM_GCC_541\Debug\main.o .\CortexM3\ARM_GCC_541\Debug\calibrate.o .\CortexM3\ARM_GCC_541\Debug\lut_protocols.o .\CortexM3\ARM_GCC_541\Debug\usb_protocols.o .\CortexM3\ARM_GCC_541\Debug\helper_functions.o .\CortexM3\ARM_GCC_541\Debug\DAC.o .\CortexM3\ARM_GCC_541\Debug\user_selections.o .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o .\CortexM3\ARM_GCC_541\Debug\cymetadata.o .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o .\CortexM3\ARM_GCC_541\Debug\Amperometry_v059_2.a "C:\Program Files (x86)\Cypress\PSoC Creator\4.3\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_541\Debug\CyComponentLibrary.a" -mcpu=cortex-m3 -mthumb -l m -L Generated_Source\PSoC5 -Wl,-Map,.\CortexM3\ARM_GCC_541\Debug/Amperometry_v059_2.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -O0 -ffat-lto-objects -Wl,--end-group
-cyelftool.exe -C C:\Users\Zanith\Documents\PSoC-Creator\psoc_potentiostat\Amperometry_v059_2.cydsn\CortexM3\ARM_GCC_541\Debug\Amperometry_v059_2.elf --flash_row_size 256 --flash_size 262144 --flash_offset 0x00000000
+arm-none-eabi-gcc.exe -Wl,--start-group -o C:\Users\Zanith\Documents\PSoC-Creator\PSoC-Potentiostat\Amperometry_v059_2.cydsn\CortexM3\ARM_GCC_541\Debug\Amperometry_v059_2.elf .\CortexM3\ARM_GCC_541\Debug\calibrate.o .\CortexM3\ARM_GCC_541\Debug\DAC.o .\CortexM3\ARM_GCC_541\Debug\helper_functions.o .\CortexM3\ARM_GCC_541\Debug\lut_protocols.o .\CortexM3\ARM_GCC_541\Debug\usb_protocols.o .\CortexM3\ARM_GCC_541\Debug\user_selections.o .\CortexM3\ARM_GCC_541\Debug\main.o .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o .\CortexM3\ARM_GCC_541\Debug\cymetadata.o .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o .\CortexM3\ARM_GCC_541\Debug\Amperometry_v059_2.a "C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_541\Debug\CyComponentLibrary.a" -mcpu=cortex-m3 -mthumb -l m -L Generated_Source\PSoC5 -Wl,-Map,.\CortexM3\ARM_GCC_541\Debug/Amperometry_v059_2.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -O0 -ffat-lto-objects -Wl,--end-group
+cyelftool.exe -C C:\Users\Zanith\Documents\PSoC-Creator\PSoC-Potentiostat\Amperometry_v059_2.cydsn\CortexM3\ARM_GCC_541\Debug\Amperometry_v059_2.elf --flash_row_size 256 --flash_size 262144 --flash_offset 0x00000000
 No ELF section .cychecksum found, creating one
 Application checksum calculated and stored in ELF section .cychecksum
 Checksum calculated and stored in ELF section .cymeta
-cyelftool.exe -S C:\Users\Zanith\Documents\PSoC-Creator\psoc_potentiostat\Amperometry_v059_2.cydsn\CortexM3\ARM_GCC_541\Debug\Amperometry_v059_2.elf
-Flash used: 40228 of 262144 bytes (15.3%).
-SRAM used: 54029 of 65536 bytes (82.4%). Stack: 2048 bytes. Heap: 128 bytes.
---------------- Rebuild Succeeded: 09/16/2022 12:39:52 ---------------
+cyelftool.exe -S C:\Users\Zanith\Documents\PSoC-Creator\PSoC-Potentiostat\Amperometry_v059_2.cydsn\CortexM3\ARM_GCC_541\Debug\Amperometry_v059_2.elf
+Flash used: 40276 of 262144 bytes (15.4%).
+SRAM used: 54037 of 65536 bytes (82.5%). Stack: 2048 bytes. Heap: 128 bytes.
+--------------- Rebuild Succeeded: 11/11/2022 10:10:07 ---------------
