@@ -24,6 +24,7 @@ for i in range(1, 4):
         break
 if not project_dir:
     raise Exception("Project directory not found")
+BACKUP_FILENAME = "cytypes_backup.h"
 
 
 def load_file(_filename):
@@ -36,11 +37,41 @@ def load_file(_filename):
 
     """
     file_path = os.path.join(project_dir, _filename)
-    with open(file_path + '.c', 'r') as fp:
-        source = fp.read()
-    with open(file_path + '.h', 'r') as fp:
-        raw_header = fp.read()
+    with open(file_path + '.c', 'r', encoding="utf-8") as _file:
+        source = _file.read()
+    with open(file_path + '.h', 'r', encoding="utf-8") as _file:
+        raw_header = _file.read()
     return source, raw_header
+
+
+def setup_mock_files():
+    """
+    To create the c file, a blank cytypes.h file needs to be in the test
+    directory.  This program checks for an existing file first in the project
+    directory, and saves it with the name cytypes_backup.h if it exists, and
+    then makes the blank cytypes.h for testing.  The file restore_mock_files
+    will then restore the original cytypes.h file.
+    """
+    # check if file exists
+    existing_file = os.path.join(project_dir, "cytypes.h")
+    if os.path.isfile(existing_file):
+        print("file exists")
+        os.rename(existing_file, BACKUP_FILENAME)
+    open(existing_file, 'w').close()  # create a blank file
+
+
+def restore_mock_files():
+    """
+    Check if a cytypes back-up file was created and restore it if it
+    was, else delete the blank cytypes.h file created for testing as
+    this causes problems for the PSoC Creator compiler
+    """
+    original_file = os.path.join(project_dir, "cytypes.h")
+    if os.path.isfile(BACKUP_FILENAME):  # restore the file
+        os.rename(BACKUP_FILENAME, original_file)
+    else:  # clear the file
+        if os.path.isfile(original_file):
+            os.remove(original_file)
 
 
 def load(_filenames, function_names: list[str], header_includes: list[str] = [],
@@ -80,21 +111,26 @@ def load(_filenames, function_names: list[str], header_includes: list[str] = [],
     cdef = ""
     # split the str by ;, not lines
     for line in raw_header.split(';'):
+        # print(f"line: {line}")
+        # print("============================")
         for function_name in function_names:
             if function_name in line:
                 cdef += line
                 cdef += ';\n'  # ; was stripped out so add it and the line break
     # everything is made, so put it together and compile it
     cdef += "".join(header_includes)
+    # print(f"function names: {function_names}")
+    # print(f"cdef: {cdef}")
     ffi_builder = cffi.FFI()
     ffi_builder.cdef(cdef)
+    # ffi_builder.new("struct RunParams run_params")
     # there should be mocked file in the current directory also so include that
     ffi_builder.set_source(compiled_filename, source,
                            include_dirs=[project_dir, "."])
     ffi_builder.compile()
     # import the module and return it
     _module = importlib.import_module(compiled_filename)
-    return _module.lib
+    return _module.lib, _module.ffi
 
 
 def convert_c_array_to_list(c_array, start_index, end_index):
@@ -126,3 +162,8 @@ def reverse_mock_files():  # nevermind figure it out with out these functions
     cytype_file = os.path.join(project_dir, "cytypes_mock.h")
     if not os.path.isfile(cytype_mock_file) and os.path.isfile(cytype_file):
         os.rename(cytype_file, cytype_mock_file)
+
+
+if __name__ == "__main__":
+    setup_mock_files()
+    restore_mock_files()

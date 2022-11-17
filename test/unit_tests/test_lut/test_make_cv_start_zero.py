@@ -5,7 +5,7 @@ Test that the LUT_MakeCVStartZero function works properly
 in the lut_protocols.c file, needs LUT_make_line to work properly
 """
 
-__author__ = "Kyle Vitatus Lopin"
+__author__ = "Kyle VitaUtus Lopin"
 
 # standard libraries
 import unittest
@@ -13,6 +13,7 @@ import unittest
 # local files
 import test.helper_functions as helper_funcs
 import test.unit_tests.test_lut.solutions as solutions
+
 
 class LUTMakeCVStartZero(unittest.TestCase):
     """ Test that the LUT_MakeTriangle_Wave function works properly"""

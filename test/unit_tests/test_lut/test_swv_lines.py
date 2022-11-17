@@ -23,11 +23,14 @@ class SWVMakeLineTestCase(unittest.TestCase):
         used in the integration tests
         module: compiles c module to use for testing
     """
+    _filenames = 'lut_protocols'
+
     @classmethod
     def setUpClass(cls) -> None:
-        """ Load the file just one time for each test """
-        cls._filename = 'lut_protocols'
-        cls.module = helper_funcs.load(cls._filename, ["LUT_make_swv_line"],
+        """ Load the file just one time for each test, and make sure the mock
+         cytypes.h (and possible globals.h??) file are in place """
+        # helper_funcs.setup_mock_files()
+        cls.module = helper_funcs.load(cls._filenames, ["LUT_make_swv_line"],
                                        header_includes=[
                                        "static uint16_t waveform_lut[];"],
                                        compiled_file_end="make_swv_lines")

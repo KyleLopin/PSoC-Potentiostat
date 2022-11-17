@@ -23,15 +23,14 @@ class InputToLUT(unittest.TestCase):
         _filenames (list[str]): names of the c and h files
         used in the integration tests
     """
-    _filenames = []
+    _filenames = ['helper_functions', 'user_selections', 'lut_protocols']
 
     @classmethod
     def setUpClass(cls):
         """ Load the file just one time for each test """
-        cls._filenames = ['lut_protocols', 'user_selections', 'helper_functions']
         # make the waveform_lut static, for testing it doesn't matter,
         # and it suppresses an error
-        cls.module = helper_funcs.load(cls._filenames,
+        cls.module, _ = helper_funcs.load(cls._filenames,
                        ["LUT_make_line", "LUT_MakeTriangle_Wave",
                         "user_lookup_table_maker", "helper_Convert2Dec"],
                         header_includes=["static uint16_t waveform_lut[];"],
@@ -147,6 +146,9 @@ class InputToLUT(unittest.TestCase):
         """Test the program will not overwrite the look-up table
         array past its end for a cyclic voltammetry call"""
         index = self.module.user_lookup_table_maker(b"S|0090|5110|38399|LS")
+        waveform = helper_funcs.convert_c_array_to_list(self.module.waveform_lut,
+                                                        0, index)
+        print(f"waveform: {waveform}")
         self.assertEqual(index, 5001,
                          msg=f"test_LS_input_out_of_range returned and "
                              f"index of {index} instead of 5001")

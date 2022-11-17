@@ -215,12 +215,11 @@ void helper_HardwareSleep(void){  // put to sleep all the components that have t
 }
 
 
-void make_run_params(const uint8_t data_buffer[], const uint8_t use_swv,
-                     struct RunParams *run_params) {
+void make_run_params(const uint8_t data_buffer[], struct RunParams *run_params) {
     run_params->start_value = helper_Convert2Dec(&data_buffer[2], 4);
     run_params->end_value = helper_Convert2Dec(&data_buffer[7], 4);
     run_params->timer_period = helper_Convert2Dec(&data_buffer[12], 5);
-    if (use_swv == true) {
+    if (run_params->use_swv == true) {
         run_params->use_swv = true;
         run_params->swv_inc = helper_Convert2Dec(&data_buffer[18], 4);
         run_params->swv_pulse_height = helper_Convert2Dec(&data_buffer[23], 4);

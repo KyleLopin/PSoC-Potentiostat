@@ -12,7 +12,7 @@ NOTE: WAITING ON USB VENDOR AND PRODUCT ID
 *********************************************************************************/
 
 #include <project.h>
-#include "USB_protocols.h"
+#include "usb_protocols.h"
 #include "stdio.h"
 #include "stdlib.h"
 extern char LCD_str[];  // for debug
