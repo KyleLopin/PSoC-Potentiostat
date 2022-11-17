@@ -379,7 +379,7 @@ uint16_t user_lookup_table_maker_depr(uint8_t data_buffer[]) {
 
 
 uint16_t user_lookup_table_maker(uint8_t data_buffer[]) {
-    make_run_params(data_buffer, &run_params);
+    run_params = make_run_params(data_buffer, &run_params);
     
     return 1;
 }

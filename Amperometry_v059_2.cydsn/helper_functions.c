@@ -215,8 +215,9 @@ void helper_HardwareSleep(void){  // put to sleep all the components that have t
 }
 
 
-void make_run_params(const uint8_t data_buffer[], struct RunParams *run_params) {
+struct RunParams make_run_params(const uint8_t data_buffer[], struct RunParams *run_params) {
     run_params->start_value = helper_Convert2Dec(&data_buffer[2], 4);
+    //printf("%i", run_params->start_value);
     run_params->end_value = helper_Convert2Dec(&data_buffer[7], 4);
     run_params->timer_period = helper_Convert2Dec(&data_buffer[12], 5);
     if (run_params->use_swv == true) {
@@ -230,7 +231,7 @@ void make_run_params(const uint8_t data_buffer[], struct RunParams *run_params) 
         run_params->sweep_type = data_buffer[18];
         run_params->start_volt_type = data_buffer[19];
     }
-    
+    return *run_params;
 }
 
 
