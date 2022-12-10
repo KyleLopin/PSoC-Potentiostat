@@ -16,6 +16,7 @@ import cffi
 
 # because the test directory can be changed bases on what tests are being run,
 # different paths have to be searched.
+project_dir = None  # initialize and raise an exception if it in not changed
 for i in range(1, 4):
     path_list = ['..'] * i + ['Amperometry_v059_2.cydsn']
     path = os.path.join(*path_list)
@@ -109,18 +110,21 @@ def load(_filenames, function_names: list[str], header_includes: list[str] = [],
     # make the cdef with just the functions we want
     # cdef can not deal with comments or directives
     cdef = ""
-    # split the str by ;, not lines
-    for line in raw_header.split(';'):
-        # print(f"line: {line}")
-        # print("============================")
+    # split the str by ;, or lines ?
+    lines = raw_header.split('\n')
+    for index, line in enumerate(lines):
+        print(f"line: {line}")
+        print("============================")
         for function_name in function_names:
             if function_name in line:
                 cdef += line
+                if ';' not in line:  # if the head is 2 lines get the second line
+                    cdef += lines[index+1]
                 cdef += ';\n'  # ; was stripped out so add it and the line break
     # everything is made, so put it together and compile it
     cdef += "".join(header_includes)
     # print(f"function names: {function_names}")
-    # print(f"cdef: {cdef}")
+    print(f"cdef: {cdef}")
     ffi_builder = cffi.FFI()
     ffi_builder.cdef(cdef)
     # ffi_builder.new("struct RunParams run_params")

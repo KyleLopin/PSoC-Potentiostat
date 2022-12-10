@@ -30,7 +30,7 @@ class SWVMakeLineTestCase(unittest.TestCase):
         """ Load the file just one time for each test, and make sure the mock
          cytypes.h (and possible globals.h??) file are in place """
         # helper_funcs.setup_mock_files()
-        cls.module = helper_funcs.load(cls._filenames, ["LUT_make_swv_line"],
+        cls.module, _ = helper_funcs.load(cls._filenames, ["LUT_make_swv_line"],
                                        header_includes=[
                                        "static uint16_t waveform_lut[];"],
                                        compiled_file_end="make_swv_lines")

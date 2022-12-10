@@ -27,7 +27,7 @@ class LuTMakeLineTestCase(unittest.TestCase):
     def setUpClass(cls):
         """ Load the file just one time for each test """
         cls._filename = 'lut_protocols'
-        cls.module = helper_funcs.load(cls._filename, ["LUT_make_line"],
+        cls.module, _ = helper_funcs.load(cls._filename, ["LUT_make_line"],
                                        header_includes=["static uint16_t waveform_lut[];"],
                                        compiled_file_end="make_lines")
 
