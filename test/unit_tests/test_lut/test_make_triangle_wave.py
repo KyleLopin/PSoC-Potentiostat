@@ -23,7 +23,7 @@ class LuTMakeTriangleWave(unittest.TestCase):
         cls._filename = 'lut_protocols'
         # make the waveform_lut static, for testing it doesn't matter,
         # and it suppresses an error
-        cls.module = helper_funcs.load(cls._filename,
+        cls.module, _ = helper_funcs.load(cls._filename,
                                        ["LUT_make_line", "LUT_MakeTriangle_Wave"],
                                        header_includes=["static uint16_t waveform_lut[];"],
                                        compiled_file_end="make_triangle")

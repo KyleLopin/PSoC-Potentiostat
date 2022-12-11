@@ -23,11 +23,11 @@ class LUTMakeCVStartZero(unittest.TestCase):
         cls._filename = 'lut_protocols'
         # make the waveform_lut static, for testing it doesn't matter,
         # and it suppresses an error
-        cls.module = helper_funcs.load(cls._filename,
-                                       ["LUT_make_line", "LUT_MakeCVStartZero"],
-                                       header_includes=["static uint16_t waveform_lut[];\n"
-                                                        "static uint16_t dac_ground_value;"],
-                                       compiled_file_end="make_CVStartZero")
+        cls.module, _ = helper_funcs.load(cls._filename,
+                                          ["LUT_make_line", "LUT_MakeCVStartZero"],
+                                          header_includes=["static uint16_t waveform_lut[];\n"
+                                                           "static uint16_t dac_ground_value;"],
+                                          compiled_file_end="make_CVStartZero")
 
     def test_down_first(self):
         """ Test it makes a cyclic voltammetry waveform that goes from low to high
