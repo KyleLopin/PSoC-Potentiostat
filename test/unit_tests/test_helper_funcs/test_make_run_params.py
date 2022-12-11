@@ -64,6 +64,12 @@ class MakeRunParamsTestCase(unittest.TestCase):
         print(return_params.use_swv)
         print(dir(return_params))
         self.assertEqual(return_params.start_value, 105,
-                         msg="make_run_params not correctly getting start voltage")
+                         msg="make_run_params not correctly setting start voltage")
         self.assertEqual(return_params.end_value, 95,
-                         msg="make_run_params not correctly getting start voltage")
+                         msg="make_run_params not correctly setting start voltage")
+        self.assertEqual(return_params.sweep_type, 67,  # 67 - 'C'
+                         msg="make_run_params not correctly setting sweep type")
+        self.assertEqual(return_params.start_volt_type, 83,  # 83 - 'S'
+                         msg="make_run_params not correctly start voltage type")
+        self.assertEqual(return_params.use_swv, 0,  # 83 - 'S'
+                         msg="make_run_params not correctly setting use_swv")
