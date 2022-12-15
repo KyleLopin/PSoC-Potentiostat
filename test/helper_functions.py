@@ -113,8 +113,8 @@ def load(_filenames, function_names: list[str], header_includes: list[str] = [],
     # split the str by ;, or lines ?
     lines = raw_header.split('\n')
     for index, line in enumerate(lines):
-        print(f"line: {line}")
-        print("============================")
+        # print(f"line: {line}")
+        # print("============================")
         for function_name in function_names:
             if function_name in line:
                 cdef += line

@@ -68,6 +68,7 @@ class InputToLUT(unittest.TestCase):
         index = self.module.user_lookup_table_maker(b"S|0105|0095|38399|CS")
         waveform = helper_funcs.convert_c_array_to_list(self.module.waveform_lut,
                                                         0, index)
+        print(f"waveform: {waveform}")
         self.assertEqual(index, len(solutions.test_input_cv_to_lut1),
                          msg=f"test_LS_input returned an index of {index} "
                              f"instead of {len(solutions.test_input_cv_to_lut1)}")
