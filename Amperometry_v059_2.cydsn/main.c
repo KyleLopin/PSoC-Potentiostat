@@ -149,7 +149,7 @@ int main() {
                 calibrate_TIA();
                 break;
             case SET_PWM_TIMER_COMPARE: ;  // 'C' change the compare value of the PWM to start the adc isr
-                PWM_isr_WriteCompare(helper_Convert2Dec(&OUT_Data_Buffer[2], 5));
+                PWM_isr_WriteCompare(LUT_Convert2Dec(&OUT_Data_Buffer[2], 5));
                 break;
             case SET_PWM_TIMER_PERIOD: ; // 'T' Set the PWM timer period
                 user_set_isr_timer(OUT_Data_Buffer);
@@ -170,7 +170,7 @@ int main() {
                 user_identify();
                 break;
             case CHANGE_NUMBER_ELECTRODES: ; // 'L' User wants to change the electrode configuration
-                AMux_channel_select = helper_Convert2Dec(&OUT_Data_Buffer[2], 1) - 2; // user sends 2 or 3 for the # electrode 
+                AMux_channel_select = LUT_Convert2Dec(&OUT_Data_Buffer[2], 1) - 2; // user sends 2 or 3 for the # electrode 
                 //config, map this to 0 or 1 for the channel the AMux should select
                 AMux_electrode_Select(AMux_channel_select);
                 break;
@@ -181,7 +181,7 @@ int main() {
                 lut_length = user_lookup_table_maker(OUT_Data_Buffer);
                 break; 
             case SET_DAC_VALUE: ; // 'D' set the dac value
-                DAC_SetValue(helper_Convert2Dec(&OUT_Data_Buffer[2], 4));
+                DAC_SetValue(LUT_Convert2Dec(&OUT_Data_Buffer[2], 4));
                 break;
             case RUN_AMPEROMETRY: ; // 'M' run an amperometric experiment
                 adc_recording_channel = 0;

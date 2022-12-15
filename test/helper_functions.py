@@ -97,7 +97,7 @@ def load(_filenames, function_names: list[str], header_includes: list[str] = [],
     Returns: the compiled files in a module
 
     """
-    compiled_filename = 'pytest_' + compiled_file_end  # name of saved file
+    compiled_filename = 'py_test_' + compiled_file_end  # name of saved file
     if type(_filenames) is str:  # if just a string, just load 1 file
         source, raw_header = load_file(_filenames)
     else:  # load each file in the list
@@ -133,6 +133,9 @@ def load(_filenames, function_names: list[str], header_includes: list[str] = [],
                            include_dirs=[project_dir, "."])
     ffi_builder.compile()
     # import the module and return it
+    print(f"compiled filename: {compiled_filename}; "
+          f"{os.path.isfile(compiled_filename)}")
+
     _module = importlib.import_module(compiled_filename)
     return _module.lib, _module.ffi
 

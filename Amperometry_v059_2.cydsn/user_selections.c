@@ -219,7 +219,7 @@ void user_identify(void) {
 
 void user_set_isr_timer(uint8_t data_buffer[]) {
     PWM_isr_Wakeup();
-    uint16_t timer_period = helper_Convert2Dec(&data_buffer[2], 5);
+    uint16_t timer_period = LUT_Convert2Dec(&data_buffer[2], 5);
     PWM_isr_WriteCompare(timer_period / 2);  // not used in amperometry run so just set in the middle
     PWM_isr_WritePeriod(timer_period);
     PWM_isr_Sleep();
@@ -251,9 +251,9 @@ void user_set_isr_timer(uint8_t data_buffer[]) {
 
 uint16_t user_chrono_lut_maker(uint8_t data_buffer[]) {
     PWM_isr_Wakeup();
-    uint16_t baseline = helper_Convert2Dec(&data_buffer[2], 4);
-    uint16_t pulse = helper_Convert2Dec(&data_buffer[7], 4);
-    uint16_t timer_period = helper_Convert2Dec(&data_buffer[12], 5);
+    uint16_t baseline = LUT_Convert2Dec(&data_buffer[2], 4);
+    uint16_t pulse = LUT_Convert2Dec(&data_buffer[7], 4);
+    uint16_t timer_period = LUT_Convert2Dec(&data_buffer[12], 5);
                 
     PWM_isr_WritePeriod(timer_period);
                 
@@ -296,27 +296,40 @@ uint16_t user_chrono_lut_maker(uint8_t data_buffer[]) {
 *  index - how far in the look up table that has been filled
 *
 *******************************************************************************/
-
+// TODO: move the hardware parts out
 uint16_t user_dpv_lut_maker(uint8_t data_buffer[]) {
     PWM_isr_Wakeup();
-    uint16_t start = helper_Convert2Dec(&data_buffer[2], 4);
-    uint16_t end = helper_Convert2Dec(&data_buffer[7], 4);
-    uint16_t pulse_height = helper_Convert2Dec(&data_buffer[12], 3);
-    uint16_t pulse_inc = helper_Convert2Dec(&data_buffer[16], 3);
+    uint16_t start = LUT_Convert2Dec(&data_buffer[INDEX_START_VALUE], 4);
+    uint16_t end = LUT_Convert2Dec(&data_buffer[INDEX_END_VALUE], 4);
+    uint16_t pulse_height = LUT_Convert2Dec(&data_buffer[INDEX_SWV_PULSE_HEIGHT], 4);
+    uint16_t pulse_inc = LUT_Convert2Dec(&data_buffer[INDEX_SWV_INC], 4);
+    
+    uint8_t sweep_type = data_buffer[INDEX_SWV_SWEEP_TYPE];
+    uint8_t start_volt_type = data_buffer[INDEX_SWV_START_VOLT_TYPE];
     //LCD_ClearDisplay();
     
     //sprintf(LCD_str, "%d|%d|%d|%d", start, end, pulse_height, pulse_inc);
     //sprintf(LCD_str, "%.*s", 16, data_buffer);
     //LCD_PrintString(LCD_str);
-    uint16_t timer_period = helper_Convert2Dec(&data_buffer[20], 5);
+    uint16_t timer_period = LUT_Convert2Dec(&data_buffer[INDEX_SWV_TIMER_VALUE], 5);
 //                
     PWM_isr_WritePeriod(timer_period);
-                
-    uint16_t index = LUT_make_dpv(start, end, pulse_height, pulse_inc, 0);
+    uint16_t lut_length;
+    if (sweep_type == 'L') {
+        lut_length = LUT_make_dpv(start, end, pulse_height, pulse_inc, 0);
+        waveform_lut[lut_length] = waveform_lut[lut_length-1];  // dac is changed once before end so double last voltage
+        lut_length += 1;
+    }
+    else if (start_volt_type == 'Z') {  // Make a Cyclic voltammetry look up table that starts at 0 volts
+        lut_length = LUT_MakeCVStartZero_SWV(start, end, pulse_height, pulse_inc);
+    }
+    else if (start_volt_type == 'S') {  // Make a Cyclic voltammetry look up table that starts at the first dac value
+        lut_length = LUT_MakeTriangle_Wave_SWV(start, end, pulse_height, pulse_inc);
+    } 
     lut_value = waveform_lut[0];  // setup the dac so when it starts it will be at the correct voltage
                 
     PWM_isr_Sleep();
-    return index; // the look up table length will be 4000
+    return lut_length; // the look up table length will be 4000
 }
 
 
@@ -347,11 +360,11 @@ uint16_t user_dpv_lut_maker(uint8_t data_buffer[]) {
 *
 *******************************************************************************/
 
-uint16_t user_lookup_table_maker_depr(uint8_t data_buffer[]) {
+uint16_t user_lookup_table_maker(uint8_t data_buffer[]) {
     PWM_isr_Wakeup();
-    uint16_t start_dac_value = helper_Convert2Dec(&data_buffer[2], 4);
-    uint16_t end_dac_value = helper_Convert2Dec(&data_buffer[7], 4);
-    uint16_t timer_period = helper_Convert2Dec(&data_buffer[12], 5);
+    uint16_t start_dac_value = LUT_Convert2Dec(&data_buffer[2], 4);
+    uint16_t end_dac_value = LUT_Convert2Dec(&data_buffer[7], 4);
+    uint16_t timer_period = LUT_Convert2Dec(&data_buffer[12], 5);
     uint8_t sweep_type = data_buffer[18];
     uint8_t start_volt_type = data_buffer[19];
     PWM_isr_WritePeriod(timer_period);
@@ -378,8 +391,8 @@ uint16_t user_lookup_table_maker_depr(uint8_t data_buffer[]) {
 }
 
 
-uint16_t user_lookup_table_maker(uint8_t data_buffer[]) {
-    run_params = make_run_params(data_buffer, &run_params);
+uint16_t user_lookup_table_make_future(uint8_t data_buffer[]) {
+    run_params = LUT_make_run_params(data_buffer, &run_params);
     
     return 1;
 }
@@ -416,13 +429,13 @@ uint16_t user_run_amperometry(uint8_t data_buffer[]) {
             isr_adc_Disable();
         }
     }
-    uint16_t dac_value = helper_Convert2Dec(&data_buffer[2], 4);  // get the voltage the user wants and set the dac
+    uint16_t dac_value = LUT_Convert2Dec(&data_buffer[2], 4);  // get the voltage the user wants and set the dac
     lut_index = 0;
     DAC_SetValue(dac_value);
     
     ADC_SigDel_StartConvert();
     CyDelay(15);
-    uint16_t buffer_size_data_pts = helper_Convert2Dec(&data_buffer[7], 4);  // how many data points to collect in each adc channel before exporting the data
+    uint16_t buffer_size_data_pts = LUT_Convert2Dec(&data_buffer[7], 4);  // how many data points to collect in each adc channel before exporting the data
     isr_adcAmp_Enable();
     return buffer_size_data_pts;
 }

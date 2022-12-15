@@ -32,7 +32,7 @@ class InputToLUT(unittest.TestCase):
         # and it suppresses an error
         cls.module, _ = helper_funcs.load(cls._filenames,
                        ["LUT_make_line", "LUT_MakeTriangle_Wave",
-                        "user_lookup_table_maker", "helper_Convert2Dec"],
+                        "user_lookup_table_maker", "LUT_Convert2Dec"],
                         header_includes=["static uint16_t waveform_lut[];"],
                         compiled_file_end="input_to_lut")
 

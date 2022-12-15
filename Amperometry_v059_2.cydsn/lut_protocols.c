@@ -55,6 +55,29 @@ uint16_t LUT_MakeTriangle_Wave(uint16_t start_value, uint16_t end_value) {
 }
 
 
+uint16_t LUT_MakeTriangle_Wave_SWV(uint16_t start_value, uint16_t end_value,
+                                   uint16_t swv_height, uint16_t swv_inc) {
+    uint16_t _lut_index = 0;  // start at the beginning of the lut
+    
+    //LCD_Position(1,0);
+    //LCD_PrintDecUint16(end_value);
+    printf("p: %i\n", _lut_index);
+
+    _lut_index = LUT_make_dpv(start_value, end_value, swv_height, swv_inc, 0);
+    printf("z: %i\n", _lut_index);
+
+    _lut_index = LUT_make_dpv(end_value, start_value, swv_height, swv_inc, _lut_index-1);
+    printf("v: %i\n", _lut_index);
+    waveform_lut[_lut_index] = start_value;  // the DAC is changed before the value is checked in the isr so it will go 1 over so make it stay at last voltage
+    _lut_index++;
+    //LCD_PutChar('|');
+    //LCD_PrintDecUint16(_lut_index);
+    printf("%i\n", _lut_index);
+    //LCD_PutChar('|');
+    return _lut_index;  
+}
+
+
 /******************************************************************************
 * Function Name: LUT_MakeCVStartZero
 *******************************************************************************
@@ -85,6 +108,26 @@ uint16_t LUT_MakeCVStartZero(const uint16_t start_value, const uint16_t end_valu
     
     _lut_index = LUT_make_line(start_value, end_value, _lut_index-1);
     _lut_index = LUT_make_line(end_value, dac_ground_value, _lut_index-1);
+    waveform_lut[_lut_index] = dac_ground_value;  // the DAC is changed before the value is checked in the isr so it will go 1 over so make it stay at virtual ground
+    _lut_index++;
+    //LCD_PutChar('|');
+    //LCD_PrintDecUint16(_lut_index);
+    //LCD_PutChar('|');
+    return _lut_index;  
+}
+
+
+uint16_t LUT_MakeCVStartZero_SWV(uint16_t start_value, uint16_t end_value,
+                                 uint16_t swv_height, uint16_t swv_inc){
+    uint16_t _lut_index = 0;  // start at the beginning of the lut
+    
+    //LCD_Position(1,0);
+    //LCD_PrintDecUint16(end_value);
+    printf("dac ground value: %i\n", dac_ground_value);
+    _lut_index = LUT_make_dpv(dac_ground_value, start_value, swv_height, swv_inc, 0);
+    
+    _lut_index = LUT_make_dpv(start_value, end_value, swv_height, swv_inc, _lut_index-1);
+    _lut_index = LUT_make_dpv(end_value, dac_ground_value, swv_height, swv_inc, _lut_index-1);
     waveform_lut[_lut_index] = dac_ground_value;  // the DAC is changed before the value is checked in the isr so it will go 1 over so make it stay at virtual ground
     _lut_index++;
     //LCD_PutChar('|');
@@ -279,6 +322,45 @@ void LUT_MakePulse(uint16_t base, uint16_t pulse) {
         waveform_lut[_lut_index] = base;
         _lut_index++;
     }
+}
+
+
+struct RunParams LUT_make_run_params(const uint8_t data_buffer[], struct RunParams *run_params) {
+    // The start, and end values are always in the same place
+    run_params->start_value = LUT_Convert2Dec(&data_buffer[2], 4);
+    //printf("%i", run_params->start_value);
+    run_params->end_value = LUT_Convert2Dec(&data_buffer[7], 4);
+    // To determine where the other values are have to check if we are using a
+    // square wave voltammetry profile as seen in the first letter
+    if (data_buffer[0] == 'G') {
+        run_params->use_swv = true;
+    }
+    else {  // default to no swv
+        run_params->use_swv = false;
+    }  // TODO: how to raise an error if bad input?
+    if (run_params->use_swv == true) {
+        run_params->use_swv = true;
+        run_params->swv_inc = LUT_Convert2Dec(&data_buffer[12], 4);
+        run_params->swv_pulse_height = LUT_Convert2Dec(&data_buffer[17], 4);
+        run_params->timer_period = LUT_Convert2Dec(&data_buffer[23], 5);
+        run_params->sweep_type = data_buffer[28];
+        run_params->start_volt_type = data_buffer[29];
+    }
+    else {
+        run_params->timer_period = LUT_Convert2Dec(&data_buffer[12], 5);
+        run_params->sweep_type = data_buffer[18];
+        run_params->start_volt_type = data_buffer[19];
+    }
+    return *run_params;
+}
+
+
+uint16_t LUT_Convert2Dec(const uint8_t array[], const uint8_t len){
+    uint16_t num = 0;
+    for (int i = 0; i < len; i++){
+        num = num * 10 + (array[i] - '0');
+    }
+    return num;
 }
 
 /* [] END OF FILE */

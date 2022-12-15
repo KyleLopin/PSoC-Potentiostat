@@ -215,42 +215,4 @@ void helper_HardwareSleep(void){  // put to sleep all the components that have t
 }
 
 
-struct RunParams make_run_params(const uint8_t data_buffer[], struct RunParams *run_params) {
-    // The start, and end values are always in the same place
-    run_params->start_value = helper_Convert2Dec(&data_buffer[2], 4);
-    //printf("%i", run_params->start_value);
-    run_params->end_value = helper_Convert2Dec(&data_buffer[7], 4);
-    // To determine where the other values are have to check if we are using a
-    // square wave voltammetry profile as seen in the first letter
-    if (data_buffer[0] == 'G') {
-        run_params->use_swv = true;
-    }
-    else {  // default to no swv
-        run_params->use_swv = false;
-    }  // TODO: how to raise an error if bad input?
-    if (run_params->use_swv == true) {
-        run_params->use_swv = true;
-        run_params->swv_inc = helper_Convert2Dec(&data_buffer[12], 4);
-        run_params->swv_pulse_height = helper_Convert2Dec(&data_buffer[17], 4);
-        run_params->timer_period = helper_Convert2Dec(&data_buffer[23], 5);
-        run_params->sweep_type = data_buffer[28];
-        run_params->start_volt_type = data_buffer[29];
-    }
-    else {
-        run_params->timer_period = helper_Convert2Dec(&data_buffer[12], 5);
-        run_params->sweep_type = data_buffer[18];
-        run_params->start_volt_type = data_buffer[19];
-    }
-    return *run_params;
-}
-
-
-uint16_t helper_Convert2Dec(const uint8_t array[], const uint8_t len){
-    uint16_t num = 0;
-    for (int i = 0; i < len; i++){
-        num = num * 10 + (array[i] - '0');
-    }
-    return num;
-}
-
 /* [] END OF FILE */

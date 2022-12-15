@@ -39,6 +39,20 @@
 #define STOP_SHORTING_TIA               'd'
 #define DPV_LUT                         'G'
     
+// index of start of different parts of input string
+#define INDEX_START_VALUE               2
+#define INDEX_END_VALUE                 7
+#define INDEX_TIMER_VALUE               12
+#define INDEX_SWEEP_TYPE                18
+#define INDEX_START_VOLT_TYPE           19
+// Square wave voltammertry options
+#define INDEX_SWV_INC                   12
+#define INDEX_SWV_PULSE_HEIGHT          17
+#define INDEX_SWV_TIMER_VALUE           23
+#define INDEX_SWV_SWEEP_TYPE            18
+#define INDEX_SWV_START_VOLT_TYPE       19
+
+
 /**************************************
 *           ADC Constants
 **************************************/  

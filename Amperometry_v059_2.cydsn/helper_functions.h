@@ -39,8 +39,6 @@ void helper_HardwareSetup(void);
 void helper_HardwareStart(void);
 void helper_HardwareSleep(void);
 void helper_HardwareWakeup(void);
-struct RunParams make_run_params(const uint8_t data_buffer[], struct RunParams *run_params);
-uint16_t helper_Convert2Dec(const uint8_t array[], const uint8_t len);
 
 
 #endif
