@@ -120,7 +120,7 @@ def load(_filenames, function_names: list[str], header_includes: list[str] = [],
                 cdef += line
                 if ';' not in line:  # if the head is 2 lines get the second line
                     cdef += lines[index+1]
-                cdef += ';\n'  # ; was stripped out so add it and the line break
+                cdef += '\n'  # ; was stripped out so add it and the line break
     # everything is made, so put it together and compile it
     cdef += "".join(header_includes)
     # print(f"function names: {function_names}")

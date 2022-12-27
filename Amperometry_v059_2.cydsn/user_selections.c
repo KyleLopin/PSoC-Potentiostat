@@ -314,7 +314,7 @@ uint16_t user_dpv_lut_maker(uint8_t data_buffer[]) {
     uint16_t timer_period = LUT_Convert2Dec(&data_buffer[INDEX_SWV_TIMER_VALUE], 5);
 //                
     PWM_isr_WritePeriod(timer_period);
-    uint16_t lut_length;
+    uint16_t lut_length = 0;
     if (sweep_type == 'L') {
         lut_length = LUT_make_dpv(start, end, pulse_height, pulse_inc, 0);
         waveform_lut[lut_length] = waveform_lut[lut_length-1];  // dac is changed once before end so double last voltage
@@ -368,7 +368,7 @@ uint16_t user_lookup_table_maker(uint8_t data_buffer[]) {
     uint8_t sweep_type = data_buffer[18];
     uint8_t start_volt_type = data_buffer[19];
     PWM_isr_WritePeriod(timer_period);
-    uint16_t lut_length;
+    uint16_t lut_length = 0;
     printf("user lookup table: %i, %i\n", start_dac_value, end_dac_value);
     if (sweep_type == 'L') {  // Make look up table for linear sweep, ignore start volt type
         // The dac changes once after the run, so hold the voltage at the end constant

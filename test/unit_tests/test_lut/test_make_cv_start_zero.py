@@ -63,3 +63,18 @@ class LUTMakeCVStartZero(unittest.TestCase):
         print(f"waveform: {waveform}")
         self.assertEqual(index, 5001, msg=f"test_up returned and index of {index} "
                                           f"instead of 5001")
+
+
+class LUTMakeCVStartZero(unittest.TestCase):
+    """ Test that the LUT_MakeTriangle_Wave function works properly"""
+    @classmethod
+    def setUpClass(cls):
+        """ Load the file just one time for each test """
+        cls._filename = 'lut_protocols'
+        # make the waveform_lut static, for testing it doesn't matter,
+        # and it suppresses an error
+        cls.module, _ = helper_funcs.load(cls._filename,
+                                          ["LUT_make_line", "LUT_MakeCVStartZero"],
+                                          header_includes=["static uint16_t waveform_lut[];\n"
+                                                           "static uint16_t dac_ground_value;"],
+                                          compiled_file_end="make_CVStartZero")

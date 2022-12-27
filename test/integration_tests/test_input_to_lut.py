@@ -36,6 +36,10 @@ class InputToLUT(unittest.TestCase):
                         header_includes=["static uint16_t waveform_lut[];"],
                         compiled_file_end="input_to_lut")
 
+    @classmethod
+    def tearDownClass(cls) -> None:
+        pass
+
     # test making cyclic voltammetry look-up tables
     def test_cv_input(self):
         """Test if the program makes a cyclic voltammetry going down correctly"""
