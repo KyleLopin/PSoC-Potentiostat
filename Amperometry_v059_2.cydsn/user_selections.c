@@ -303,7 +303,7 @@ uint16_t user_dpv_lut_maker(uint8_t data_buffer[]) {
     uint16_t end = LUT_Convert2Dec(&data_buffer[INDEX_END_VALUE], 4);
     uint16_t pulse_height = LUT_Convert2Dec(&data_buffer[INDEX_SWV_PULSE_HEIGHT], 4);
     uint16_t pulse_inc = LUT_Convert2Dec(&data_buffer[INDEX_SWV_INC], 4);
-    
+
     uint8_t sweep_type = data_buffer[INDEX_SWV_SWEEP_TYPE];
     uint8_t start_volt_type = data_buffer[INDEX_SWV_START_VOLT_TYPE];
     //LCD_ClearDisplay();
@@ -325,7 +325,7 @@ uint16_t user_dpv_lut_maker(uint8_t data_buffer[]) {
     }
     else if (start_volt_type == 'S') {  // Make a Cyclic voltammetry look up table that starts at the first dac value
         lut_length = LUT_MakeTriangle_Wave_SWV(start, end, pulse_height, pulse_inc);
-    } 
+    }
     lut_value = waveform_lut[0];  // setup the dac so when it starts it will be at the correct voltage
                 
     PWM_isr_Sleep();
@@ -393,7 +393,7 @@ uint16_t user_lookup_table_maker(uint8_t data_buffer[]) {
 
 uint16_t user_lookup_table_make_future(uint8_t data_buffer[]) {
     run_params = LUT_make_run_params(data_buffer, &run_params);
-    
+
     return 1;
 }
 

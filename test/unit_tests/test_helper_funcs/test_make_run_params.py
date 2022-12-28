@@ -41,15 +41,20 @@ class MakeRunParamsTestCase(unittest.TestCase):
                     uint16_t timer_period;
                 };
 
-                struct RunParams run_params;"""]
+                extern struct RunParams run_params;"""]
 
     @classmethod
     def setUpClass(cls) -> None:
         """ Load the file just one time for each test """
-
+        helper_funcs.setup_mock_files()  # setup mock files
         cls.module, cls.ffi = helper_funcs.load(cls._filenames, cls._function_names,
                                                 header_includes=cls.helper_include,
                                                 compiled_file_end="helper_func")
+
+    @classmethod
+    def tearDownClass(cls) -> None:
+        """ Clean up any mock files that were used """
+        helper_funcs.restore_files_after_mock()
 
     def test_make_run_params(self):
         run_params = self.ffi.new("struct RunParams *")
@@ -85,16 +90,16 @@ class MakeRunParamsTestCase(unittest.TestCase):
         run_params = self.ffi.new("struct RunParams *")
         return_params = self.module.make_run_params(b"G|0131|0125|0122|0128|23999|LS",
                                                     run_params)
-        print(return_params.start_value)
-        print(return_params.end_value)
-
-        print(return_params.start_volt_type)
-        print(return_params.sweep_type)
-        print(return_params.swv_inc)
-        print(return_params.swv_pulse_height)
-        print(return_params.timer_period)
-        print(return_params.use_swv)
-        print(dir(return_params))
+        # print(return_params.start_value)
+        # print(return_params.end_value)
+        #
+        # print(return_params.start_volt_type)
+        # print(return_params.sweep_type)
+        # print(return_params.swv_inc)
+        # print(return_params.swv_pulse_height)
+        # print(return_params.timer_period)
+        # print(return_params.use_swv)
+        # print(dir(return_params))
         self.assertEqual(return_params.start_value, 131,
                          msg="make_run_params not correctly setting start voltage")
         self.assertEqual(return_params.end_value, 125,

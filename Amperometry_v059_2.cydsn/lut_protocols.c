@@ -13,6 +13,34 @@
 #include "globals.h"
 //extern char LCD_str[];  // for debug
 
+
+//uint16_t LUT_make_from_params(const struct RunParams _run_params) {
+//    uint16_t (*line_maker)(struct RunParams, uint16_t);
+//    if (_run_params.use_swv == true) {
+//        line_maker = &LUT_make_line;
+//    }
+//    else {
+//        line_maker = &LUT_make_dpv;
+//    }
+//    
+//    uint16_t lut_length;
+//    if (run_params.sweep_type == 'L') {
+//        lut_length = line_maker(_run_params, lut_length);
+//        waveform_lut[lut_length] = waveform_lut[lut_length-1];
+//        lut_length += 1;
+//    }  // else this is a cyclic voltammerty experiment
+//    // TODO: check if the sweep time is C and call an error if so?
+//    else if (run_params.start_volt_type == 'Z') {  // Make a Cyclic voltammetry look up table that starts at 0 volts
+//        lut_length = LUT_MakeCVStartZero(_run_params);
+//    }
+//    else if (run_params.start_volt_type == 'S') {  // Make a Cyclic voltammetry look up table that starts at the first dac value
+//        lut_length = LUT_MakeTriangle_Wave(_run_params);
+//    } 
+//    
+//    
+//    return lut_length;
+//}
+
 /******************************************************************************
 * Function Name: LUT_MakeTriangleWave
 *******************************************************************************
@@ -98,9 +126,8 @@ uint16_t LUT_MakeTriangle_Wave_SWV(uint16_t start_value, uint16_t end_value,
 *
 *******************************************************************************/
 
-uint16_t LUT_MakeCVStartZero(const uint16_t start_value, const uint16_t end_value){
+uint16_t LUT_MakeCVStartZero(uint16_t start_value, uint16_t end_value){
     uint16_t _lut_index = 0;  // start at the beginning of the lut
-    
     //LCD_Position(1,0);
     //LCD_PrintDecUint16(end_value);
     printf("dac ground value: %i\n", dac_ground_value);
@@ -266,7 +293,34 @@ uint16_t LUT_make_swv_line(uint16_t start, uint16_t end, uint16_t pulse_inc,
 *
 *******************************************************************************/
 
-uint16_t LUT_make_dpv(uint16_t start, uint16_t end, uint16_t height,
+
+uint16_t LUT_make_dpv(const struct RunParams _run_params, uint16_t index) {
+    
+    
+    uint16_t level = _run_params.start_value;  // variable to store currend dac values in
+    
+    waveform_lut[index] = level;
+    while (level >= _run_params.end_value) {  // >= because the voltages are inverted compared to the dac
+        index += 1;
+        waveform_lut[index] = level - _run_params.swv_pulse_height - _run_params.swv_inc;  // negative bec
+        index += 1;
+        waveform_lut[index] = level - _run_params.swv_inc;
+        level = waveform_lut[index];
+    }
+//    LCD_ClearDisplay();
+//    
+//    sprintf(LCD_str, "%d|%d|%d", waveform_lut[0], waveform_lut[1], waveform_lut[2]);
+//    LCD_PrintString(LCD_str);
+//    LCD_Position(1, 0);
+    
+//    sprintf(LCD_str, "%d|%d|%d", waveform_lut[3], waveform_lut[4], waveform_lut[5]);
+//    LCD_PrintString(LCD_str);
+    
+    return index;
+}
+                        
+                        
+uint16_t LUT_make_dpv_depr(uint16_t start, uint16_t end, uint16_t height,
                     uint16_t increment, uint16_t index) {
     uint16_t level = start;  // variable to store currend dac values in
     

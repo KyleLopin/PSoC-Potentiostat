@@ -26,15 +26,15 @@ class LuTMakeLineTestCase(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         """ Load the file just one time for each test """
-        # helper_funcs.setup_mock_files()
+        helper_funcs.setup_mock_files()
         cls._filename = 'lut_protocols'
         cls.module, _ = helper_funcs.load(cls._filename, ["LUT_make_line"],
                                        header_includes=["static uint16_t waveform_lut[];"],
                                        compiled_file_end="make_lines")
 
-    # @classmethod
-    # def tearDownClass(cls) -> None:
-    #     helper_funcs.restore_mock_files()
+    @classmethod
+    def tearDownClass(cls) -> None:
+        helper_funcs.restore_files_after_mock()
 
     def setUp(self) -> None:
         """ Reset the waveform_lut for each test """
