@@ -31,6 +31,10 @@ class InputToLUTSWV(unittest.TestCase):
                                           header_includes=["static uint16_t waveform_lut[];"],
                                           compiled_file_end="input_to_lut_swv")
 
+    @classmethod
+    def tearDownClass(cls) -> None:
+        helper_funcs.remove_compiled_files()
+
     def test_swv_cv_input(self):
         index = self.module.user_lookup_table_maker(b"S|0105|0095|38399|CS")
         waveform = helper_funcs.convert_c_array_to_list(self.module.waveform_lut,

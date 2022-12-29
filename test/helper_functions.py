@@ -79,6 +79,11 @@ def setup_mock_files():
         os.replace(MOCK_PROJECT_FILE, PROJECT_DIR_H_FILE)
 
 
+def remove_compiled_files():
+    files = os.listdir('.')
+    print(f"files: {files}")
+
+
 def restore_files_after_mock():
     """
     Check if a cytypes back-up file was created and restore it if it
@@ -157,12 +162,16 @@ def load(_filenames, function_names: list[str], header_includes: list[str] = [],
                            include_dirs=[project_dir, "."])
     ffi_builder.compile()
     # import the module and return it
-    # print(f"compiled filename: {compiled_filename}; "
-    #       f"{os.path.isfile(compiled_filename)}")
-    # print(f"cwd: {os.getcwd()}")
-    # print(f"path: {sys.path}")
-    # print(f"called by file dir: {os.path.dirname(inspect.stack()[1].filename)}")
-
+    print(f"compiled filename: {compiled_filename}; "
+          f"{os.path.isfile(compiled_filename)}")
+    print(f"cwd: {os.getcwd()}")
+    print(f"path: {sys.path}")
+    file_dir = os.path.dirname(inspect.stack()[1].filename)
+    sys.path.append(os.getcwd())
+    print(f"called by file dir: {file_dir}")
+    print(os.path.split(file_dir))
+    module_dir = os.path.split(file_dir)[1]
+    print(module_dir)
     _module = importlib.import_module(compiled_filename)
     return _module.lib, _module.ffi
 
