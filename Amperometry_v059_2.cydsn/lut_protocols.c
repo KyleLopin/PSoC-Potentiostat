@@ -294,17 +294,18 @@ uint16_t LUT_make_swv_line(uint16_t start, uint16_t end, uint16_t pulse_inc,
 *******************************************************************************/
 
 
-uint16_t LUT_make_dpv(const struct RunParams _run_params, uint16_t index) {
+uint16_t LUT_make_dpv(uint16_t start, uint16_t end, uint16_t height,
+                      uint16_t increment, uint16_t index) {
     
     
-    uint16_t level = _run_params.start_value;  // variable to store currend dac values in
+    uint16_t level = start;  // variable to store currend dac values in
     
     waveform_lut[index] = level;
-    while (level >= _run_params.end_value) {  // >= because the voltages are inverted compared to the dac
+    while (level >= end) {  // >= because the voltages are inverted compared to the dac
         index += 1;
-        waveform_lut[index] = level - _run_params.swv_pulse_height - _run_params.swv_inc;  // negative bec
+        waveform_lut[index] = level - height - increment;  // negative bec
         index += 1;
-        waveform_lut[index] = level - _run_params.swv_inc;
+        waveform_lut[index] = level - increment;
         level = waveform_lut[index];
     }
 //    LCD_ClearDisplay();

@@ -9,7 +9,9 @@ __author__ = "Kyle Vitatus Lopin"
 
 # standard libraries
 import importlib
+import inspect
 import os
+import sys
 
 # installed libraries
 import cffi
@@ -155,8 +157,11 @@ def load(_filenames, function_names: list[str], header_includes: list[str] = [],
                            include_dirs=[project_dir, "."])
     ffi_builder.compile()
     # import the module and return it
-    print(f"compiled filename: {compiled_filename}; "
-          f"{os.path.isfile(compiled_filename)}")
+    # print(f"compiled filename: {compiled_filename}; "
+    #       f"{os.path.isfile(compiled_filename)}")
+    # print(f"cwd: {os.getcwd()}")
+    # print(f"path: {sys.path}")
+    # print(f"called by file dir: {os.path.dirname(inspect.stack()[1].filename)}")
 
     _module = importlib.import_module(compiled_filename)
     return _module.lib, _module.ffi
