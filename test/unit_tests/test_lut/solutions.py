@@ -31,7 +31,7 @@ test_cv_zero_up_first = [100, 101, 102, 103, 104, 105, 104, 103, 102, 101, 100, 
 # correct waveform_lut values for test_swv_lines
 test_swv_up = [250, 150, 260, 160, 270, 170, 280, 180, 290, 190, 300, 200,
                310, 210, 320, 220, 330, 230, 340, 240, 350, 250]
-test_swv_up2 = [202, 198, 207, 203, 212, 208, 217, 213, 222, 218, 227, 223, 232, 228]
+test_swv_up2 = [205, 195, 210, 200, 215, 205, 220, 210, 225, 215, 230, 220, 235, 225]
 test_swv_down = [0, 0, 110, 90, 100, 80, 90, 70, 80, 60]
 
 # correct waveform_lut values for test_make_cv_start_zero_swv
