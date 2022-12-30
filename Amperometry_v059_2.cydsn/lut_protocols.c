@@ -241,7 +241,7 @@ uint16_t LUT_make_line(uint16_t start, uint16_t end, uint16_t index) {
 *******************************************************************************/
 
 uint16_t LUT_make_swv_line(uint16_t start, uint16_t end, uint16_t pulse_inc,
-                         uint16_t pulse_height, uint16_t index) {
+                           uint16_t pulse_height, uint16_t index) {
     printf("making swv linefrom: %i to %i \n", start, end);
     printf("inc: %i height: %i \n", pulse_inc, pulse_height);
     if (index > MAX_LUT_SIZE) {
@@ -400,11 +400,11 @@ struct RunParams LUT_make_run_params(const uint8_t data_buffer[], struct RunPara
     }  // TODO: how to raise an error if bad input?
     if (run_params->use_swv == true) {
         run_params->use_swv = true;
-        run_params->swv_inc = LUT_Convert2Dec(&data_buffer[12], 4);
-        run_params->swv_pulse_height = LUT_Convert2Dec(&data_buffer[17], 4);
-        run_params->timer_period = LUT_Convert2Dec(&data_buffer[23], 5);
-        run_params->sweep_type = data_buffer[28];
-        run_params->start_volt_type = data_buffer[29];
+        run_params->swv_inc = LUT_Convert2Dec(&data_buffer[12], 3);
+        run_params->swv_pulse_height = LUT_Convert2Dec(&data_buffer[16], 3);
+        run_params->timer_period = LUT_Convert2Dec(&data_buffer[21], 5);
+        run_params->sweep_type = data_buffer[26];
+        run_params->start_volt_type = data_buffer[27];
     }
     else {
         run_params->timer_period = LUT_Convert2Dec(&data_buffer[12], 5);

@@ -39,6 +39,7 @@ uint16_t user_dpv_lut_maker(uint8_t data_buffer[]);
 //uint16_t user_dpv_lut_make_depr(uint8_t data_buffer[]);
 uint16_t user_lookup_table_make_future(uint8_t data_buffer[]);
 uint16_t user_lookup_table_maker(uint8_t data_buffer[]);
+uint16_t user_lookup_table_maker_swv(uint8_t data_buffer[]);
 uint16_t user_run_amperometry(uint8_t data_buffer[]);
 
 

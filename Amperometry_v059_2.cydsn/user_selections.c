@@ -361,6 +361,11 @@ uint16_t user_dpv_lut_maker(uint8_t data_buffer[]) {
 *******************************************************************************/
 
 uint16_t user_lookup_table_maker(uint8_t data_buffer[]) {
+    printf("make look up table\n");
+    if (data_buffer[0] == 'G') {
+        printf("make look up table for swv\n");
+        return user_lookup_table_maker_swv(data_buffer);
+    }
     PWM_isr_Wakeup();
     uint16_t start_dac_value = LUT_Convert2Dec(&data_buffer[2], 4);
     uint16_t end_dac_value = LUT_Convert2Dec(&data_buffer[7], 4);
@@ -387,6 +392,35 @@ uint16_t user_lookup_table_maker(uint8_t data_buffer[]) {
     
     lut_value = waveform_lut[0];  // Initialize for the start of the experiment
     PWM_isr_Sleep();
+    return lut_length;
+}
+
+
+uint16_t user_lookup_table_maker_swv(uint8_t data_buffer[]) {
+    uint16_t lut_length = 0;
+    uint16_t start_dac_value = LUT_Convert2Dec(&data_buffer[2], 4);
+    uint16_t end_dac_value = LUT_Convert2Dec(&data_buffer[7], 4);
+    uint16_t swv_inc = LUT_Convert2Dec(&data_buffer[12], 3);
+    uint16_t swv_pulse_height = LUT_Convert2Dec(&data_buffer[16], 3);
+    uint16_t timer_period = LUT_Convert2Dec(&data_buffer[22], 5);
+    uint16_t sweep_type = data_buffer[26];
+    uint16_t start_volt_type = data_buffer[27];
+    PWM_isr_Wakeup();
+    PWM_isr_WritePeriod(timer_period);
+    PWM_isr_Sleep();
+    printf("start_voltage: %i\n", start_dac_value);
+    printf("end voltage: %i\n", end_dac_value);
+    printf("inc voltage: %i\n", swv_inc);
+    printf("swv pulse voltage: %i\n", swv_pulse_height);
+    printf("start_voltage_tupe: %i\n", sweep_type);
+    if (sweep_type == 'L') {
+        return 205;  // Not implimented yet
+    }
+    else if (start_volt_type == 'Z') {
+         printf("make CV look up table and start at 0V\n");
+        lut_length = LUT_MakeCVStartZero_SWV(start_dac_value, end_dac_value, swv_pulse_height, swv_inc);
+    }
+    
     return lut_length;
 }
 
