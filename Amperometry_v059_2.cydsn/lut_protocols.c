@@ -151,10 +151,16 @@ uint16_t LUT_MakeCVStartZero_SWV(uint16_t start_value, uint16_t end_value,
     //LCD_Position(1,0);
     //LCD_PrintDecUint16(end_value);
     printf("dac ground value: %i\n", dac_ground_value);
-    _lut_index = LUT_make_dpv(dac_ground_value, start_value, swv_height, swv_inc, 0);
-    
-    _lut_index = LUT_make_dpv(start_value, end_value, swv_height, swv_inc, _lut_index-1);
-    _lut_index = LUT_make_dpv(end_value, dac_ground_value, swv_height, swv_inc, _lut_index-1);
+    _lut_index = LUT_make_swv_line(dac_ground_value, start_value, swv_inc, swv_height, 0);
+    //TODO: put in function and put in the other waveform making functions
+    if (_lut_index >= 2) { // incase an error occured and the first function didn't do anything
+        _lut_index -= 2;  // go back one, you need just 1 point at the peak, not 2
+    }  // the next call will add the peak voltage again
+    _lut_index = LUT_make_swv_line(start_value, end_value, swv_inc, swv_height, _lut_index);
+    if (_lut_index >= 2) { 
+        _lut_index -= 2; 
+    } 
+    _lut_index = LUT_make_swv_line(end_value, dac_ground_value, swv_inc, swv_height, _lut_index);
     waveform_lut[_lut_index] = dac_ground_value;  // the DAC is changed before the value is checked in the isr so it will go 1 over so make it stay at virtual ground
     _lut_index++;
     //LCD_PutChar('|');
@@ -236,32 +242,33 @@ uint16_t LUT_make_line(uint16_t start, uint16_t end, uint16_t index) {
 
 uint16_t LUT_make_swv_line(uint16_t start, uint16_t end, uint16_t pulse_inc,
                          uint16_t pulse_height, uint16_t index) {
-    // printf("start: %i, end: %i\n", start, end);
+    printf("making swv linefrom: %i to %i \n", start, end);
+    printf("inc: %i height: %i \n", pulse_inc, pulse_height);
     if (index > MAX_LUT_SIZE) {
         return index;
     }
-    uint16_t half_pulse = pulse_height / 2;
+    // uint16_t half_pulse = pulse_height / 2;
     if (start < end) {
         for (int16_t value = start; value <= end; value+=pulse_inc) {
-            waveform_lut[index] = value + half_pulse;
+            waveform_lut[index] = value + pulse_height;
             index ++;
-            waveform_lut[index] = value - half_pulse;
+            waveform_lut[index] = value - pulse_height;
             index ++;
-            //printf("l: %i, %i\n", index, value);
+            printf("a: %i, %i\n", index, value);
             if (index > MAX_LUT_SIZE) {
-                break;
+               return index;
             }
         }
     }
     else {
         for (int16_t value = start; value >= end; value-=pulse_inc) {
-            waveform_lut[index] = value + half_pulse;
+            waveform_lut[index] = value + pulse_height;
             index ++;
-            waveform_lut[index] = value - half_pulse;
+            waveform_lut[index] = value - pulse_height;
             index ++;
             printf("b: %i, %i\n", index, value);
             if (index > MAX_LUT_SIZE) {
-                break;
+                return index;
             }
         }
     }
@@ -297,9 +304,7 @@ uint16_t LUT_make_swv_line(uint16_t start, uint16_t end, uint16_t pulse_inc,
 uint16_t LUT_make_dpv(uint16_t start, uint16_t end, uint16_t height,
                       uint16_t increment, uint16_t index) {
     
-    
     uint16_t level = start;  // variable to store currend dac values in
-    
     waveform_lut[index] = level;
     while (level >= end) {  // >= because the voltages are inverted compared to the dac
         index += 1;
