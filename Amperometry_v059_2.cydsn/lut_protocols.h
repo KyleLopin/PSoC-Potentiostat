@@ -22,7 +22,9 @@
 
 /***************************************
 *        Function Prototypes
-***************************************/    
+***************************************/
+
+
 uint16_t LUT_MakeCVStartZero(uint16_t start_value, uint16_t end_value);
 uint16_t LUT_MakeTriangle_Wave(uint16_t start_value, uint16_t end_value);
 
@@ -33,7 +35,7 @@ uint16_t LUT_MakeTriangle_Wave_SWV(uint16_t start_value, uint16_t end_value,
 
 void LUT_MakePulse(uint16_t base, uint16_t pulse);
 uint16_t LUT_make_line(uint16_t start, uint16_t end, uint16_t index);
-uint16_t LUT_make_dpv(uint16_t start, uint16_t end, uint16_t height,
+uint16_t LUT_make_dpv_depr(uint16_t start, uint16_t end, uint16_t height,
                       uint16_t increment, uint16_t index);
 uint16_t LUT_make_swv_line(uint16_t start, uint16_t end, uint16_t pulse_inc,
                          uint16_t pulse_height, uint16_t index);

@@ -13,6 +13,8 @@
 #include "globals.h"
 //extern char LCD_str[];  // for debug
 
+static uint16_t LUT_fix_lut_index(uint16_t lut_index, uint16_t fix_pt);
+
 
 //uint16_t LUT_make_from_params(const struct RunParams _run_params) {
 //    uint16_t (*line_maker)(struct RunParams, uint16_t);
@@ -91,10 +93,10 @@ uint16_t LUT_MakeTriangle_Wave_SWV(uint16_t start_value, uint16_t end_value,
     //LCD_PrintDecUint16(end_value);
     printf("p: %i\n", _lut_index);
 
-    _lut_index = LUT_make_dpv(start_value, end_value, swv_height, swv_inc, 0);
+    _lut_index = LUT_make_swv_line(start_value, end_value, swv_height, swv_inc, 0);
     printf("z: %i\n", _lut_index);
 
-    _lut_index = LUT_make_dpv(end_value, start_value, swv_height, swv_inc, _lut_index-1);
+    _lut_index = LUT_make_swv_line(end_value, start_value, swv_height, swv_inc, _lut_index-1);
     printf("v: %i\n", _lut_index);
     waveform_lut[_lut_index] = start_value;  // the DAC is changed before the value is checked in the isr so it will go 1 over so make it stay at last voltage
     _lut_index++;
@@ -144,6 +146,17 @@ uint16_t LUT_MakeCVStartZero(uint16_t start_value, uint16_t end_value){
 }
 
 
+static uint16_t LUT_fix_lut_index(uint16_t lut_index, uint16_t fix_pt) {
+    // incase an error occured and the first function didn't do anything
+    // go back one, you need just 1 point at the peak, not 2
+    // the next call will add the peak voltage again
+    if (lut_index >= fix_pt) {
+        return lut_index - fix_pt;
+    }
+    return lut_index;  // If not enough space on look up table, just return un-modified
+}
+
+
 uint16_t LUT_MakeCVStartZero_SWV(uint16_t start_value, uint16_t end_value,
                                  uint16_t swv_height, uint16_t swv_inc){
     uint16_t _lut_index = 0;  // start at the beginning of the lut
@@ -153,13 +166,9 @@ uint16_t LUT_MakeCVStartZero_SWV(uint16_t start_value, uint16_t end_value,
     printf("dac ground value: %i\n", dac_ground_value);
     _lut_index = LUT_make_swv_line(dac_ground_value, start_value, swv_inc, swv_height, 0);
     //TODO: put in function and put in the other waveform making functions
-    if (_lut_index >= 2) { // incase an error occured and the first function didn't do anything
-        _lut_index -= 2;  // go back one, you need just 1 point at the peak, not 2
-    }  // the next call will add the peak voltage again
+    _lut_index = LUT_fix_lut_index(_lut_index, 2);
     _lut_index = LUT_make_swv_line(start_value, end_value, swv_inc, swv_height, _lut_index);
-    if (_lut_index >= 2) { 
-        _lut_index -= 2; 
-    } 
+    _lut_index = LUT_fix_lut_index(_lut_index, 2);
     _lut_index = LUT_make_swv_line(end_value, dac_ground_value, swv_inc, swv_height, _lut_index);
     waveform_lut[_lut_index] = dac_ground_value;  // the DAC is changed before the value is checked in the isr so it will go 1 over so make it stay at virtual ground
     _lut_index++;
@@ -300,36 +309,11 @@ uint16_t LUT_make_swv_line(uint16_t start, uint16_t end, uint16_t pulse_inc,
 *
 *******************************************************************************/
 
-
-uint16_t LUT_make_dpv(uint16_t start, uint16_t end, uint16_t height,
-                      uint16_t increment, uint16_t index) {
-    
-    uint16_t level = start;  // variable to store currend dac values in
-    waveform_lut[index] = level;
-    while (level >= end) {  // >= because the voltages are inverted compared to the dac
-        index += 1;
-        waveform_lut[index] = level - height - increment;  // negative bec
-        index += 1;
-        waveform_lut[index] = level - increment;
-        level = waveform_lut[index];
-    }
-//    LCD_ClearDisplay();
-//    
-//    sprintf(LCD_str, "%d|%d|%d", waveform_lut[0], waveform_lut[1], waveform_lut[2]);
-//    LCD_PrintString(LCD_str);
-//    LCD_Position(1, 0);
-    
-//    sprintf(LCD_str, "%d|%d|%d", waveform_lut[3], waveform_lut[4], waveform_lut[5]);
-//    LCD_PrintString(LCD_str);
-    
-    return index;
-}
-                        
-                        
+// DONT USE, use LUT_make_swv_line
 uint16_t LUT_make_dpv_depr(uint16_t start, uint16_t end, uint16_t height,
-                    uint16_t increment, uint16_t index) {
-    uint16_t level = start;  // variable to store currend dac values in
+                           uint16_t increment, uint16_t index) {
     
+    uint16_t level = start;  // variable to store currend dac values in
     waveform_lut[index] = level;
     while (level >= end) {  // >= because the voltages are inverted compared to the dac
         index += 1;
@@ -349,6 +333,7 @@ uint16_t LUT_make_dpv_depr(uint16_t start, uint16_t end, uint16_t height,
     
     return index;
 }
+
 
 /******************************************************************************
 * Function Name: LUT_MakePulse

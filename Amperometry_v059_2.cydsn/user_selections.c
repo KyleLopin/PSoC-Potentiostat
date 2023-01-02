@@ -316,7 +316,7 @@ uint16_t user_dpv_lut_maker(uint8_t data_buffer[]) {
     PWM_isr_WritePeriod(timer_period);
     uint16_t lut_length = 0;
     if (sweep_type == 'L') {
-        lut_length = LUT_make_dpv(start, end, pulse_height, pulse_inc, 0);
+        lut_length = LUT_make_swv_line(start, end, pulse_height, pulse_inc, 0);
         waveform_lut[lut_length] = waveform_lut[lut_length-1];  // dac is changed once before end so double last voltage
         lut_length += 1;
     }
