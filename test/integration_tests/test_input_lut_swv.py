@@ -36,12 +36,18 @@ class InputToLUTSWV(unittest.TestCase):
     def tearDownClass(cls) -> None:
         helper_funcs.remove_compiled_files()
 
-    def test_swv_cv_input(self):
+    def test_swv_cv_input_start_zero_down(self):
         # 120, 80, 30, 5
         self.module.dac_ground_value = 100
-        index = self.module.user_lookup_table_maker(b"G|0125|0080|005|030|38399|CZ")
+        index = self.module.user_lookup_table_maker(b"G|0080|0120|005|030|38399|CZ")
         waveform = helper_funcs.convert_c_array_to_list(self.module.waveform_lut,
                                                         0, index)
         print(f"index: {index}")
         print(f"waveform: {waveform}")
-        soln = solutions.test_swv_cv_input
+
+        soln = solutions.test_swv_cv_input_start_zero
+        print(f"solution: {soln}")
+        self.assertEqual(index, len(soln),
+                         msg=f"test_ls_input2 returned an index of {index} "
+                             f"instead of {len(soln)}")
+        self.assertListEqual(waveform, soln)
