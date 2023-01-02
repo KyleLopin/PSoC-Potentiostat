@@ -37,9 +37,10 @@ class LUTMakeCVStartZero(unittest.TestCase):
         index = self.module.LUT_MakeCVStartZero(95, 105)
         waveform = helper_funcs.convert_c_array_to_list(
             self.module.waveform_lut, 0, index)
-        self.assertEqual(index, 22, msg=f"test_up returned and index of {index} "
-                                        f"instead of 22")
-        self.assertListEqual(waveform, solutions.test_cv_zero_down_first,
+        soln = solutions.test_cv_zero_down_first
+        self.assertEqual(index, len(soln), msg=f"test_up returned and index of {index} "
+                                               f"instead of {len(soln)}")
+        self.assertListEqual(waveform, soln,
                              msg="test_down_first didn't return the proper lut array")
 
     def test_up_first(self):
@@ -51,9 +52,10 @@ class LUTMakeCVStartZero(unittest.TestCase):
         waveform = helper_funcs.convert_c_array_to_list(
             self.module.waveform_lut, 0, index)
         print(f"waveform: {waveform}")
-        self.assertEqual(index, 22, msg=f"test_up returned and index of {index} "
-                                        f"instead of 22")
-        self.assertListEqual(waveform, solutions.test_cv_zero_up_first,
+        soln = solutions.test_cv_zero_up_first
+        self.assertEqual(index, len(soln), msg=f"test_up returned and index of {index} "
+                                               f"instead of {len(soln)}")
+        self.assertListEqual(waveform, soln,
                              msg="test_down_first didn't return the proper lut array")
 
     def test_out_of_range(self):

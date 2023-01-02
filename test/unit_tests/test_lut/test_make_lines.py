@@ -44,36 +44,40 @@ class LuTMakeLineTestCase(unittest.TestCase):
         """ Test LUT make line function going up """
         index = self.module.LUT_make_line(0, 10, 0)
         waveform = helper_funcs.convert_c_array_to_list(self.module.waveform_lut, 0, index)
-        self.assertEqual(index, 11, msg=f"test_up returned and index of {index} "
-                                        f"instead of 11")
-        self.assertListEqual(waveform, solutions.test_make_lines_up,
+        soln = solutions.test_make_lines_up
+        self.assertEqual(index, len(soln), msg=f"test_up returned and index of {index} "
+                                               f"instead of {len(soln)}")
+        self.assertListEqual(waveform, soln,
                              msg="test_up didn't return the proper lut array")
 
     def test_up2(self):
         """ Test LUT make line function going up not from the start """
         index = self.module.LUT_make_line(15, 20, 5)
         waveform = helper_funcs.convert_c_array_to_list(self.module.waveform_lut, 0, index)
-        self.assertEqual(index, 11, msg=f"test_up2 returned and index of {index} "
-                                        f"instead of 11")
-        self.assertListEqual(waveform, solutions.test_make_lines_up2,
+        soln = solutions.test_make_lines_up2
+        self.assertEqual(index, len(soln), msg=f"test_up2 returned and index of {index} "
+                                               f"instead of {len(soln)}")
+        self.assertListEqual(waveform, soln,
                              msg="test_up2 didn't return the proper lut array")
 
     def test_down(self):
         """ Test LUT make line function going down """
         index = self.module.LUT_make_line(50, 40, 0)
         waveform = helper_funcs.convert_c_array_to_list(self.module.waveform_lut, 0, index)
-        self.assertEqual(index, 11, msg=f"test_down returned and index of {index} "
-                                        f"instead of 11")
-        self.assertListEqual(waveform, solutions.test_make_lines_down,
+        soln = solutions.test_make_lines_down
+        self.assertEqual(index, len(soln), msg=f"test_down returned and index of {index} "
+                                               f"instead of {len(soln)}")
+        self.assertListEqual(waveform, soln,
                              msg=f"test_down didn't return the proper lut array")
 
     def test_down2(self):
         """ Test LUT make line function going down offset from the start """
         index = self.module.LUT_make_line(40, 35, 5)
         waveform = helper_funcs.convert_c_array_to_list(self.module.waveform_lut, 0, index)
-        self.assertEqual(index, 11, msg=f"test_down returned and index of {index} "
-                                        f"instead of 11")
-        self.assertListEqual(waveform, solutions.test_make_lines_down2,
+        soln = solutions.test_make_lines_down2
+        self.assertEqual(index, len(soln), msg=f"test_down returned and index of {index} "
+                                               f"instead of {len(soln)}")
+        self.assertListEqual(waveform, soln,
                              msg=f"test_down2 didn't return the proper lut array")
 
     def test_out_of_range(self):
@@ -81,7 +85,8 @@ class LuTMakeLineTestCase(unittest.TestCase):
         start_index = 4995
         index = self.module.LUT_make_line(20, 40, start_index)
         waveform = helper_funcs.convert_c_array_to_list(self.module.waveform_lut, start_index, index)
+        soln = solutions.test_make_lines_out_of_range
         self.assertEqual(index, 5000, msg=f"test_out_of_range returned and index of {index} "
                                           f"instead of 5000")
-        self.assertListEqual(waveform, solutions.test_make_lines_out_of_range,
+        self.assertListEqual(waveform, soln,
                              msg=f"test_out_of_range didn't return the proper lut array")
