@@ -19,6 +19,7 @@
 *        USB INPUT OPTIONS
 **************************************/ 
     
+#define EXPORT_LUT                      'l'
 #define EXPORT_STREAMING_DATA           'F'
 #define EXPORT_ADC_ARRAY                'E'
 #define CALIBRATE_TIA_ADC               'B'
@@ -110,6 +111,11 @@ uint16_t lut_value;  // value need to load DAC
 // add 5 to the lut to add a buffer cause a few functions go over the MAX_LUT_SIZE
 // by 1, and will use MAX_LUT_SIZE to check for over runs
 uint16_t waveform_lut[MAX_LUT_SIZE+5];  // look up table to store waveform for variable potential experiments
+union waveform_lut_union {
+    uint8_t usb[2*(MAX_LUT_SIZE+5)];
+    int16_t data[MAX_LUT_SIZE+5];
+};
+    
 uint16_t lut_index;  // look up table index
 
 /* Global structs */

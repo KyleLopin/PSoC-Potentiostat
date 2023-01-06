@@ -26,7 +26,8 @@
 /***************************************
 *        Function Prototypes
 ***************************************/  
-   
+
+void user_export_lut(uint8_t data_buffer[]);
 void user_setup_TIA_ADC(uint8_t data_buffer[]);
 void user_run_cv_experiment(uint8_t data_buffer[]);
 void user_voltage_source_funcs(uint8_t data_buffer[]);
@@ -49,6 +50,7 @@ uint16_t user_run_amperometry(uint8_t data_buffer[]);
 
 extern uint8_t TIA_resistor_value_index;
 extern uint8_t ADC_buffer_index;
+union waveform_lut_union;
     
 #endif
 

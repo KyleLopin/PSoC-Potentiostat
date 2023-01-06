@@ -140,10 +140,15 @@ int main() {
                     // 2*(lut_length+2) because the data is 2 times as long as it has to 
                     // be sent as 8-bits and the data is 16 bit, +1 is for the 0xC000 finished signal
                     USB_Export_Data(&ADC_array[user_ch].usb[0], 2*(lut_length+1));  
+                    ADC_array[user_ch].data[0] = lut_length;
+                    //USB_Export_Data(&ADC_array[user_ch].usb[0], 2*(lut_length+1));  
                 }
                 else {
                     USB_Export_Data((uint8*)"Error Exporting", 16);
                 }
+                break;
+            case EXPORT_LUT: ; // 'l' expport Look up table
+                user_export_lut(OUT_Data_Buffer);
                 break;
             case CALIBRATE_TIA_ADC: ; // 'B' calibrate the TIA / ADC current measuring circuit
                 calibrate_TIA();
