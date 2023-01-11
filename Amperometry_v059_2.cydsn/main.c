@@ -108,12 +108,12 @@ int main() {
     isr_adcAmp_StartEx(adcAmpInterrupt);
     isr_adcAmp_Disable();
     
-    CyWdtStart(CYWDT_1024_TICKS, CYWDT_LPMODE_NOCHANGE);
+    //CyWdtStart(CYWDT_1024_TICKS, CYWDT_LPMODE_NOCHANGE);
     
     //helper_Writebyte_EEPROM(0, VDAC_ADDRESS);
     
     for(;;) {
-        CyWdtClear();
+        //CyWdtClear();
         if(USBFS_IsConfigurationChanged()) {  // if the configuration is changed reenable the OUT ENDPOINT
             while(!USBFS_GetConfiguration()) {  // wait for the configuration with windows / controller is updated
             }

@@ -3,11 +3,11 @@
 *
 * Description:
 *  Source code for the protocols used by the USB.
-NOTE: WAITING ON USB VENDOR AND PRODUCT ID
+*  converted to USBUART in January 2023
 *
 *
 **********************************************************************************
- * Copyright Naresuan University, Phitsanulok Thailand
+ * Copyright Naresuan University, Phitsanulok Thailand 2017-2023
  * Released under Creative Commons Attribution-ShareAlike  3.0 (CC BY-SA 3.0 US)
 *********************************************************************************/
 
@@ -30,24 +30,15 @@ extern char LCD_str[];  // for debug
 * Return:
 *  true (1) if data has been inputed or false (0) if no data
 *
-* Global variables:
-*  OUT_ENDPOINT:  number that is the endpoint coming out of the computer
-*
 *******************************************************************************/
 
 uint8 USB_CheckInput(uint8 buffer[]) {
     
-    if(USBFS_GetEPState(OUT_ENDPOINT) == USBFS_OUT_BUFFER_FULL) {
-        
-        /* There is data coming in, get the number of bytes*/
-        uint8 OUT_COUNT = USBFS_GetEPCount(OUT_ENDPOINT);
-        /* Read the OUT endpoint and store data in OUT_Data_buffer */
-        USBFS_ReadOutEP(OUT_ENDPOINT, buffer, OUT_COUNT);
-        /* Re-enable OUT endpoint */
-        USBFS_EnableOutEP(OUT_ENDPOINT);
+    uint16_t count = USBUART_GetCount();
+    if ( count != 0 ) {
+        USBUART_GetData(buffer, count);
         return true;
     }
-    
     return false;
 }
 
@@ -65,38 +56,10 @@ uint8 USB_CheckInput(uint8 buffer[]) {
 * Return:
 *  None
 *
-* Global variables:
-*  MAX_BUFFER_SIZE:  the number of bytes the UBS device can hold
-*
 *******************************************************************************************/
 
 void USB_Export_Data(uint8 array[], uint16_t size) {
-//    LCD_Position(1,0);
-//    sprintf(LCD_str, "e:%d|%c%c%c%c%c%c| |", size ,array[0], array[1], array[2], array[3], array[4], array[5]);
-//    LCD_PrintString(LCD_str);
-    for (int i=0; i < size; i=i+MAX_BUFFER_SIZE) {
-        while(USBFS_GetEPState(IN_ENDPOINT) != USBFS_IN_BUFFER_EMPTY)
-        {
-        }
-        uint16_t size_to_send = size - i;
-        if (size_to_send > MAX_BUFFER_SIZE) {
-            size_to_send = MAX_BUFFER_SIZE;
-        }
-
-//        LCD_Position(0,0);
-//        sprintf(LCD_str, "g:%d |", size_to_send);
-//        LCD_PrintString(LCD_str);
-        if(USBFS_GetEPState(IN_ENDPOINT) == USBFS_IN_BUFFER_EMPTY){
-            USBFS_LoadInEP(IN_ENDPOINT, &array[i], size_to_send);  // TODO: Fix this
-            USBFS_EnableOutEP(OUT_ENDPOINT);
-        }
-    }
-//    if(USBFS_GetEPState(IN_ENDPOINT) == USBFS_IN_BUFFER_EMPTY){
-//        USBFS_EnableOutEP(OUT_ENDPOINT);
-//    }
-    //LCD_Position(1,0);
-    //sprintf(LCD_str, "exported:%d", size);
-    //LCD_PrintString(LCD_str);
+    USBUART_PutData(array, size);
 }
 
 /* [] END OF FILE */
