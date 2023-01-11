@@ -94,17 +94,17 @@ int main() {
 //    LCD_ClearDisplay();
 //    LCD_PrintString("DPV1");
     
-    USBFS_Start(0, USBFS_DWR_VDDD_OPERATION);  // initialize the USB
+    USBUART_Start(0, USBUART_5V_OPERATION);
     helper_HardwareSetup();
     ADC_SigDel_SelectConfiguration(2, DO_NOT_RESTART_ADC);
-    while(!USBFS_bGetConfiguration());  //Wait till it the usb gets its configuration from the PC ??
+    while(!USBUART_GetConfiguration());  
     
     isr_dac_StartEx(dacInterrupt);
     isr_dac_Disable();  // disable interrupt until a voltage signal needs to be given
     isr_adc_StartEx(adcInterrupt);
     isr_adc_Disable();
     
-    USBFS_EnableOutEP(OUT_ENDPOINT);  // changed
+    USBUART_CDC_Init();
     isr_adcAmp_StartEx(adcAmpInterrupt);
     isr_adcAmp_Disable();
     
@@ -114,11 +114,7 @@ int main() {
     
     for(;;) {
         //CyWdtClear();
-        if(USBFS_IsConfigurationChanged()) {  // if the configuration is changed reenable the OUT ENDPOINT
-            while(!USBFS_GetConfiguration()) {  // wait for the configuration with windows / controller is updated
-            }
-            USBFS_EnableOutEP(OUT_ENDPOINT);  // reenable OUT ENDPOINT
-        }
+
         if (Input_Flag == false) {  // make sure any input has already been dealt with
             Input_Flag = USB_CheckInput(OUT_Data_Buffer);  // check if there is a response from the computer
         }

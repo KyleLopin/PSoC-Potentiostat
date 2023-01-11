@@ -201,7 +201,7 @@ void user_identify(void) {
     isr_adcAmp_Disable();
     isr_adc_Disable();
     isr_dac_Disable();
-    USB_Export_Data((uint8_t*)"USB Test - v04", 15);
+    USB_Export_Data((uint8_t*)"Naresuan University", 19);
     // TODO:  Put in a software reset incase something goes wrong the program can reattach
 }
 
