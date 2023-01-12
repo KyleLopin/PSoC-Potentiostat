@@ -10,6 +10,10 @@ Download the Graphical User Interface from the Potentiostat_GUI repository.  You
 
 Different electrochemical experiments are shown in different notebook tabs.
 
+Source code is in the \Amperometry_v059_2.cydsn folder used by PSoC Creator to make the C files
+The tests are in the \test folder and use python to compile the files and unittest them
+HighResDacs.cylib is need for the DVDAC to work, I think
+
 
 
 # PSoC-Potentiostat Commands
