@@ -146,6 +146,9 @@ int main() {
             case EXPORT_LUT: ; // 'l' expport Look up table
                 user_export_lut(OUT_Data_Buffer);
                 break;
+            case EXPORT_LUT_LENGTH: ; // 'g' export lut_length variable
+                user_export_lut_length();
+                break;
             case CALIBRATE_TIA_ADC: ; // 'B' calibrate the TIA / ADC current measuring circuit
                 calibrate_TIA();
                 break;

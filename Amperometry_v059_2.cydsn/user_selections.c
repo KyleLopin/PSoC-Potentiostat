@@ -69,7 +69,12 @@ void user_setup_TIA_ADC(uint8_t data_buffer[]) {
 
 void user_export_lut(uint8_t data_buffer[]) {
     uint16_t length = LUT_Convert2Dec(&data_buffer[2], 4);
-    USB_Export_Data(waveform_lut, length);
+    
+    USB_Export_Data(&waveform_lut, length);
+}
+
+void user_export_lut_length() {
+    USB_Export_Data(&lut_length, 2);
 }
 
 
@@ -201,7 +206,7 @@ void user_identify(void) {
     isr_adcAmp_Disable();
     isr_adc_Disable();
     isr_dac_Disable();
-    USB_Export_Data((uint8_t*)"Naresuan University", 19);
+    USB_Export_Data((uint8_t*)"Naresuan Potentiostat", 21);
     // TODO:  Put in a software reset incase something goes wrong the program can reattach
 }
 

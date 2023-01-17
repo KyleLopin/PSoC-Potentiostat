@@ -59,7 +59,18 @@ uint8 USB_CheckInput(uint8 buffer[]) {
 *******************************************************************************************/
 
 void USB_Export_Data(uint8 array[], uint16_t size) {
-    USBUART_PutData(array, size);
+    uint16_t size_to_send;
+    for (int i=0; i < size; i=i+MAX_BUFFER_SIZE) {
+        
+        size_to_send = size - i;
+        if (size_to_send > MAX_BUFFER_SIZE) {
+            size_to_send = MAX_BUFFER_SIZE;
+        }
+        while(USBUART_CDCIsReady() == 0)
+        {
+        }
+        USBUART_PutData(array, size_to_send);
+    }
 }
 
 /* [] END OF FILE */

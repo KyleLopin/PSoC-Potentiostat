@@ -19,6 +19,7 @@
 *        USB INPUT OPTIONS
 **************************************/ 
     
+#define EXPORT_LUT_LENGTH               'g'
 #define EXPORT_LUT                      'l'
 #define EXPORT_STREAMING_DATA           'F'
 #define EXPORT_ADC_ARRAY                'E'
