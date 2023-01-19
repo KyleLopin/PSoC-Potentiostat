@@ -69,7 +69,7 @@ void USB_Export_Data(uint8 array[], uint16_t size) {
         while(USBUART_CDCIsReady() == 0)
         {
         }
-        USBUART_PutData(array, size_to_send);
+        USBUART_PutData(&array[i], size_to_send);
     }
 }
 
