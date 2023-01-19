@@ -249,8 +249,8 @@ uint16_t LUT_make_line(uint16_t start, uint16_t end, uint16_t index) {
 *
 *******************************************************************************/
 
-uint16_t LUT_make_swv_line(uint16_t start, uint16_t end, uint16_t pulse_inc,
-                           uint16_t pulse_height, uint16_t index) {
+uint16_t LUT_make_swv_line(uint16_t start, uint16_t end, uint16_t pulse_height,
+                           uint16_t pulse_inc, uint16_t index) {
     printf("making swv linefrom: %i to %i \n", start, end);
     printf("inc: %i height: %i \n", pulse_inc, pulse_height);
     if (index > MAX_LUT_SIZE) {

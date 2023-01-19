@@ -51,8 +51,8 @@
 #define INDEX_SWV_INC                   12
 #define INDEX_SWV_PULSE_HEIGHT          17
 #define INDEX_SWV_TIMER_VALUE           23
-#define INDEX_SWV_SWEEP_TYPE            18
-#define INDEX_SWV_START_VOLT_TYPE       19
+#define INDEX_SWV_SWEEP_TYPE            28
+#define INDEX_SWV_START_VOLT_TYPE       29
 
 
 /**************************************

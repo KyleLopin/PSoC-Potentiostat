@@ -29,7 +29,8 @@ class InputToLUTSWV(unittest.TestCase):
             cls._filenames, ["LUT_make_line", "LUT_MakeTriangle_Wave",
                              "user_lookup_table_maker", "LUT_Convert2Dec"],
             header_includes=["static uint16_t waveform_lut[];\n"
-                             "static uint16_t dac_ground_value;"],
+                             "static uint16_t dac_ground_value;\n"
+                             "static uint16_t lut_length;"],
             compiled_file_end="input_to_lut_swv")
 
     @classmethod
@@ -40,6 +41,21 @@ class InputToLUTSWV(unittest.TestCase):
         # 120, 80, 30, 5
         self.module.dac_ground_value = 100
         index = self.module.user_lookup_table_maker(b"G|0080|0120|005|030|38399|CZ")
+        waveform = helper_funcs.convert_c_array_to_list(self.module.waveform_lut,
+                                                        0, index)
+        print(f"index: {index}")
+        print(f"waveform: {waveform}")
+
+        soln = solutions.test_swv_cv_input_start_zero
+        print(f"solution: {soln}")
+        self.assertEqual(index, len(soln),
+                         msg=f"test_ls_input2 returned an index of {index} "
+                             f"instead of {len(soln)}")
+        self.assertListEqual(waveform, soln)
+
+    def test_swv_cv_input_start2(self):
+        self.module.dac_ground_value = 2048
+        index = self.module.user_lookup_table_maker(b"G|2098|1993|0005|0100|23999|CS")
         waveform = helper_funcs.convert_c_array_to_list(self.module.waveform_lut,
                                                         0, index)
         print(f"index: {index}")
