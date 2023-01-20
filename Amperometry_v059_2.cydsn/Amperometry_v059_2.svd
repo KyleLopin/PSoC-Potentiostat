@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <device schemaVersion="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="CMSIS-SVD_Schema_1_0.xsd">
-  <name>CY8C5888LTI_LP097</name>
+  <name>CY8C5868AXI_LP035</name>
   <version>0.1</version>
   <description>CY8C58LP</description>
   <addressUnitBits>8</addressUnitBits>
@@ -55,7 +55,7 @@
         <register>
           <name>IDAC8_TR</name>
           <description>IDAC8_TR</description>
-          <addressOffset>0x4000460A</addressOffset>
+          <addressOffset>0x40004608</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -73,7 +73,7 @@
         <register>
           <name>IDAC8_CR0</name>
           <description>DAC Block Control Register 0</description>
-          <addressOffset>0x40005828</addressOffset>
+          <addressOffset>0x40005820</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -151,7 +151,7 @@
         <register>
           <name>IDAC8_CR1</name>
           <description>DAC Block Control Register 1</description>
-          <addressOffset>0x40005829</addressOffset>
+          <addressOffset>0x40005821</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -252,7 +252,7 @@
         <register>
           <name>IDAC8_SW0</name>
           <description>DAC Analog Routing Register 0</description>
-          <addressOffset>0x40005A90</addressOffset>
+          <addressOffset>0x40005A80</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -301,7 +301,7 @@
         <register>
           <name>IDAC8_SW2</name>
           <description>DAC Analog Routing Register 2</description>
-          <addressOffset>0x40005A92</addressOffset>
+          <addressOffset>0x40005A82</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -350,7 +350,7 @@
         <register>
           <name>IDAC8_SW3</name>
           <description>DAC Analog Routing Register 3</description>
-          <addressOffset>0x40005A93</addressOffset>
+          <addressOffset>0x40005A83</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -418,7 +418,7 @@
         <register>
           <name>IDAC8_SW4</name>
           <description>DAC Analog Routing Register 4</description>
-          <addressOffset>0x40005A94</addressOffset>
+          <addressOffset>0x40005A84</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -467,7 +467,7 @@
         <register>
           <name>IDAC8_STROBE</name>
           <description>DAC Strobe Register</description>
-          <addressOffset>0x40005A97</addressOffset>
+          <addressOffset>0x40005A87</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -546,7 +546,7 @@
         <register>
           <name>IDAC8_D</name>
           <description>DAC Data Register</description>
-          <addressOffset>0x40005B82</addressOffset>
+          <addressOffset>0x40005B80</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -564,7 +564,7 @@
       </registers>
     </peripheral>
     <peripheral>
-      <name>USBFS</name>
+      <name>USBUART</name>
       <description>USBFS</description>
       <baseAddress>0x0</baseAddress>
       <addressBlock>
@@ -1393,6 +1393,169 @@
           </fields>
         </register>
         <register>
+          <name>SIE_EP3_CNT0</name>
+          <description>SIE Endpoint 1 Count0 Register</description>
+          <addressOffset>0x4000602C</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+          <fields>
+            <field>
+              <name>DATA_COUNT_MSB</name>
+              <description>These bits are the 3 MSb bits of an 11-bit counter. The LSb are the Data Count[7:0] bits of the CNT1 register. Refer to the CNT1 register for more information.</description>
+              <lsb>0</lsb>
+              <msb>2</msb>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DATA_VALID</name>
+              <description>DATA_ERROR - 0, DATA_VALID - 1.</description>
+              <lsb>4</lsb>
+              <msb>4</msb>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DATA_TOGGLE</name>
+              <description>This bit selects the DATA packet's toggle state. For IN transactions firmware must set this bit to the expected state. For OUT transactions the hardware sets this bit to the state of the received Data Toggle bit.</description>
+              <lsb>7</lsb>
+              <msb>7</msb>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SIE_EP3_CNT1</name>
+          <description>SIE Endpoint 1 Count1 Register</description>
+          <addressOffset>0x4000602D</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+          <fields>
+            <field>
+              <name>DATA_COUNT</name>
+              <description>These bits are the 8 LSb of a 11-bit counter.  The 3 MSb bits are in the CNT0 register. The 11-bit count indicates the number of data bytes in a transaction.</description>
+              <lsb>0</lsb>
+              <msb>7</msb>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>SIE_EP3_CR0</name>
+          <description>SIE Endpoint 1 Control Register</description>
+          <addressOffset>0x4000602E</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+          <fields>
+            <field>
+              <name>MODE</name>
+              <description>The mode controls how the USB SIE responds to traffic and how the USB SIE changes the mode of that endpoint as a result of host packets to the endpoint.</description>
+              <lsb>0</lsb>
+              <msb>3</msb>
+              <access>read-write</access>
+              <enumeratedValues>
+                <enumeratedValue>
+                  <name>DISABLE</name>
+                  <description>Ignore all USB traffic to this endpoint.</description>
+                  <value>0</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>NAK_INOUT</name>
+                  <description>SETUP: Accept, IN: NAK, OUT: NAK.</description>
+                  <value>1</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>STATUS_OUT_ONLY</name>
+                  <description>SETUP: Accept, IN: STALL, OUT: ACK 0B tokens, NAK others.</description>
+                  <value>2</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>STALL_INOUT</name>
+                  <description>SETUP: Accept, IN: STALL, OUT: STALL.</description>
+                  <value>3</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ISO_OUT</name>
+                  <description>SETUP: Ignore, IN: Ignore, OUT: Accept Isochronous OUT token.</description>
+                  <value>5</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>STATUS_IN_ONLY</name>
+                  <description>SETUP: Accept, IN: Respond with 0B data, OUT:  Stall.</description>
+                  <value>6</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ISO_IN</name>
+                  <description>SETUP: Ignore, IN: Accept Isochronous IN token, OUT: Ignore.</description>
+                  <value>7</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>NAK_OUT</name>
+                  <description>SETUP: Ignore, IN: Ignore, OUT: NAK.</description>
+                  <value>8</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACK_OUT</name>
+                  <description>SETUP: Ignore, IN: Ignore, OUT: Accept data and ACK if STALL = 0, STALL otherwise. Change to MODE=8 after one succesfull OUT token.</description>
+                  <value>9</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACK_OUT_STATUS_IN</name>
+                  <description>SETUP: Accept, IN: Respond with 0B data, OUT:  Accept data.</description>
+                  <value>11</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>NAK_IN</name>
+                  <description>SETUP: Ignore, IN: NAK, OUT: Ignore.</description>
+                  <value>12</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACK_IN</name>
+                  <description>SETUP: Ignore, IN: Respond to IN with data if STALL=0, STALL otherwise, OUT: Ignore</description>
+                  <value>13</value>
+                </enumeratedValue>
+                <enumeratedValue>
+                  <name>ACK_IN_STATUS_OUT</name>
+                  <description>SETUP: Accept, IN: Respond to IN with data, OUT: ACK 0B tokens, NAK others.</description>
+                  <value>15</value>
+                </enumeratedValue>
+              </enumeratedValues>
+            </field>
+            <field>
+              <name>ACKED_TXN</name>
+              <description>ACKED_NO - 0, ACKED_YES - 1.</description>
+              <lsb>4</lsb>
+              <msb>4</msb>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>NAK_INT_EN</name>
+              <description>When set this bit causes an endpoint interrupt to be generated even when a transfer completes with a NAK.</description>
+              <lsb>5</lsb>
+              <msb>5</msb>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>ERR_IN_TXN</name>
+              <description>The Error in transaction bit is set whenever an error is detected.</description>
+              <lsb>6</lsb>
+              <msb>6</msb>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>STALL</name>
+              <description>When this bit is set the SIE stalls an OUT packet if the Mode bits are set to ACK-OUT. The SIE stalls an IN packet if the mode bits are set to ACK-IN. This bit must be clear for all other modes.</description>
+              <lsb>7</lsb>
+              <msb>7</msb>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
           <name>ARB_EP1_CFG</name>
           <description>Arbiter Endpoint 1 Configuration Register</description>
           <addressOffset>0x40006080</addressOffset>
@@ -2036,6 +2199,223 @@
               <lsb>7</lsb>
               <msb>7</msb>
               <access>read-only</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ARB_EP3_CFG</name>
+          <description>Arbiter Endpoint 1 Configuration Register</description>
+          <addressOffset>0x400060A0</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+          <fields>
+            <field>
+              <name>IN_DATA_RDY</name>
+              <description>Indication that Endpoint Packet Data is Ready in Main memory</description>
+              <lsb>0</lsb>
+              <msb>0</msb>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DMA_REQ</name>
+              <description>Manual DMA Request for a particular (1 to 8) endpoint; changing this field from 0 to 1 causes a DMA request to be generated.</description>
+              <lsb>1</lsb>
+              <msb>1</msb>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>CRC_BYPASS</name>
+              <description>CRC_NORMAL - 0, CRC_BYPASS - 1</description>
+              <lsb>2</lsb>
+              <msb>2</msb>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>RESET_PTR</name>
+              <description>RESET_KRYPTON - 0, RESET_NORMAL - 1</description>
+              <lsb>3</lsb>
+              <msb>3</msb>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ARB_EP3_INT_EN</name>
+          <description>Arbiter Endpoint 1 Interrupt Enable Register</description>
+          <addressOffset>0x400060A1</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+          <fields>
+            <field>
+              <name>IN_BUF_FULL_EN</name>
+              <description>IN Endpoint Local Buffer Full</description>
+              <lsb>0</lsb>
+              <msb>0</msb>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DMA_GNT_EN</name>
+              <description>Endpoint DMA Grant</description>
+              <lsb>1</lsb>
+              <msb>1</msb>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>BUF_OVER_EN</name>
+              <description>Endpoint Buffer Overflow</description>
+              <lsb>2</lsb>
+              <msb>2</msb>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>BUF_UNDER_EN</name>
+              <description>Endpoint Buffer Underflow</description>
+              <lsb>3</lsb>
+              <msb>3</msb>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>ERR_INT_EN</name>
+              <description>Endpoint Error in Transaction Interrupt</description>
+              <lsb>4</lsb>
+              <msb>4</msb>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DMA_TERMIN_EN</name>
+              <description>Endpoint DMA Terminated Enable</description>
+              <lsb>5</lsb>
+              <msb>5</msb>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ARB_EP3_INT_SR</name>
+          <description>Arbiter Endpoint 1 Interrupt Status Register</description>
+          <addressOffset>0x400060A2</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+          <fields>
+            <field>
+              <name>IN_BUF_FULL_EN</name>
+              <description>IN Endpoint Local Buffer Full</description>
+              <lsb>0</lsb>
+              <msb>0</msb>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DMA_GNT_EN</name>
+              <description>Endpoint DMA Grant</description>
+              <lsb>1</lsb>
+              <msb>1</msb>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>BUF_OVER_EN</name>
+              <description>Endpoint Buffer Overflow</description>
+              <lsb>2</lsb>
+              <msb>2</msb>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>BUF_UNDER_EN</name>
+              <description>Endpoint Buffer Underflow</description>
+              <lsb>3</lsb>
+              <msb>3</msb>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>ERR_INT_EN</name>
+              <description>Endpoint Error in Transaction Interrupt</description>
+              <lsb>4</lsb>
+              <msb>4</msb>
+              <access>read-write</access>
+            </field>
+            <field>
+              <name>DMA_TERMIN_EN</name>
+              <description>Endpoint DMA Terminated Enable</description>
+              <lsb>5</lsb>
+              <msb>5</msb>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ARB_RW3_WA</name>
+          <description>Arbiter Endpoint 1 Write Address LSB Register</description>
+          <addressOffset>0x400060A4</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+          <fields>
+            <field>
+              <name>WA8</name>
+              <description>Write Address for EP.</description>
+              <lsb>0</lsb>
+              <msb>7</msb>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ARB_RW3_WA_MSB</name>
+          <description>Arbiter Endpoint 1 Write Address MSB Register</description>
+          <addressOffset>0x400060A5</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+          <fields>
+            <field>
+              <name>WA9</name>
+              <description>Write Address for EP MSB.</description>
+              <lsb>0</lsb>
+              <msb>0</msb>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ARB_RW3_RA</name>
+          <description>Arbiter Endpoint 1 Read Address LSB Register</description>
+          <addressOffset>0x400060A6</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+          <fields>
+            <field>
+              <name>RA8</name>
+              <description>Read Address for EP MSB.</description>
+              <lsb>0</lsb>
+              <msb>7</msb>
+              <access>read-write</access>
+            </field>
+          </fields>
+        </register>
+        <register>
+          <name>ARB_RW3_RA_MSB</name>
+          <description>Arbiter Endpoint 1 Read Address MSB Register</description>
+          <addressOffset>0x400060A7</addressOffset>
+          <size>8</size>
+          <access>read-write</access>
+          <resetValue>0</resetValue>
+          <resetMask>0</resetMask>
+          <fields>
+            <field>
+              <name>RA9</name>
+              <description>Read Address for EP MSB.</description>
+              <lsb>0</lsb>
+              <msb>0</msb>
+              <access>read-write</access>
             </field>
           </fields>
         </register>
@@ -4464,7 +4844,7 @@
         <register>
           <name>VDAC8_TR</name>
           <description>VDAC8_TR</description>
-          <addressOffset>0x40004608</addressOffset>
+          <addressOffset>0x4000460A</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -4482,7 +4862,7 @@
         <register>
           <name>VDAC8_CR0</name>
           <description>DAC Block Control Register 0</description>
-          <addressOffset>0x40005820</addressOffset>
+          <addressOffset>0x40005828</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -4560,7 +4940,7 @@
         <register>
           <name>VDAC8_CR1</name>
           <description>DAC Block Control Register 1</description>
-          <addressOffset>0x40005821</addressOffset>
+          <addressOffset>0x40005829</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -4647,7 +5027,7 @@
         <register>
           <name>VDAC8_SW0</name>
           <description>DAC Analog Routing Register 0</description>
-          <addressOffset>0x40005A80</addressOffset>
+          <addressOffset>0x40005A90</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -4696,7 +5076,7 @@
         <register>
           <name>VDAC8_SW2</name>
           <description>DAC Analog Routing Register 2</description>
-          <addressOffset>0x40005A82</addressOffset>
+          <addressOffset>0x40005A92</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -4745,7 +5125,7 @@
         <register>
           <name>VDAC8_SW3</name>
           <description>DAC Analog Routing Register 3</description>
-          <addressOffset>0x40005A83</addressOffset>
+          <addressOffset>0x40005A93</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -4813,7 +5193,7 @@
         <register>
           <name>VDAC8_SW4</name>
           <description>DAC Analog Routing Register 4</description>
-          <addressOffset>0x40005A84</addressOffset>
+          <addressOffset>0x40005A94</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -4862,7 +5242,7 @@
         <register>
           <name>VDAC8_STROBE</name>
           <description>DAC Strobe Register</description>
-          <addressOffset>0x40005A87</addressOffset>
+          <addressOffset>0x40005A97</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
@@ -4941,7 +5321,7 @@
         <register>
           <name>VDAC8_DATA</name>
           <description>DAC Data Register</description>
-          <addressOffset>0x40005B80</addressOffset>
+          <addressOffset>0x40005B82</addressOffset>
           <size>8</size>
           <access>read-write</access>
           <resetValue>0</resetValue>
