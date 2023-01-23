@@ -72,8 +72,8 @@ uint16_t LUT_MakeTriangle_Wave(uint16_t start_value, uint16_t end_value) {
 
     _lut_index = LUT_make_line(start_value, end_value, 0);
     printf("z: %i\n", _lut_index);
-
-    _lut_index = LUT_make_line(end_value, start_value, _lut_index-1);
+    _lut_index = LUT_fix_lut_index(_lut_index, 1);
+    _lut_index = LUT_make_line(end_value, start_value, _lut_index);
     printf("v: %i\n", _lut_index);
     waveform_lut[_lut_index] = start_value;  // the DAC is changed before the value is checked in the isr so it will go 1 over so make it stay at last voltage
     _lut_index++;
@@ -95,8 +95,8 @@ uint16_t LUT_MakeTriangle_Wave_SWV(uint16_t start_value, uint16_t end_value,
 
     _lut_index = LUT_make_swv_line(start_value, end_value, swv_height, swv_inc, 0);
     printf("z: %i\n", _lut_index);
-
-    _lut_index = LUT_make_swv_line(end_value, start_value, swv_height, swv_inc, _lut_index-1);
+    _lut_index = LUT_fix_lut_index(_lut_index, 2);
+    _lut_index = LUT_make_swv_line(end_value, start_value, swv_height, swv_inc, _lut_index);
     printf("v: %i\n", _lut_index);
     waveform_lut[_lut_index] = start_value;  // the DAC is changed before the value is checked in the isr so it will go 1 over so make it stay at last voltage
     _lut_index++;
@@ -134,9 +134,10 @@ uint16_t LUT_MakeCVStartZero(uint16_t start_value, uint16_t end_value){
     //LCD_PrintDecUint16(end_value);
     printf("dac ground value: %i\n", dac_ground_value);
     _lut_index = LUT_make_line(dac_ground_value, start_value, 0);
-    
-    _lut_index = LUT_make_line(start_value, end_value, _lut_index-1);
-    _lut_index = LUT_make_line(end_value, dac_ground_value, _lut_index-1);
+    _lut_index = LUT_fix_lut_index(_lut_index, 1);
+    _lut_index = LUT_make_line(start_value, end_value, _lut_index);
+    _lut_index = LUT_fix_lut_index(_lut_index, 1);
+    _lut_index = LUT_make_line(end_value, dac_ground_value, _lut_index);
     waveform_lut[_lut_index] = dac_ground_value;  // the DAC is changed before the value is checked in the isr so it will go 1 over so make it stay at virtual ground
     _lut_index++;
     //LCD_PutChar('|');
