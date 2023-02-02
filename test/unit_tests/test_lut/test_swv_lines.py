@@ -42,10 +42,13 @@ class SWVMakeLineTestCase(unittest.TestCase):
     def test_swv_up(self):
         """ Test that the square wave voltammetry function works to a
         linear sweep type of voltage protocol in the up direction"""
-        index = self.module.LUT_make_swv_line(200, 300, 50, 10, 0)
+        index = self.module.LUT_make_swv_line(200, 300, 10, 50, 0)
         waveform = helper_funcs.convert_c_array_to_list(self.module.waveform_lut, 0,
                                                         index)
+        print(f"index: {index}")
+        print(f"waveform: {waveform}")
         soln = solutions.test_swv_up
+        print(f"soln: {soln}")
         self.assertEqual(index, len(soln),
                          msg=f"test_swv_up returned and index of"
                              f" {index} instead of {len(soln)}")

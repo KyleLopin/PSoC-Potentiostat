@@ -19,17 +19,20 @@ import cffi
 # because the test directory can be changed bases on what tests are being run,
 # different paths have to be searched.
 project_dir = None  # initialize and raise an exception if it in not changed
+root_dir = None
 for i in range(1, 4):
     path_list = ['..'] * i + ['Amperometry_v059_2.cydsn']
     path = os.path.join(*path_list)
     if os.path.isdir(path):
         project_dir = path
+        root_dir = os.path.join(*(['..'] * i))
         break
 if not project_dir:
     raise Exception("Project directory not found")
 BACKUP_CYTPES_FILENAME = "cytypes_backup.h"
 FILE_DIR = os.path.dirname(__file__)
 MOCK_PROJECT_FILE = os.path.join(FILE_DIR, "project.h")
+MOCK_FILES = os.path.join(root_dir, 'test', 'mock_files')
 PROJECT_DIR_H_FILE = os.path.join(project_dir, "project.h")
 CYTYPES_FILES = os.path.join(project_dir, "cytypes.h")
 
@@ -65,18 +68,20 @@ def setup_mock_files():
     """
     # clearn any backup file that might be saved already from an error
     # in the cleanup procedure
-    if os.path.isfile(BACKUP_CYTPES_FILENAME):
-        os.remove(BACKUP_CYTPES_FILENAME)
+    # if os.path.isfile(BACKUP_CYTPES_FILENAME):
+    #     os.remove(BACKUP_CYTPES_FILENAME)
     # check if file exists
-    if os.path.isfile(CYTYPES_FILES):
-        print("file exists")
-        os.rename(CYTYPES_FILES, BACKUP_CYTPES_FILENAME)
-    open(CYTYPES_FILES, 'w').close()  # create a blank file
+    # if os.path.isfile(CYTYPES_FILES):
+    #     print("file exists")
+    #     os.rename(CYTYPES_FILES, BACKUP_CYTPES_FILENAME)
+    # open(CYTYPES_FILES, 'w').close()  # create a blank file
     # if a project.h file is already in the project directory, ignore it is the mock file,
     # the real file is in a different directory
 
-    if not os.path.isfile(PROJECT_DIR_H_FILE):
-        os.replace(MOCK_PROJECT_FILE, PROJECT_DIR_H_FILE)
+    # if not os.path.isfile(PROJECT_DIR_H_FILE):
+    #     os.replace(MOCK_PROJECT_FILE, PROJECT_DIR_H_FILE)
+    # TODO: make sure the can be deleted after moving files
+    pass
 
 
 def remove_compiled_files():
@@ -164,7 +169,8 @@ def load(_filenames, function_names: list[str], header_includes: list[str] = [],
     # ffi_builder.new("struct RunParams run_params")
     # there should be mocked file in the current directory also so include that
     ffi_builder.set_source(compiled_filename, source,
-                           include_dirs=[project_dir, "."])
+                           include_dirs=[project_dir, ".",
+                                         MOCK_FILES])
     ffi_builder.compile()
     # import the module and return it
     sys.path.append(os.getcwd())  # make sure the file can be found
