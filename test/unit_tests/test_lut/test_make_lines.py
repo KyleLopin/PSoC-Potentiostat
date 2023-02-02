@@ -35,6 +35,7 @@ class LuTMakeLineTestCase(unittest.TestCase):
     @classmethod
     def tearDownClass(cls) -> None:
         helper_funcs.restore_files_after_mock()
+        helper_funcs.remove_compiled_files()
 
     def setUp(self) -> None:
         """ Reset the waveform_lut for each test """

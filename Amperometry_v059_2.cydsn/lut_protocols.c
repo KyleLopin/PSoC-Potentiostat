@@ -93,10 +93,10 @@ uint16_t LUT_MakeTriangle_Wave_SWV(uint16_t start_value, uint16_t end_value,
     //LCD_PrintDecUint16(end_value);
     printf("p: %i\n", _lut_index);
 
-    _lut_index = LUT_make_swv_line(start_value, end_value, swv_height, swv_inc, 0);
+    _lut_index = LUT_make_swv_line(start_value, end_value, swv_inc, swv_height, 0);
     printf("z: %i\n", _lut_index);
     _lut_index = LUT_fix_lut_index(_lut_index, 2);
-    _lut_index = LUT_make_swv_line(end_value, start_value, swv_height, swv_inc, _lut_index);
+    _lut_index = LUT_make_swv_line(end_value, start_value, swv_inc, swv_height, _lut_index);
     printf("v: %i\n", _lut_index);
     waveform_lut[_lut_index] = start_value;  // the DAC is changed before the value is checked in the isr so it will go 1 over so make it stay at last voltage
     _lut_index++;
@@ -250,8 +250,8 @@ uint16_t LUT_make_line(uint16_t start, uint16_t end, uint16_t index) {
 *
 *******************************************************************************/
 
-uint16_t LUT_make_swv_line(uint16_t start, uint16_t end, uint16_t pulse_height,
-                           uint16_t pulse_inc, uint16_t index) {
+uint16_t LUT_make_swv_line(uint16_t start, uint16_t end, uint16_t pulse_inc,
+                           uint16_t pulse_height, uint16_t index) {
     printf("making swv linefrom: %i to %i \n", start, end);
     printf("inc: %i height: %i \n", pulse_inc, pulse_height);
     if (index > MAX_LUT_SIZE) {

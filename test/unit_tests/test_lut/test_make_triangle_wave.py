@@ -28,6 +28,10 @@ class LuTMakeTriangleWave(unittest.TestCase):
                                        header_includes=["static uint16_t waveform_lut[];"],
                                        compiled_file_end="make_triangle")
 
+    @classmethod
+    def tearDownClass(cls) -> None:
+        helper_funcs.remove_compiled_files()
+
     def test_upright(self):
         """ Test it makes a cyclic voltammetry waveform that goes from low to high
             that starts at 0 """

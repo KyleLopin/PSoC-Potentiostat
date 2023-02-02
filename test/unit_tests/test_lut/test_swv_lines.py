@@ -35,10 +35,14 @@ class SWVMakeLineTestCase(unittest.TestCase):
                                        "static uint16_t waveform_lut[];"],
                                        compiled_file_end="make_swv_lines")
 
+    @classmethod
+    def tearDownClass(cls) -> None:
+        helper_funcs.remove_compiled_files()
+
     def test_swv_up(self):
         """ Test that the square wave voltammetry function works to a
         linear sweep type of voltage protocol in the up direction"""
-        index = self.module.LUT_make_swv_line(200, 300, 10, 50, 0)
+        index = self.module.LUT_make_swv_line(200, 300, 50, 10, 0)
         waveform = helper_funcs.convert_c_array_to_list(self.module.waveform_lut, 0,
                                                         index)
         soln = solutions.test_swv_up
@@ -73,6 +77,4 @@ class SWVMakeLineTestCase(unittest.TestCase):
                          msg=f"{sys._getframe().f_code.co_name} returned and "
                              f"index of {index} instead of {len(soln)}")
 
-        self.assertListEqual(waveform, soln,
-                             msg=f"{sys._getframe().f_code.co_name} "
-                                 f"didn't return the proper lut array")
+        self.assertListEqual(waveform, soln)

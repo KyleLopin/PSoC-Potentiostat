@@ -31,6 +31,10 @@ class LUTMakeCVStartZero(unittest.TestCase):
                              "static uint16_t dac_ground_value;"],
             compiled_file_end="make_CVStartZero_SWV")
 
+    @classmethod
+    def tearDownClass(cls) -> None:
+        helper_funcs.remove_compiled_files()
+
     def test_up_first_swv(self):
         """ Test it makes a cyclic voltammetry waveform with a square wave
         that goes from high to low that starts at 0 """

@@ -67,15 +67,15 @@ void user_setup_TIA_ADC(uint8_t data_buffer[]) {
 }
 
 
-void user_export_lut(uint8_t data_buffer[]) {
-    uint16_t length = LUT_Convert2Dec(&data_buffer[2], 4);
-    
-    USB_Export_Data(&waveform_lut, length);
-}
-
-void user_export_lut_length() {
-    USB_Export_Data(&lut_length, 2);
-}
+//void user_export_lut(uint8_t data_buffer[]) {
+//    uint16_t length = LUT_Convert2Dec(&data_buffer[2], 4);
+//
+//    USB_Export_Data(&waveform_lut, length);
+//}
+//
+//void user_export_lut_length() {
+//    USB_Export_Data(&lut_length, 2);
+//}
 
 
 /******************************************************************************
@@ -309,40 +309,40 @@ uint16_t user_chrono_lut_maker(uint8_t data_buffer[]) {
 *
 *******************************************************************************/
 // TODO: move the hardware parts out
-uint16_t user_dpv_lut_maker(uint8_t data_buffer[]) {
-    PWM_isr_Wakeup();
-    uint16_t start = LUT_Convert2Dec(&data_buffer[INDEX_START_VALUE], 4);
-    uint16_t end = LUT_Convert2Dec(&data_buffer[INDEX_END_VALUE], 4);
-    uint16_t pulse_height = LUT_Convert2Dec(&data_buffer[INDEX_SWV_PULSE_HEIGHT], 4);
-    uint16_t pulse_inc = LUT_Convert2Dec(&data_buffer[INDEX_SWV_INC], 4);
-
-    uint8_t sweep_type = data_buffer[INDEX_SWV_SWEEP_TYPE];
-    uint8_t start_volt_type = data_buffer[INDEX_SWV_START_VOLT_TYPE];
-    //LCD_ClearDisplay();
-    
-    //sprintf(LCD_str, "%d|%d|%d|%d", start, end, pulse_height, pulse_inc);
-    //sprintf(LCD_str, "%.*s", 16, data_buffer);
-    //LCD_PrintString(LCD_str);
-    uint16_t timer_period = LUT_Convert2Dec(&data_buffer[INDEX_SWV_TIMER_VALUE], 5);
-//                
-    PWM_isr_WritePeriod(timer_period);
-    uint16_t lut_length = 0;
-    if (sweep_type == 'L') {
-        lut_length = LUT_make_swv_line(start, end, pulse_height, pulse_inc, 0);
-        waveform_lut[lut_length] = waveform_lut[lut_length-1];  // dac is changed once before end so double last voltage
-        lut_length += 1;
-    }
-    else if (start_volt_type == 'Z') {  // Make a Cyclic voltammetry look up table that starts at 0 volts
-        lut_length = LUT_MakeCVStartZero_SWV(start, end, pulse_height, pulse_inc);
-    }
-    else if (start_volt_type == 'S') {  // Make a Cyclic voltammetry look up table that starts at the first dac value
-        lut_length = LUT_MakeTriangle_Wave_SWV(start, end, pulse_height, pulse_inc);
-    }
-    lut_value = waveform_lut[0];  // setup the dac so when it starts it will be at the correct voltage
-                
-    PWM_isr_Sleep();
-    return lut_length; // the look up table length will be 4000
-}
+//uint16_t user_dpv_lut_maker(uint8_t data_buffer[]) {
+//    PWM_isr_Wakeup();
+//    uint16_t start = LUT_Convert2Dec(&data_buffer[INDEX_START_VALUE], 4);
+//    uint16_t end = LUT_Convert2Dec(&data_buffer[INDEX_END_VALUE], 4);
+//    uint16_t pulse_height = LUT_Convert2Dec(&data_buffer[INDEX_SWV_PULSE_HEIGHT], 4);
+//    uint16_t pulse_inc = LUT_Convert2Dec(&data_buffer[INDEX_SWV_INC], 4);
+//
+//    uint8_t sweep_type = data_buffer[INDEX_SWV_SWEEP_TYPE];
+//    uint8_t start_volt_type = data_buffer[INDEX_SWV_START_VOLT_TYPE];
+//    //LCD_ClearDisplay();
+//
+//    //sprintf(LCD_str, "%d|%d|%d|%d", start, end, pulse_height, pulse_inc);
+//    //sprintf(LCD_str, "%.*s", 16, data_buffer);
+//    //LCD_PrintString(LCD_str);
+//    uint16_t timer_period = LUT_Convert2Dec(&data_buffer[INDEX_SWV_TIMER_VALUE], 5);
+////
+//    PWM_isr_WritePeriod(timer_period);
+//    uint16_t lut_length = 0;
+//    if (sweep_type == 'L') {
+//        lut_length = LUT_make_swv_line(start, end, pulse_height, pulse_inc, 0);
+//        waveform_lut[lut_length] = waveform_lut[lut_length-1];  // dac is changed once before end so double last voltage
+//        lut_length += 1;
+//    }
+//    else if (start_volt_type == 'Z') {  // Make a Cyclic voltammetry look up table that starts at 0 volts
+//        lut_length = LUT_MakeCVStartZero_SWV(start, end, pulse_height, pulse_inc);
+//    }
+//    else if (start_volt_type == 'S') {  // Make a Cyclic voltammetry look up table that starts at the first dac value
+//        lut_length = LUT_MakeTriangle_Wave_SWV(start, end, pulse_height, pulse_inc);
+//    }
+//    lut_value = waveform_lut[0];  // setup the dac so when it starts it will be at the correct voltage
+//
+//    PWM_isr_Sleep();
+//    return lut_length; // the look up table length will be 4000
+//}
 
 
 /******************************************************************************
@@ -385,55 +385,58 @@ uint16_t user_lookup_table_maker(uint8_t data_buffer[]) {
     uint8_t sweep_type = data_buffer[18];
     uint8_t start_volt_type = data_buffer[19];
     PWM_isr_WritePeriod(timer_period);
-    uint16_t lut_length = 0;
+    uint16_t local_lut_index = 0;
     printf("user lookup table: %i, %i\n", start_dac_value, end_dac_value);
     if (sweep_type == 'L') {  // Make look up table for linear sweep, ignore start volt type
         // The dac changes once after the run, so hold the voltage at the end constant
         // for 1 more tick
-        lut_length = LUT_make_line(start_dac_value, end_dac_value, 0);
-        waveform_lut[lut_length] = waveform_lut[lut_length-1];
-        lut_length += 1;
+        local_lut_index = LUT_make_line(start_dac_value, end_dac_value, 0);
+        waveform_lut[local_lut_index] = waveform_lut[local_lut_index-1];
+        local_lut_index += 1;
     }
     else if (start_volt_type == 'Z') {  // Make a Cyclic voltammetry look up table that starts at 0 volts
-        lut_length = LUT_MakeCVStartZero(start_dac_value, end_dac_value);
+        local_lut_index = LUT_MakeCVStartZero(start_dac_value, end_dac_value);
     }
     else if (start_volt_type == 'S') {  // Make a Cyclic voltammetry look up table that starts at the first dac value
-        lut_length = LUT_MakeTriangle_Wave(start_dac_value, end_dac_value);
-    } 
-    
-    
+        local_lut_index = LUT_MakeTriangle_Wave(start_dac_value, end_dac_value);
+    }
     lut_value = waveform_lut[0];  // Initialize for the start of the experiment
     PWM_isr_Sleep();
-    return lut_length;
+    return local_lut_index;
 }
 
 
 uint16_t user_lookup_table_maker_swv(uint8_t data_buffer[]) {
-    uint16_t lut_length = 0;
+    uint16_t local_lut_index = 0;
     uint16_t start_dac_value = LUT_Convert2Dec(&data_buffer[2], 4);
     uint16_t end_dac_value = LUT_Convert2Dec(&data_buffer[7], 4);
-    uint16_t swv_inc = LUT_Convert2Dec(&data_buffer[12], 3);
-    uint16_t swv_pulse_height = LUT_Convert2Dec(&data_buffer[16], 3);
+    uint16_t swv_inc = LUT_Convert2Dec(&data_buffer[12], 4);
+    uint16_t swv_pulse_height = LUT_Convert2Dec(&data_buffer[17], 4);
     uint16_t timer_period = LUT_Convert2Dec(&data_buffer[22], 5);
-    uint16_t sweep_type = data_buffer[26];
-    uint16_t start_volt_type = data_buffer[27];
+    uint16_t sweep_type = data_buffer[28];
+    uint16_t start_volt_type = data_buffer[29];
     PWM_isr_Wakeup();
     PWM_isr_WritePeriod(timer_period);
     PWM_isr_Sleep();
     printf("start_voltage: %i\n", start_dac_value);
     printf("end voltage: %i\n", end_dac_value);
     printf("inc voltage: %i\n", swv_inc);
+    printf("%s", &data_buffer[12]);
     printf("swv pulse voltage: %i\n", swv_pulse_height);
     printf("start_voltage_tupe: %i\n", sweep_type);
     if (sweep_type == 'L') {
-        return 205;  // Not implimented yet
+        local_lut_index = LUT_make_swv_line(start_dac_value, end_dac_value, swv_inc, swv_pulse_height, 0);
     }
     else if (start_volt_type == 'Z') {
-         printf("make CV look up table and start at 0V\n");
-        lut_length = LUT_MakeCVStartZero_SWV(start_dac_value, end_dac_value, swv_pulse_height, swv_inc);
+        printf("make CV look up table and start at 0V\n");
+        local_lut_index = LUT_MakeCVStartZero_SWV(start_dac_value, end_dac_value, swv_pulse_height, swv_inc);
+    }
+    else if (start_volt_type == 'S') {
+        printf("make CV look up table and start at start voltage\n");
+        local_lut_index = LUT_MakeTriangle_Wave_SWV(start_dac_value, end_dac_value, swv_pulse_height, swv_inc);
     }
     
-    return lut_length;
+    return local_lut_index;
 }
 
 

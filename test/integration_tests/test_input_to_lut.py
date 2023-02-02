@@ -38,7 +38,7 @@ class InputToLUT(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls) -> None:
-        pass
+        helper_funcs.remove_compiled_files()
 
     # test making cyclic voltammetry look-up tables
     def test_cv_input(self):

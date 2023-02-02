@@ -204,7 +204,9 @@ int main() {
             case DPV_LUT: ; // G user wants to make a look up table for differential pulse voltammetry
 //                LCD_ClearDisplay();
 //                LCD_PrintString("Making DPV LUT");
-                lut_length = user_dpv_lut_maker(OUT_Data_Buffer);
+//                lut_length = user_dpv_lut_maker(OUT_Data_Buffer);
+                lut_length = user_lookup_table_maker(OUT_Data_Buffer);
+                break;
                 break;
 
             }  // end of switch statment
