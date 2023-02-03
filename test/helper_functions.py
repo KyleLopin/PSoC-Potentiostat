@@ -59,7 +59,8 @@ def remove_compiled_files():
 
 
 def load(_filenames, function_names: list[str], header_includes: list[str] = [],
-         compiled_file_end: str = ""):
+         compiled_file_end: str = "",
+         print_debug=True):
     """
     Takes in a list of c files and functions and makes a compiled module out
     of them that can be used in python programs.  Originally developed for
@@ -90,6 +91,8 @@ def load(_filenames, function_names: list[str], header_includes: list[str] = [],
             next_src, next_raw_head = load_file(filename)
             source += next_src
             raw_header += next_raw_head
+    if print_debug:  # define the TESTING flag
+        source = "#define TESTING" + source
     # make the cdef with just the functions we want
     # cdef can not deal with comments or directives
     cdef = ""

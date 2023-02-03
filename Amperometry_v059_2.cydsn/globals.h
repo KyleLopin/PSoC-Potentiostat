@@ -161,6 +161,10 @@ struct RunParams {
 
 struct RunParams run_params;
 
+#ifndef TESTING
+    #define printf(fmt, ...) (0)
+#endif
+
 
 #endif    
 /* [] END OF FILE */
