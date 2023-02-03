@@ -9,7 +9,6 @@ __author__ = "Kyle Vitatus Lopin"
 
 # standard libraries
 import importlib
-import inspect
 import os
 import sys
 
@@ -29,12 +28,7 @@ for i in range(1, 4):
         break
 if not project_dir:
     raise Exception("Project directory not found")
-BACKUP_CYTPES_FILENAME = "cytypes_backup.h"
-FILE_DIR = os.path.dirname(__file__)
-MOCK_PROJECT_FILE = os.path.join(FILE_DIR, "project.h")
-MOCK_FILES = os.path.join(root_dir, 'test', 'mock_files')
-PROJECT_DIR_H_FILE = os.path.join(project_dir, "project.h")
-CYTYPES_FILES = os.path.join(project_dir, "cytypes.h")
+MOCK_FILE_DIR = os.path.join(root_dir, 'test', 'mock_files')
 
 
 def load_file(_filename):
@@ -54,36 +48,6 @@ def load_file(_filename):
     return source, raw_header
 
 
-def setup_mock_files():
-    """
-    TODO: Fix this
-    To create the c file, a blank cytypes.h file and a mocked project.h file in the project
-    directory.  This program checks for an existing cytype file first in the project
-    directory, and saves it with the name cytypes_backup.h if it exists, and
-    then makes the blank cytypes.h for testing.  The file restore_mock_files
-    will then restore the original cytypes.h file.
-    The program will also delete any project.h file in the project directory
-    (Note the project.h file used by PSoC is in the $project directory$/Generated_Source/PSoC5
-    directory) and replace it with the project.h file in this folder's directory
-    """
-    # clearn any backup file that might be saved already from an error
-    # in the cleanup procedure
-    # if os.path.isfile(BACKUP_CYTPES_FILENAME):
-    #     os.remove(BACKUP_CYTPES_FILENAME)
-    # check if file exists
-    # if os.path.isfile(CYTYPES_FILES):
-    #     print("file exists")
-    #     os.rename(CYTYPES_FILES, BACKUP_CYTPES_FILENAME)
-    # open(CYTYPES_FILES, 'w').close()  # create a blank file
-    # if a project.h file is already in the project directory, ignore it is the mock file,
-    # the real file is in a different directory
-
-    # if not os.path.isfile(PROJECT_DIR_H_FILE):
-    #     os.replace(MOCK_PROJECT_FILE, PROJECT_DIR_H_FILE)
-    # TODO: make sure the can be deleted after moving files
-    pass
-
-
 def remove_compiled_files():
     files = os.listdir('.')
     # print(f"files: {files}")
@@ -92,26 +56,6 @@ def remove_compiled_files():
             if file.startswith('py_test'):
                 # print(f"removing file: {file}")
                 os.remove(file)
-
-
-def restore_files_after_mock():
-    """
-    Check if a cytypes back-up file was created and restore it if it
-    was, else delete the blank cytypes.h file created for testing as
-    this causes problems for the PSoC Creator compiler.  Also
-    delete any project.h file in the project directory, PSoC Creator uses different path
-    """
-    original_file = os.path.join(project_dir, "cytypes.h")
-    if os.path.isfile(original_file):
-        os.remove(original_file)
-
-    if os.path.isfile(BACKUP_CYTPES_FILENAME):  # restore the file
-        os.rename(BACKUP_CYTPES_FILENAME, original_file)
-
-    # remove the mocked project.h file from project folder, PSoC Creator uses
-    # a different file path
-    # if os.path.isfile(PROJECT_DIR_H_FILE):
-    #     os.remove(PROJECT_DIR_H_FILE)
 
 
 def load(_filenames, function_names: list[str], header_includes: list[str] = [],
@@ -170,7 +114,7 @@ def load(_filenames, function_names: list[str], header_includes: list[str] = [],
     # there should be mocked file in the current directory also so include that
     ffi_builder.set_source(compiled_filename, source,
                            include_dirs=[project_dir, ".",
-                                         MOCK_FILES])
+                                         MOCK_FILE_DIR])
     ffi_builder.compile()
     # import the module and return it
     sys.path.append(os.getcwd())  # make sure the file can be found
@@ -193,22 +137,3 @@ def convert_c_array_to_list(c_array, start_index, end_index):
     for i in range(start_index, end_index):
         return_list.append(c_array[i])
     return return_list
-
-
-def make_mock_files():  # nevermind figure it out with out these functions
-    cytype_mock_file = os.path.join(project_dir, "cytypes_mock.h")
-    cytype_file = os.path.join(project_dir, "cytypes_mock.h")
-    if os.path.isfile(cytype_mock_file) and not os.path.isfile(cytype_file):
-        os.rename(cytype_mock_file, cytype_file)
-
-
-def reverse_mock_files():  # nevermind figure it out with out these functions
-    cytype_mock_file = os.path.join(project_dir, "cytypes_mock.h")
-    cytype_file = os.path.join(project_dir, "cytypes_mock.h")
-    if not os.path.isfile(cytype_mock_file) and os.path.isfile(cytype_file):
-        os.rename(cytype_file, cytype_mock_file)
-
-
-if __name__ == "__main__":
-    setup_mock_files()
-    restore_files_after_mock()
