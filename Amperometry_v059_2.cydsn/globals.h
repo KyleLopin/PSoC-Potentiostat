@@ -161,6 +161,7 @@ struct RunParams {
 
 struct RunParams run_params;
 
+// Use the print statements in the tests, but not on the hardware
 #ifndef TESTING
     #define printf(fmt, ...) (0)
 #endif

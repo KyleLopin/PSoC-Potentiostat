@@ -67,15 +67,15 @@ void user_setup_TIA_ADC(uint8_t data_buffer[]) {
 }
 
 
-//void user_export_lut(uint8_t data_buffer[]) {
-//    uint16_t length = LUT_Convert2Dec(&data_buffer[2], 4);
-//
-//    USB_Export_Data(&waveform_lut, length);
-//}
-//
-//void user_export_lut_length() {
-//    USB_Export_Data(&lut_length, 2);
-//}
+void user_export_lut(uint8_t data_buffer[]) {
+    uint16_t length = LUT_Convert2Dec(&data_buffer[2], 4);
+
+    USB_Export_Data(&waveform_lut, length);
+}
+
+void user_export_lut_length() {
+    USB_Export_Data(&lut_length, 2);
+}
 
 
 /******************************************************************************
