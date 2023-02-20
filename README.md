@@ -90,6 +90,9 @@ The following are the inputs commands the device will take, all inputs are input
 ## v1.8 - 
 - add potentiometry, chronopotentiometry
 
+## v1.9 - 
+- add EIS
+
 optional / exploratory
 - add auto range for the current.  Can TIA swith resistor that fast?
 - add way to have an equilibrium time for CV
@@ -97,6 +100,7 @@ optional / exploratory
 - free up the counter electrode DAC or TIA DAC with the VRef
 - add calibration routine
 - add DFB for removing high frequency noise
+
 
 
 # PSoC-Potentiostat Hardware changes to make
